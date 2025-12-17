@@ -165,8 +165,8 @@ export default function Home() {
               <p>Monday to Friday, 6:30am - 10:30pm GMT</p>
             </div>
           </div>
-{/*
-          <div className={styles.contactForm}>
+
+          {/*<div className={styles.contactForm}>
             <h3>Send us a message</h3>
             <form className={styles.form}>
               <div className={styles.formGroup}>
@@ -197,9 +197,9 @@ export default function Home() {
                 Send Message
               </button>
             </form>
-          </div>
+          </div>*/}
         </div>
-      </section>*/}
+      </section>
 
       {/* Footer */}
       <footer className={styles.footer}>
