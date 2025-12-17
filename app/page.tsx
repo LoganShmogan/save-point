@@ -17,7 +17,7 @@ export default function Home() {
       {/* Hero Section */}
       <header className={styles.hero}>
         <div className={styles.heroContent}>
-          <h1 className={styles.companyName}>Save Point (Limited)</h1>
+          <h1 className={styles.companyName}>Save Point Limited</h1>
           <p className={styles.tagline}>Transforming Your Digital Presence</p>
           <p className={styles.heroDescription}>
             Professional IT solutions and software development tailored to your
@@ -159,10 +159,10 @@ export default function Home() {
             <div className={styles.contactMethod}>
               <FontAwesomeIcon icon={faPhone} className={styles.contactIcon} />
               <h3>Call Us</h3>
-              <a href="tel:+441234567890" className={styles.contactLink}>
-                +44 1234 567890
+              <a href="tel:+640210653792" className={styles.contactLink}>
+                +64 021 065 3792
               </a>
-              <p>Monday to Friday, 9am - 6pm GMT</p>
+              <p>Monday to Friday, 6:30am - 10:30pm GMT</p>
             </div>
           </div>
 
@@ -205,16 +205,14 @@ export default function Home() {
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
           <div className={styles.footerLogo}>
-            <h3>Save Point (Limited)</h3>
+            <h3>Save Point Limited</h3>
             <p>Your Partner in Digital Transformation</p>
           </div>
           <div className={styles.footerInfo}>
             <p>
-              &copy; {new Date().getFullYear()} Save Point (Limited). All rights
+              &copy; {new Date().getFullYear()} Save Point Limited. All rights
               reserved.
             </p>
-            <p>Company Registration Number: [Your Company Number]</p>
-            <p>VAT Number: [Your VAT Number]</p>
           </div>
         </div>
       </footer>
