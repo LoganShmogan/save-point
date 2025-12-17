@@ -151,7 +151,7 @@ export default function Home() {
                 href="mailto:contact@savepoint.com"
                 className={styles.contactLink}
               >
-                contact@savepoint.com
+                contact@savepoint.cc
               </a>
               <p>We typically respond within 24 hours</p>
             </div>
