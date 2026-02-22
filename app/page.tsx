@@ -1,30 +1,21 @@
-import styles from "./page.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEnvelope,
-  faPhone,
-  faCheckCircle,
-  faCogs,
-  faShoppingCart,
-  faLaptopCode,
-  faShieldAlt,
-  faHeadset,
-} from "@fortawesome/free-solid-svg-icons";
-
 export default function Home() {
   return (
     <main className="page">
 
-      {/* HEADER STRIP */}
+      {/* SYSTEM HEADER */}
       <div className="topbar">
-        <div>SAVE POINT LTD</div>
-        <div>WORK • SERVICES • CONTACT</div>
+        <div className="logo">SAVE POINT LTD</div>
+        <div className="nav">WORK • SERVICES • CONTACT</div>
       </div>
 
-      {/* HERO BLOCK */}
+      {/* HERO */}
       <section className="block hero">
         <span className="block-id">00000001</span>
-        <h1>DIGITAL SYSTEM OPTIMISATION</h1>
+        <h1>
+          DIGITAL<br />
+          SYSTEM<br />
+          OPTIMISATION
+        </h1>
         <p>
           Modernising and upgrading existing business software.
           We bridge the gap between your current systems and
@@ -33,23 +24,24 @@ export default function Home() {
         <button className="cta">REQUEST CONSULTATION</button>
       </section>
 
-      {/* GRID SECTION */}
+      {/* SERVICES GRID */}
       <section className="grid">
+
         <div className="block">
           <span className="block-id">00000002</span>
           <h2>SOFTWARE CUSTOMISATION</h2>
           <p>
-            Modify existing internal systems to align with
-            your operational workflow.
+            Modify internal systems to align with
+            operational workflow.
           </p>
         </div>
 
-        <div className="block accent-purple">
+        <div className="block accent">
           <span className="block-id">00000003</span>
           <h2>WEB DEVELOPMENT</h2>
           <p>
-            High-performance websites and applications built
-            using modern stacks.
+            High-performance websites and
+            modern web applications.
           </p>
         </div>
 
@@ -57,22 +49,23 @@ export default function Home() {
           <span className="block-id">00000004</span>
           <h2>MAINTENANCE & SUPPORT</h2>
           <p>
-            Security updates, optimisation, documentation,
-            and long-term system support.
+            Security updates, optimisation,
+            and long-term system stability.
           </p>
         </div>
 
-        <div className="block accent-yellow">
+        <div className="block accent">
           <span className="block-id">00000005</span>
           <h2>E-COMMERCE SYSTEMS</h2>
           <p>
-            Scalable commerce solutions integrated into
-            existing business ecosystems.
+            Scalable commerce platforms
+            integrated into your ecosystem.
           </p>
         </div>
+
       </section>
 
-      {/* CONTACT BLOCK */}
+      {/* CONTACT */}
       <section className="block contact">
         <span className="block-id">00000006</span>
         <h2>CONTACT</h2>

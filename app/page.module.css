@@ -1,78 +1,120 @@
-:root {
-  --purple: #b791c2;
-  --yellow: #eecc67;
-  --blue: #699fd5;
-  --green: #82c889;
-}
-
-body {
-  background: #f5f5f5;
-  margin: 0;
-  font-family: var(--font-body);
-  color: #000;
-}
-
 .page {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 60px 40px;
 }
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
 
 .topbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-family: var(--font-display);
-  font-weight: 700;
-  border-bottom: 3px solid black;
-  padding-bottom: 10px;
-  margin-bottom: 40px;
+  border-bottom: 3px solid var(--purple);
+  padding-bottom: 12px;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
 }
 
-.block {
-  border: 3px solid black;
-  padding: 30px;
-  margin-bottom: 30px;
-  background: white;
+.logo {
+  font-size: 18px;
 }
+
+.nav {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ============================= */
+/* BLOCKS */
+/* ============================= */
+
+.block {
+  border: 3px solid var(--purple);
+  padding: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  background: var(--black);
+  transition: 0.2s ease;
+}
+
+/* subtle retro hover shift */
+.block:hover {
+  transform: translate(-4px, -4px);
+}
+
+/* Accent variant */
+.accent {
+  background: var(--purple);
+  color: var(--black);
+}
+
+/* ============================= */
+/* TEXT */
+/* ============================= */
 
 .block-id {
   font-family: monospace;
-  font-size: 14px;
-  letter-spacing: 3px;
+  font-size: 12px;
+  letter-spacing: 4px;
+  opacity: 0.6;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: var(--font-display);
   font-weight: 700;
-  margin: 10px 0;
+  margin: 16px 0;
+  line-height: 1.1;
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 64px;
 }
 
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* ============================= */
+/* BUTTON */
+/* ============================= */
+
 .cta {
-  margin-top: 20px;
-  padding: 12px 24px;
-  border: 3px solid black;
-  background: var(--purple);
+  margin-top: 24px;
+  padding: 14px 28px;
+  border: 3px solid var(--purple);
+  background: transparent;
+  color: var(--purple);
   font-family: var(--font-display);
   cursor: pointer;
+  letter-spacing: 2px;
+  transition: 0.2s ease;
 }
+
+.cta:hover {
+  background: var(--purple);
+  color: var(--black);
+}
+
+/* ============================= */
+/* GRID */
+/* ============================= */
 
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  gap: 40px;
 }
 
-.accent-purple {
-  background: var(--purple);
-}
-
-.accent-yellow {
-  background: var(--yellow);
-}
+/* ============================= */
+/* CONTACT */
+/* ============================= */
 
 .contact {
   text-align: center;
