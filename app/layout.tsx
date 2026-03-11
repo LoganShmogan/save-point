@@ -9,7 +9,7 @@ const chakra = Chakra_Petch({
 
 const figtree = Figtree({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400"],
   variable: "--font-body",
 });
 

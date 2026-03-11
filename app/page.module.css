@@ -1,121 +1,23 @@
 .page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 40px;
-}
-
-/* ============================= */
-/* HEADER */
-/* ============================= */
-
-.topbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: var(--font-display);
-  border-bottom: 3px solid var(--purple);
-  padding-bottom: 12px;
-  margin-bottom: 60px;
-  letter-spacing: 2px;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  min-height: 100vh;
 }
 
-.logo {
-  font-size: 18px;
-}
-
-.nav {
-  font-size: 14px;
-  opacity: 0.8;
-}
-
-/* ============================= */
-/* BLOCKS */
-/* ============================= */
-
-.block {
-  border: 3px solid var(--purple);
-  padding: 40px;
-  margin-bottom: 40px;
-  position: relative;
-  background: var(--black);
-  transition: 0.2s ease;
-}
-
-/* subtle retro hover shift */
-.block:hover {
-  transform: translate(-4px, -4px);
-}
-
-/* Accent variant */
-.accent {
-  background: var(--purple);
-  color: var(--black);
-}
-
-/* ============================= */
-/* TEXT */
-/* ============================= */
-
-.block-id {
-  font-family: monospace;
-  font-size: 12px;
-  letter-spacing: 4px;
-  opacity: 0.6;
-}
-
-h1,
-h2 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  margin: 16px 0;
-  line-height: 1.1;
-}
-
-.hero h1 {
-  font-size: 64px;
-}
-
-p {
-  font-size: 16px;
-  line-height: 1.6;
-  max-width: 600px;
-}
-
-/* ============================= */
-/* BUTTON */
-/* ============================= */
-
-.cta {
-  margin-top: 24px;
-  padding: 14px 28px;
-  border: 3px solid var(--purple);
-  background: transparent;
-  color: var(--purple);
-  font-family: var(--font-display);
-  cursor: pointer;
-  letter-spacing: 2px;
-  transition: 0.2s ease;
-}
-
-.cta:hover {
-  background: var(--purple);
-  color: var(--black);
-}
-
-/* ============================= */
-/* GRID */
-/* ============================= */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-}
-
-/* ============================= */
-/* CONTACT */
-/* ============================= */
-
-.contact {
+.construct {
+  width: 400px;
+  background-color: #b791c2;
   text-align: center;
+  padding: 10px;
+  border: solid white 5px;
+}
+
+.textMain {
+  font-size: 25;
+  font-family: var(--font-display);
+}
+
+.textSub {
+  font-family: var(--font-body);
 }
