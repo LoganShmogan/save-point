@@ -5,6 +5,10 @@
   min-height: 100vh;
 }
 
+.logo {
+  paddingpadding-right: 10px;
+}
+
 .construct {
   width: 400px;
   background-color: #b791c2;
