@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Chakra_Petch, Figtree } from "next/font/google";
+import type { Metadata } from "next";
 
 const chakra = Chakra_Petch({
   subsets: ["latin"],
@@ -12,6 +13,15 @@ const figtree = Figtree({
   weight: ["400"],
   variable: "--font-body",
 });
+
+export const metadata: Metadata = {
+  icons: {
+    icon: "/favicon.ico",
+  },
+  title: "Save Point",
+  description:
+    "Save Point website for custom software and automation services made by Logan Young",
+};
 
 export default function RootLayout({
   children,
