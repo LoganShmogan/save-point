@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   title: "Save Point",
   description:
-    "Save Point website for custom software and automation services made by Logan Young",
+    "Save Point website for intelligent connected systems made by Logan Young",
 };
 
 export default function RootLayout({
@@ -34,3 +34,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+

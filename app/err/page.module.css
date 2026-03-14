@@ -1,0 +1,24 @@
+.page {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  min-height: 100vh;
+}
+
+.logo {
+  padding-right: 10px;
+}
+
+.construct {
+  width: 400px;
+  background-color: #b791c2;
+  text-align: center;
+  padding: 10px;
+  border: solid white 5px;
+  margin-left: 25px;
+}
+
+.textMain {
+  font-size: 25;
+  font-family: var(--font-display);
+}
