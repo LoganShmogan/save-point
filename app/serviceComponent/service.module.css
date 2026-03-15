@@ -1,0 +1,65 @@
+.servicesLogo {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+}
+
+.servicesLogoText {
+  font-size: 50px;
+  font-family: var(--font-display);
+}
+
+/* Container for cards */
+.servicesContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 600px 600px;
+  grid-gap: 10px;
+  place-items: center;
+  height: 650px;
+}
+
+/* Services cards */
+.servicesCard {
+  background-color: var(--purple);
+  width: 350px;
+  min-height: 500px;
+  border: solid white 10px;
+}
+
+.servicesHeader {
+  font-family: var(--font-display);
+  font-size: 25px;
+  padding: 10px;
+  border-bottom: solid white 10px;
+}
+
+/* Container for sub, img, link*/
+.servicesContent {
+  display: grid;
+  justify-content: center;
+}
+
+.servicesSubheading {
+  font-family: var(--font-body);
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20% 60% 20%;
+}
+
+.servicesImage {
+  padding: 10px;
+  place-self: center;
+}
+
+.servicesCardLink {
+  font-size: 25px;
+  font-family: var(--font-display);
+  padding: 10px;
+  place-self: center;
+}
+
+.servicesCardLink:hover {
+  color: var(--green);
+}

@@ -19,64 +19,49 @@
 }
 
 /* Services section */
-
-.servicesLogo {
+/*About section*/
+.aboutLogo {
   display: flex;
   justify-content: center; /* Centers horizontally */
   align-items: center; /* Centers vertically */
 }
 
-.servicesLogoText {
+.aboutLogoText {
   font-size: 50px;
   font-family: var(--font-display);
 }
-
-/* Container for cards */
-.servicesContainer {
+/*About card*/
+.aboutContainer {
+  padding: 40px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 600px 600px;
-  grid-gap: 10px;
-  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px;
 }
 
-/* Services cards */
-.servicesCard {
+.aboutCard {
   background-color: var(--purple);
-  width: 350px;
-  min-height: 500px;
-  border: solid white 10px;
+  border: solid 10px var(--white);
+  padding: 10px;
 }
 
-.servicesHeader {
-  font-family: var(--font-display);
+.aboutHeader {
   font-size: 25px;
-  padding: 10px;
-  border-bottom: solid white 10px;
+  font-family: var(--font-display);
 }
 
-/* Container for sub, img, link*/
-.servicesContent {
-  display: grid;
-  justify-content: center;
-}
-
-.servicesSubheading {
+.aboutSubHeader {
+  font-size: 18px;
+  padding-top: 10px;
   font-family: var(--font-body);
-  padding: 10px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 20% 60% 20%;
 }
 
-.servicesImage {
-	padding: 10px;
-	place-self: center;
+.aboutBodyText {
+  padding-top: 10px;
+  font-family: var(--font-body);
 }
 
-.servicesCardLink {
-	font-size: 25px;
-	font-family: var(--font-display);
-	padding: 10px;
-	place-self: center;
+.aboutLink {
+  padding-top: 10px;
+  font-size: 25px;
+  font-family: var(--font-display);
 }

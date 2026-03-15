@@ -1,0 +1,38 @@
+/* Navbar section */
+.outer {
+  padding: 10px;
+  padding-left: 80px;
+  padding-right: 80px;
+  position: sticky;
+  top: 10px;
+}
+
+.container {
+  display: flex;
+  padding: 10px;
+  font-size: 25px;
+  justify-content: space-evenly;
+  font-family: var(--font-display);
+  background-color: var(--purple);
+  border: solid 10px var(--white);
+}
+
+.home,
+.about,
+.contact,
+.package,
+.price,
+.legal {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+}
+
+.home:hover,
+.about:hover,
+.contact:hover,
+.package:hover,
+.price:hover,
+.legal:hover {
+  color: var(--green);
+}

@@ -1,9 +1,11 @@
 import Image from "next/image";
 import styles from "@/app/err/page.module.css";
+import Navbar from "@/app/navigation/navBar";
 // Page dedicatied under contruction or when site is down etc 
 export default function Home() {
   return (
-    <main>
+	  <main>
+		  <Navbar/>
       <div className={styles.page}>
         <div className={styles.logo}>
           <Image

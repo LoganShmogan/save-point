@@ -2,12 +2,14 @@ import "./globals.css";
 import { Chakra_Petch, Figtree } from "next/font/google";
 import type { Metadata } from "next";
 
+// Main header / button font
 const chakra = Chakra_Petch({
   subsets: ["latin"],
   weight: ["700"],
   variable: "--font-display",
 });
 
+// Main body font
 const figtree = Figtree({
   subsets: ["latin"],
   weight: ["400"],
@@ -20,7 +22,7 @@ export const metadata: Metadata = {
   },
   title: "Save Point",
   description:
-    "Save Point website for intelligent connected systems made by Logan Young",
+    "Save Point website for intelligent connected systems located in New Zealand. Website made by Logan Young - Software Architect",
 };
 
 export default function RootLayout({

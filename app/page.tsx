@@ -1,6 +1,8 @@
 import Image from "next/image";
 import styles from "@/app/page.module.css";
 import Link from "next/link";
+import Navbar from "@/app/navigation/navBar";
+import Service from "@/app/serviceComponent/service";
 
 export default function Home() {
   return (
@@ -21,91 +23,42 @@ export default function Home() {
           <h2>Please scroll down for services.</h2>
         </div>
       </div>
-      {/*Servics*/}
-      {/*Services Logo*/}
-      <div className={styles.servicesLogo}>
-        <div className={styles.servicesLogoText}>
-          <h1>Services</h1>
+		  <Navbar />
+		  <Service/>
+      {/*About section
+      <div className={styles.aboutLogo}>
+        <div className={styles.aboutLogoText}>
+          <h1>About us</h1>
         </div>
       </div>
-      {/*Servics cards*/}
-      <div className={styles.servicesContainer}>
-        {/*Automation card*/}
-        <div className={styles.servicesCard}>
-          <div className={styles.servicesHeader}>
-            <h1>Automation</h1>
+      <div className={styles.aboutContainer}>
+        <div className={styles.aboutImage}>
+          <Image
+            src="/logo/logoFlag (800 x 800).jpg"
+            alt="Save Point flag logo"
+            width={500}
+            height={500}
+          />
+        </div>
+        <div className={styles.aboutCard}>
+          <div className={styles.aboutHeader}>
+            <h1>Making your Save Point</h1>
           </div>
-          <div className={styles.servicesContent}>
-            <div className={styles.servicesSubheading}>
-              <h2>
-                Home and business internet of things (ioT). Arduino, Raspberry
-                Pi, Elegoo ++
-              </h2>
-            </div>
-            <div className={styles.servicesImage}>
-              <Image
-                src="/ads/Hourglass (1250 x 1250).png"
-                alt="Pixelated hourglass illistration"
-                width={250}
-                height={250}
-              />
-            </div>
-            <div className={styles.servicesCardLink}>
-              <Link href="/err">View Packages</Link>
-            </div>
+          <div className={styles.aboutSubheader}>
+            <h2>Hoursehold and business software ++ more.</h2>
+          </div>
+          <div className={styles.aboutBodyText}>
+            <p>paragraph</p>
+          </div>
+          <div className={styles.aboutLink}>
+            <Link href="/err">
+              <u>View more</u>
+            </Link>
           </div>
         </div>
-        {/*Custom software card*/}
-        <div className={styles.servicesCard}>
-          <div className={styles.servicesHeader}>
-            <h1>Custom Software</h1>
-          </div>
-          <div className={styles.servicesContent}>
-            <div className={styles.servicesSubheading}>
-              <h2>
-                All areas of advanced systems and software. DBMS, CRM, ERM, POS
-                ++
-              </h2>
-            </div>
-            <div className={styles.servicesImage}>
-              <Image
-                src="/ads/Lightbulb (1250 x 1250).png"
-                alt="Pixelated lightbulb illistration"
-                width={250}
-                height={250}
-              />
-            </div>
-            <div className={styles.servicesCardLink}>
-              <Link href="/err">View Packages</Link>
-            </div>
-          </div>
-        </div>
-        {/*Web apps card*/}
-        <div className={styles.servicesCard}>
-          <div className={styles.servicesHeader}>
-            <h1>Web applications</h1>
-          </div>
-          <div className={styles.servicesContent}>
-            <div className={styles.servicesSubheading}>
-              <h2>
-                Mobile and desktop support. Large and small scale business
-                support ++
-              </h2>
-            </div>
-            <div className={styles.servicesImage}>
-              <Image
-                src="/ads/Coin (1250 x 1250).png"
-                alt="Pixelated coin illistration"
-                width={250}
-                height={250}
-              />
-            </div>
-            <div className={styles.servicesCardLink}>
-              <Link href="/err">View Packages</Link>
-            </div>
-          </div>
-        </div>
-      </div>
+		  </div>
+		  
+				About section*/}
     </main>
   );
 }
