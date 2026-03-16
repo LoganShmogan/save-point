@@ -16,7 +16,7 @@ export default function Home() {
           />
         </div>
         <div className={styles.construct}>
-          <h1 className={styles.textMain}>Page is under contruction.</h1>
+          <h1 className={styles.textMain}>Page is under construction.</h1>
         </div>
       </div>
     </main>

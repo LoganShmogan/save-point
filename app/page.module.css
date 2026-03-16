@@ -60,6 +60,10 @@
   font-family: var(--font-body);
 }
 
+.aboutBodyText p {
+	padding-bottom: 10px;
+}
+
 .aboutLink {
   padding-top: 10px;
   font-size: 25px;
