@@ -22,8 +22,8 @@ const Service = () => {
           <div className={styles.servicesContent}>
             <div className={styles.servicesSubheading}>
               <h2>
-                Home and business internet of things (ioT). Arduino, Raspberry
-                Pi, Elegoo ++ more.
+                Home and business internet of things (ioT). Arduino,
+                Raspberrorory Pi, Elegoo ++ more.
               </h2>
             </div>
             <div className={styles.servicesImage}>
@@ -35,7 +35,7 @@ const Service = () => {
               />
             </div>
             <div className={styles.servicesCardLink}>
-              <Link href="/err">
+              <Link href="/error">
                 <u>View Packages</u>
               </Link>
             </div>
@@ -62,7 +62,7 @@ const Service = () => {
               />
             </div>
             <div className={styles.servicesCardLink}>
-              <Link href="/err">
+              <Link href="/error">
                 <u>View Packages</u>
               </Link>
             </div>
@@ -89,7 +89,7 @@ const Service = () => {
               />
             </div>
             <div className={styles.servicesCardLink}>
-              <Link href="/err">
+              <Link href="/error">
                 <u>View Packages</u>
               </Link>
             </div>
