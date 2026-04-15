@@ -1,0 +1,23 @@
+.outer {
+  padding: 40px;
+}
+
+.container {
+  background-color: var(--purple);
+  min-height: 300px;
+  border: solid white 10px;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr;
+}
+
+.privacy {
+}
+
+.contacts {
+}
+
+.company {
+}

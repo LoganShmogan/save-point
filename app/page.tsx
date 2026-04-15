@@ -3,6 +3,7 @@ import styles from "@/app/page.module.css";
 import Link from "next/link";
 import Navbar from "@/app/navigation/navBar";
 import Service from "@/app/serviceComponent/service";
+import Footer from "@/app/footer/footer";
 
 export default function Home() {
   return (
@@ -79,6 +80,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
