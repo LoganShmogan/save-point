@@ -1,3 +1,7 @@
+u:hover {
+  color: var(--blue);
+}
+
 .outer {
   padding: 40px;
 }
@@ -6,18 +10,39 @@
   background-color: var(--purple);
   min-height: 300px;
   border: solid white 10px;
-}
-
-.inner {
   display: grid;
   grid-template-columns: 1fr 1fr 3fr;
 }
 
 .privacy {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.privacyHeader {
+  font-size: 25px;
+  font-family: var(--font-display);
 }
 
 .contacts {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.contactHeader {
+  font-size: 25px;
+  font-family: var(--font-display);
 }
 
 .company {
+  display: grid;
+  justify-items: end;
+  padding: 10px;
+}
+
+.companyHeader {
+  font-size: 25px;
+  font-family: var(--font-display);
 }
