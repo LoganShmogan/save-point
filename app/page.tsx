@@ -6,7 +6,6 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main>
-      <Navbar />
       <div className={styles.page}>
         <div className={styles.logo}>
           <Image
