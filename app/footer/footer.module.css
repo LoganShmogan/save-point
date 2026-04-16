@@ -12,6 +12,7 @@ u:hover {
   border: solid white 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 3fr;
+  grid-template-rows: 1fr;
 }
 
 .privacy {

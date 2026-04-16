@@ -46,7 +46,7 @@ const Footer = () => {
             <p>Intellegent connect systems built with you.</p>
           </div>
           <div className={styles.siteLinks}></div>
-          <p>© Save Point @ 2026</p>
+          <p>© 2026 Save Point Limited</p>
         </div>
       </div>
     </div>
