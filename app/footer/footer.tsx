@@ -4,52 +4,44 @@ import styles from "@/app/footer/footer.module.css";
 
 const Footer = () => {
   return (
-    <div className={styles.outer}>
-      {/*Footer container*/}
+    <footer className={styles.outer}>
       <div className={styles.container}>
-        <div className={styles.privacy}>
-          <div className={styles.privacyHeader}>
-            <Link href="/Legal">
-              <u>Legal</u>
-            </Link>
-          </div>
-          <Link href="/legal">
-            <u>Our Policy</u>
-          </Link>
-          <Link href="/legal">
-            <u>Terms of Service</u>
-          </Link>
-          <Link href="/legal">
-            <u>Support</u>
-          </Link>
+
+        {/* Column 1 — Legal */}
+        <div className={styles.column}>
+          <p className={styles.columnHeader}>Legal</p>
+          <Link href="/legal" className={styles.link}>Our Policy</Link>
+          <Link href="/legal" className={styles.link}>Terms of Service</Link>
+          <Link href="/legal" className={styles.link}>Support</Link>
         </div>
-        <div className={styles.contacts}>
-          <div className={styles.contactHeader}>
-            <Link href="/contact">
-              <u>Contact</u>
-            </Link>
-          </div>
-          <p>Email: contact@savepoint.cc</p>
-          <p> Message us on Facebook: </p>
+
+        {/* Divider */}
+        <div className={styles.divider} />
+
+        {/* Column 2 — Contact */}
+        <div className={styles.column}>
+          <p className={styles.columnHeader}>Contact</p>
+          <p className={styles.text}>contact@savepoint.cc</p>
           <Link
             href="https://www.facebook.com/profile.php?id=61584633437200"
-            target="_black"
+            target="_blank"
+            className={styles.link}
           >
-            <u>@Save Point Limited</u>
+            Facebook — @Save Point Limited
           </Link>
-          {/*<p>Instagram: @ Save Point</p>
-            <p>Linkedin: @ Save Point</p>
-            <p>TikTok: @ Save Point</p>*/}
         </div>
-        <div className={styles.company}>
-          <div className={styles.companyHeader}>
-            <p>Intellegent connect systems built with you.</p>
-          </div>
-          <div className={styles.siteLinks}></div>
-          <p>© 2026 Save Point Limited</p>
+
+        {/* Divider */}
+        <div className={styles.divider} />
+
+        {/* Column 3 — Brand */}
+        <div className={styles.brandColumn}>
+          <p className={styles.brandTagline}>Intelligent connected systems built with you.</p>
+          <p className={styles.copyright}>© 2026 Save Point Limited</p>
         </div>
+
       </div>
-    </div>
+    </footer>
   );
 };
 

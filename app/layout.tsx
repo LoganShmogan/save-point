@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Chakra_Petch, Figtree } from "next/font/google";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 // Main header / button font
 const chakra = Chakra_Petch({
@@ -15,6 +15,11 @@ const figtree = Figtree({
   weight: ["400"],
   variable: "--font-body",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   icons: {
@@ -36,5 +41,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-

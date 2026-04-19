@@ -1,9 +1,12 @@
 /* Logo section */
 .logoContainer {
   display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   min-height: 700px;
+  padding: 20px;
+  gap: 20px;
 }
 
 .logo {
@@ -18,19 +21,19 @@
   font-family: var(--font-body);
 }
 
-/* Services section */
-/*About section*/
+/* About section */
 .aboutLogo {
   display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
+  justify-content: center;
+  align-items: center;
 }
 
 .aboutLogoText {
   font-size: 50px;
   font-family: var(--font-display);
 }
-/*About card*/
+
+/* About card */
 .aboutContainer {
   padding: 40px;
   display: grid;
@@ -61,11 +64,48 @@
 }
 
 .aboutBodyText p {
-	padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .aboutLink {
   padding-top: 10px;
   font-size: 25px;
   font-family: var(--font-display);
+}
+
+/* ── Mobile / Tablet ── */
+@media (max-width: 768px) {
+  .logoContainer {
+    min-height: auto;
+    padding: 40px 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    margin-right: 0;
+    /* Scale down logo image on mobile via max-width on the img tag isn't possible here,
+       but we can constrain the container */
+    max-width: 100%;
+  }
+
+  /* Make the Next.js Image scale on mobile */
+  .logo img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .aboutLogoText {
+    font-size: 32px;
+  }
+
+  .aboutContainer {
+    padding: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .aboutImage {
+    display: flex;
+    justify-content: center;
+  }
 }
