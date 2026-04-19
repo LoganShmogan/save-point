@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "@/app/error/page.module.css";
-import Navbar from "@/app/navigation/navBar";
 import Link from "next/link";
 
 export default function Home() {
