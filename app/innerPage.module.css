@@ -153,6 +153,10 @@
   text-decoration: underline;
 }
 
+.subHeadPart {
+  font-size: 25px;
+}
+
 .priceBtn:hover {
   color: var(--green);
 }
