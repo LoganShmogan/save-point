@@ -6,22 +6,29 @@ const Navbar = () => {
     <nav className={styles.outer}>
       <div className={styles.container}>
         <div className={styles.home}>
-          <Link href="/home"><u>Home</u></Link>
+          <Link href="/home">
+            <u>Home</u>
+          </Link>
         </div>
         <div className={styles.about}>
-          <Link href="/about"><u>About</u></Link>
+          <Link href="/about">
+            <u>About</u>
+          </Link>
         </div>
         <div className={styles.contact}>
-          <Link href="/contact"><u>Contact</u></Link>
-        </div>
-        <div className={styles.package}>
-          <Link href="/packages"><u>Packages</u></Link>
+          <Link href="/contact">
+            <u>Contact</u>
+          </Link>
         </div>
         <div className={styles.price}>
-          <Link href="/pricing"><u>Pricing</u></Link>
+          <Link href="/pricing">
+            <u>Pricing</u>
+          </Link>
         </div>
         <div className={styles.legal}>
-          <Link href="/legal"><u>Legal</u></Link>
+          <Link href="/legal">
+            <u>Legal</u>
+          </Link>
         </div>
       </div>
     </nav>

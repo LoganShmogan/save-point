@@ -1,7 +1,7 @@
 import Navbar from "@/app/navigation/navBar";
 import Footer from "@/app/footer/footer";
 import Link from "next/link";
-import styles from "@/app/innerPage.module.css";
+import styles from "@/app/contact/page.module.css";
 
 export default function Contact() {
   return (
