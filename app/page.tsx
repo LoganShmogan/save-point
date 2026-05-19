@@ -39,6 +39,7 @@ export default function Home() {
             alt="Save Point flag logo"
             width={500}
             height={500}
+            loading="eager"
           />
         </div>
         <div className={styles.aboutCard}>
