@@ -35,7 +35,7 @@ const Service = () => {
               />
             </div>
             <div className={styles.servicesCardLink}>
-              <Link href="/error">
+              <Link href="/pricing">
                 <u>View Packages</u>
               </Link>
             </div>
@@ -62,7 +62,7 @@ const Service = () => {
               />
             </div>
             <div className={styles.servicesCardLink}>
-              <Link href="/error">
+              <Link href="/pricing">
                 <u>View Packages</u>
               </Link>
             </div>
@@ -89,7 +89,7 @@ const Service = () => {
               />
             </div>
             <div className={styles.servicesCardLink}>
-              <Link href="/error">
+              <Link href="/pricing">
                 <u>View Packages</u>
               </Link>
             </div>
