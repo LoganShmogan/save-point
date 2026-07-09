@@ -1,6 +1,16 @@
 import Navbar from "@/app/navigation/navBar";
 import Footer from "@/app/footer/footer";
 import styles from "@/app/legal/page.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Legal",
+  description:
+    "Save Point's privacy policy, terms of service, and warranty information, governed by New Zealand law.",
+  alternates: {
+    canonical: "/legal",
+  },
+};
 
 export default function Legal() {
   return (

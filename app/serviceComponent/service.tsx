@@ -4,12 +4,12 @@ import Link from "next/link";
 
 const Service = () => {
   return (
-    <main>
+    <section>
       {/*Servics*/}
       {/*Services Logo*/}
       <div className={styles.servicesLogo}>
         <div className={styles.servicesLogoText}>
-          <h1>Services</h1>
+          <h2>Services</h2>
         </div>
       </div>
       {/*Servics cards*/}
@@ -17,19 +17,19 @@ const Service = () => {
         {/*Automation card*/}
         <div className={styles.servicesCard}>
           <div className={styles.servicesHeader}>
-            <h1>Automation</h1>
+            <h3>Automation</h3>
           </div>
           <div className={styles.servicesContent}>
             <div className={styles.servicesSubheading}>
-              <h2>
-                Home and business internet of things (ioT). Arduino,
-                Raspberrorory Pi, Elegoo ++ more.
-              </h2>
+              <p>
+                Home and business internet of things (IoT). Arduino,
+                Raspberry Pi, Elegoo ++ more.
+              </p>
             </div>
             <div className={styles.servicesImage}>
               <Image
                 src="/ads/Hourglass (1250 x 1250).png"
-                alt="Pixelated hourglass illistration"
+                alt="Pixelated hourglass illustration"
                 width={250}
                 height={250}
               />
@@ -44,19 +44,19 @@ const Service = () => {
         {/*Custom software card*/}
         <div className={styles.servicesCard}>
           <div className={styles.servicesHeader}>
-            <h1>Custom Software</h1>
+            <h3>Custom Software</h3>
           </div>
           <div className={styles.servicesContent}>
             <div className={styles.servicesSubheading}>
-              <h2>
+              <p>
                 All areas of advanced systems and software. DBMS, CRM, ERM, POS
                 ++ more.
-              </h2>
+              </p>
             </div>
             <div className={styles.servicesImage}>
               <Image
                 src="/ads/Lightbulb (1250 x 1250).png"
-                alt="Pixelated lightbulb illistration"
+                alt="Pixelated lightbulb illustration"
                 width={250}
                 height={250}
               />
@@ -71,19 +71,19 @@ const Service = () => {
         {/*Web apps card*/}
         <div className={styles.servicesCard}>
           <div className={styles.servicesHeader}>
-            <h1>Web applications</h1>
+            <h3>Web applications</h3>
           </div>
           <div className={styles.servicesContent}>
             <div className={styles.servicesSubheading}>
-              <h2>
+              <p>
                 Mobile and desktop support. Startup or established business
                 support ++ more.
-              </h2>
+              </p>
             </div>
             <div className={styles.servicesImage}>
               <Image
                 src="/ads/Coin (1250 x 1250).png"
-                alt="Pixelated coin illistration"
+                alt="Pixelated coin illustration"
                 width={250}
                 height={250}
               />
@@ -96,7 +96,7 @@ const Service = () => {
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 
