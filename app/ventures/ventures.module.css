@@ -1,0 +1,463 @@
+/* ── Shared shell for venture landing pages ──
+   A lighter, minimal sub-brand look: white/gray surfaces, black text,
+   purple as the single accent — distinct from the main dark site but
+   built on the same fonts and brand colours. */
+
+.page {
+  background: var(--white);
+  color: var(--gray-900);
+  min-height: 100vh;
+}
+
+/* ── Nav ── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: solid 1px var(--gray-300);
+}
+
+.navInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navBrand {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--gray-900);
+  text-decoration: none;
+}
+
+.navBrand:hover {
+  color: var(--purple);
+}
+
+.navDivider {
+  color: var(--gray-300);
+}
+
+.navTitle {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--purple);
+  flex: 1;
+}
+
+.navLinks {
+  display: flex;
+  gap: 28px;
+}
+
+.navLink {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--gray-600);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.navLink:hover {
+  color: var(--purple);
+}
+
+/* ── Hero ── */
+.hero {
+  padding: 100px 40px 80px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--purple);
+  background: var(--gray-100);
+  border: solid 1px var(--gray-300);
+  border-radius: 999px;
+  padding: 6px 16px;
+  margin-bottom: 24px;
+}
+
+.heroEyebrow {
+  font-family: var(--font-body);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-600);
+  margin: 0 0 16px;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: 56px;
+  line-height: 1.1;
+  margin: 0 0 20px;
+  color: var(--gray-900);
+}
+
+.heroTitle span {
+  color: var(--purple);
+}
+
+.heroSubtitle {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--gray-600);
+  margin: 0 auto 36px;
+  max-width: 620px;
+}
+
+.heroActions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--white);
+  background: var(--black);
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.ctaPrimary:hover {
+  background: var(--purple);
+}
+
+.ctaSecondary {
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--gray-900);
+  background: var(--white);
+  border: solid 1px var(--gray-300);
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.ctaSecondary:hover {
+  border-color: var(--purple);
+  color: var(--purple);
+}
+
+/* ── Sections ── */
+.section {
+  padding: 70px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sectionAlt {
+  background: var(--gray-50);
+  border-top: solid 1px var(--gray-300);
+  border-bottom: solid 1px var(--gray-300);
+}
+
+.sectionEyebrow {
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin: 0 0 10px;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 32px;
+  color: var(--gray-900);
+  margin: 0 0 16px;
+}
+
+.sectionLead {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--gray-600);
+  max-width: 700px;
+  margin: 0 0 40px;
+}
+
+.sectionLead:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Feature / step grid ── */
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.card {
+  background: var(--white);
+  border: solid 1px var(--gray-300);
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.cardNumber {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--purple);
+  margin: 0 0 12px;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--gray-900);
+  margin: 0 0 10px;
+}
+
+.cardBody {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--gray-600);
+  margin: 0;
+}
+
+.aboutText {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--gray-600);
+  margin: 0;
+}
+
+/* ── Fact list (used in About) ── */
+.factList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.factList li {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--gray-600);
+  padding-left: 20px;
+  position: relative;
+}
+
+.factList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  background: var(--purple);
+  border-radius: 2px;
+}
+
+/* ── Contact ── */
+.contactCard {
+  background: var(--white);
+  border: solid 1px var(--gray-300);
+  border-radius: 12px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contactRow {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  font-family: var(--font-body);
+  font-size: 15px;
+}
+
+.contactLabel {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--gray-900);
+  min-width: 90px;
+}
+
+.inlineLink {
+  color: var(--purple);
+  text-decoration: underline;
+}
+
+.inlineLink:hover {
+  color: var(--gray-900);
+}
+
+/* ── Legal ── */
+.legalBox {
+  background: var(--white);
+  border: solid 1px var(--gray-300);
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.legalBox p {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--gray-600);
+  margin: 0 0 14px;
+}
+
+.legalBox p:last-child {
+  margin-bottom: 0;
+}
+
+.legalBox strong {
+  color: var(--gray-900);
+}
+
+/* ── Footer ── */
+.footer {
+  background: var(--gray-50);
+  border-top: solid 1px var(--gray-300);
+}
+
+.footerContainer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footerHeader {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--gray-900);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 6px;
+}
+
+.footerLink {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--gray-600);
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  color: var(--purple);
+}
+
+.footerBrandColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: right;
+}
+
+.footerBrand {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.footerTagline {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--gray-600);
+  margin: 0;
+}
+
+.footerCopyright {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--gray-600);
+  opacity: 0.8;
+  margin: 6px 0 0;
+}
+
+/* ── Mobile / Tablet ── */
+@media (max-width: 900px) {
+  .grid3,
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+
+  .footerContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .footerBrandColumn {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .navInner {
+    padding: 14px 20px;
+    flex-wrap: wrap;
+  }
+
+  .navLinks {
+    gap: 18px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .hero {
+    padding: 60px 20px 50px;
+  }
+
+  .heroTitle {
+    font-size: 36px;
+  }
+
+  .heroSubtitle {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 48px 20px;
+  }
+
+  .sectionTitle {
+    font-size: 26px;
+  }
+
+  .footerContainer {
+    padding: 36px 20px;
+  }
+}

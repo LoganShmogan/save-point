@@ -2,13 +2,22 @@ import type { MetadataRoute } from "next";
 
 const baseUrl = "https://savepoint.cc";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/about", "/pricing", "/contact", "/legal"];
+// Update a route's date here when its page content actually changes.
+const routes = [
+  { path: "", lastModified: "2026-08-02" },
+  { path: "/about", lastModified: "2026-07-09" },
+  { path: "/pricing", lastModified: "2026-07-09" },
+  { path: "/contact", lastModified: "2026-07-09" },
+  { path: "/legal", lastModified: "2026-07-09" },
+  { path: "/automation", lastModified: "2026-08-02" },
+  { path: "/job-search", lastModified: "2026-08-02" },
+];
 
-  return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : 0.8,
+export default function sitemap(): MetadataRoute.Sitemap {
+  return routes.map(({ path, lastModified }) => ({
+    url: `${baseUrl}${path}`,
+    lastModified,
+    changeFrequency: path === "" ? "weekly" : "monthly",
+    priority: path === "" ? 1 : 0.8,
   }));
 }

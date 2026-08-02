@@ -1,0 +1,83 @@
+.venturesLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.venturesLogoText {
+  font-size: 50px;
+  font-family: var(--font-display);
+}
+
+/* Container for cards */
+.venturesContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px 40px 40px;
+  place-items: center;
+}
+
+/* Venture cards — same brutalist card style as the services cards */
+.venturesCard {
+  background-color: var(--purple);
+  width: 400px;
+  min-height: 260px;
+  border: solid white 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.venturesHeader {
+  font-family: var(--font-display);
+  font-size: 25px;
+  padding: 10px;
+  border-bottom: solid white 10px;
+}
+
+.venturesContent {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.venturesSubheading {
+  font-family: var(--font-body);
+  flex: 1;
+}
+
+.venturesCardLink {
+  font-size: 25px;
+  font-family: var(--font-display);
+  padding-top: 10px;
+  text-align: center;
+}
+
+.venturesCardLink:hover {
+  color: var(--green);
+}
+
+/* ── Mobile / Tablet ── */
+@media (max-width: 900px) {
+  .venturesContainer {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .venturesCard {
+    width: 100%;
+    max-width: 400px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .venturesLogoText {
+    font-size: 32px;
+  }
+
+  .venturesContainer {
+    padding: 16px;
+  }
+}

@@ -3,6 +3,7 @@ import styles from "@/app/home/page.module.css";
 import Link from "next/link";
 import Navbar from "@/app/navigation/navBar";
 import Service from "@/app/serviceComponent/service";
+import OurVentures from "@/app/ourVentures/ourVentures";
 import Footer from "@/app/footer/footer";
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
       </div>
       <Navbar />
       <Service />
+      <OurVentures />
       {/*About section*/}
       <div className={styles.aboutLogo}>
         <div className={styles.aboutLogoText}>
