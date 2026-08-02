@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import VentureNav from "@/app/ventures/ventureNav";
 import VentureFooter from "@/app/ventures/ventureFooter";
+import WaitlistForm from "@/app/job-search/waitlistForm";
 import styles from "@/app/ventures/ventures.module.css";
 
 export const metadata: Metadata = {
@@ -122,25 +123,30 @@ export default function JobSearch() {
             when it launches, or if you&apos;d like to ask a question in the
             meantime.
           </p>
-          <div className={styles.contactCard}>
-            <div className={styles.contactRow}>
-              <span className={styles.contactLabel}>Email</span>
-              <Link
-                href="mailto:contact@savepoint.cc?subject=Job%20Search%20Waitlist"
-                className={styles.inlineLink}
-              >
-                contact@savepoint.cc
-              </Link>
+          <div className={styles.grid2}>
+            <div className={styles.contactCard}>
+              <WaitlistForm />
             </div>
-            <div className={styles.contactRow}>
-              <span className={styles.contactLabel}>Location</span>
-              <span>New Zealand</span>
-            </div>
-            <div className={styles.contactRow}>
-              <span className={styles.contactLabel}>More</span>
-              <Link href="/contact" className={styles.inlineLink}>
-                Visit the main Save Point contact page
-              </Link>
+            <div className={styles.contactCard}>
+              <div className={styles.contactRow}>
+                <span className={styles.contactLabel}>Email</span>
+                <Link
+                  href="mailto:contact@savepoint.cc?subject=Job%20Search%20Waitlist"
+                  className={styles.inlineLink}
+                >
+                  contact@savepoint.cc
+                </Link>
+              </div>
+              <div className={styles.contactRow}>
+                <span className={styles.contactLabel}>Location</span>
+                <span>New Zealand</span>
+              </div>
+              <div className={styles.contactRow}>
+                <span className={styles.contactLabel}>More</span>
+                <Link href="/contact" className={styles.inlineLink}>
+                  Visit the main Save Point contact page
+                </Link>
+              </div>
             </div>
           </div>
         </div>
