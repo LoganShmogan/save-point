@@ -18,6 +18,9 @@ const Navbar = () => {
 
   return (
     <header className={styles.outer}>
+      <a href="#main" className={styles.skipLink}>
+        Skip to main content
+      </a>
       <nav className={styles.container} aria-label="Main">
         <Link href="/" className={styles.brand}>
           <Image

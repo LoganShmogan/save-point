@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/error"],
       },
     ],
-    sitemap: "https://savepoint.cc/sitemap.xml",
+    sitemap: "https://savepoint.co.nz/sitemap.xml",
   };
 }

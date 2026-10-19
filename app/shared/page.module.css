@@ -30,11 +30,11 @@
 }
 
 .heroTitle {
-  font-size: clamp(36px, 5vw, 56px);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
 }
 
 .heroLead {
-  font-size: 21px;
+  font-size: 1.3125rem;
   color: var(--on-plum-soft);
   max-width: 36em;
   margin: 16px 0 0;
@@ -47,17 +47,19 @@
   padding: 56px var(--gutter) 0;
 }
 
-/* Section block — white card with a chunky retro border */
+/* Section block: white card with a chunky retro border */
 .section {
   background: var(--paper-raised);
   border: var(--border);
   box-shadow: var(--pixel-shadow);
-  padding: clamp(24px, 4vw, 40px);
+  padding: clamp(20px, 4vw, 40px);
   margin-bottom: 40px;
+  /* Keep headings clear of the sticky nav when jumped to */
+  scroll-margin-top: 100px;
 }
 
 .sectionTitle {
-  font-size: clamp(26px, 3vw, 32px);
+  font-size: clamp(1.625rem, 3vw, 2rem);
   margin-bottom: 20px;
   padding-bottom: 12px;
   border-bottom: solid 4px var(--purple);
@@ -73,7 +75,7 @@
 }
 
 .subHeadPart {
-  font-size: 22px;
+  font-size: 1.375rem;
   margin: 28px 0 10px;
 }
 
@@ -81,9 +83,34 @@
   margin-top: 0;
 }
 
+/* "Last updated" lines */
+.updated {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+/* Table of contents */
+.contents {
+  list-style: decimal;
+  margin: 0;
+  padding-left: 1.4em;
+  display: grid;
+  gap: 8px;
+  font-size: 1.25rem;
+}
+
+.list {
+  list-style: disc;
+  margin: 0 0 1em;
+  padding-left: 1.4em;
+  display: grid;
+  gap: 6px;
+}
+
 /* Small print, e.g. contract disclaimers */
 .note {
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--ink-soft);
   border-left: solid 4px var(--purple);
   padding-left: 12px;
@@ -118,7 +145,7 @@
 
 /* Contact field rows */
 .contactList {
-  margin: 28px 0 0;
+  margin: 0;
   display: grid;
   gap: 4px;
 }
@@ -130,7 +157,7 @@
   align-items: baseline;
   padding: 14px 0;
   border-top: solid 2px var(--paper-tint);
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .contactRow dd {
@@ -156,7 +183,7 @@
 }
 
 .priceCardTitle {
-  font-size: 24px;
+  font-size: 1.5rem;
   width: 100%;
   border-bottom: solid 4px var(--purple);
   padding-bottom: 12px;
@@ -165,7 +192,7 @@
 .priceAmount {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 38px;
+  font-size: 2.375rem;
   line-height: 1.1;
   color: var(--purple-deep);
   margin: 0;
@@ -229,7 +256,7 @@
 }
 
 .messageTitle {
-  font-size: clamp(32px, 4vw, 44px);
+  font-size: clamp(2rem, 4vw, 2.75rem);
   margin-bottom: 16px;
 }
 
@@ -255,7 +282,7 @@
   }
 
   .heroLead {
-    font-size: 19px;
+    font-size: 1.1875rem;
   }
 
   .content {

@@ -22,7 +22,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://savepoint.cc"),
+  metadataBase: new URL("https://savepoint.co.nz"),
   icons: {
     icon: "/favicon.ico",
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_NZ",
-    url: "https://savepoint.cc",
+    url: "https://savepoint.co.nz",
     siteName: "Save Point",
     title: "Save Point | Custom Software & IoT Development, New Zealand",
     description:
@@ -72,11 +72,11 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Save Point Limited",
-  url: "https://savepoint.cc",
-  logo: "https://savepoint.cc/logo.png",
+  url: "https://savepoint.co.nz",
+  logo: "https://savepoint.co.nz/logo.png",
   description:
     "Save Point builds custom software, web applications, and IoT device integration for businesses across New Zealand.",
-  email: "contact@savepoint.cc",
+  email: "contact@savepoint.co.nz",
   telephone: "+64210653792",
   areaServed: {
     "@type": "Country",
@@ -97,7 +97,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${chakra.variable} ${figtree.variable}`}>
+    <html lang="en-NZ" className={`${chakra.variable} ${figtree.variable}`}>
       <body>
         <script
           type="application/ld+json"

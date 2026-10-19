@@ -18,9 +18,9 @@ export default function NotFound() {
   return (
     <>
       <Navbar />
-      <main className={styles.message}>
+      <main id="main" className={styles.message}>
         <div className={styles.messageArt}>
-          <Image src="/logo-flag.png" width={600} height={743} alt="" />
+          <Image src="/logo-flag.png" width={600} height={743} alt="Pixel-art purple flag from the Save Point logo" />
         </div>
         <h1 className={styles.messageTitle}>
           Sorry, we can&apos;t find that page.

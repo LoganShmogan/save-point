@@ -7,124 +7,188 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Legal",
   description:
-    "Save Point's privacy policy, terms of service, and warranty information, governed by New Zealand law.",
+    "Save Point's privacy policy, cookie policy, terms and conditions, refund and warranty policy, governed by New Zealand law.",
   alternates: {
     canonical: "/legal",
   },
 };
 
+const LAST_UPDATED = "19 October 2026";
+
+const contents = [
+  { id: "privacy", label: "Privacy Policy" },
+  { id: "cookies", label: "Cookie Policy" },
+  { id: "terms", label: "Terms and Conditions" },
+  { id: "refunds", label: "Refund and Warranty Policy" },
+  { id: "disclaimer", label: "Disclaimer" },
+  { id: "support", label: "Support" },
+];
+
+const SupportEmail = () => (
+  <a href="mailto:support@savepoint.co.nz" className={styles.inlineLink}>
+    support@savepoint.co.nz
+  </a>
+);
+
 export default function Legal() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main">
         <PageHero
           title="Legal"
-          lead="Our privacy policy, terms, disclaimers and warranty — all in one place."
+          lead="Our privacy, cookie, terms, refund and warranty policies, all in one place."
         />
 
         <div className={styles.content}>
+          {/* Table of contents */}
+          <nav className={styles.section} aria-labelledby="contents-title">
+            <h2 id="contents-title" className={styles.sectionTitle}>
+              On this page
+            </h2>
+            <ol className={styles.contents}>
+              {contents.map((item) => (
+                <li key={item.id}>
+                  <a href={`#${item.id}`} className={styles.inlineLink}>
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+
           {/* 1. Privacy Policy */}
-          <div className={styles.section}>
-            <h2 className={styles.sectionTitle}>Privacy Policy</h2>
+          <section id="privacy" className={styles.section}>
+            <h2 className={styles.sectionTitle}>1. Privacy Policy</h2>
             <div className={styles.sectionBody}>
-              <p>
-                <strong>
-                  Last updated: 13 May 2026 | Governed by the New Zealand Privacy
-                  Act 2020
-                </strong>
+              <p className={styles.updated}>
+                Last updated: {LAST_UPDATED}. Governed by the New Zealand
+                Privacy Act 2020.
               </p>
 
+              <h3 className={styles.subHeadPart}>1.1 Who we are</h3>
               <p>
-                <strong>1.1 Introduction</strong>
-                <br />
-                Save Point Limited (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) is committed to protecting
-                your personal information in accordance with the New Zealand
-                Privacy Act 2020. This Privacy Policy explains how we collect,
-                use, store, and protect any personal information you provide to us
-                through our website or in the course of our services.
+                Save Point Limited (&ldquo;we&rdquo;, &ldquo;us&rdquo;,
+                &ldquo;our&rdquo;) is a New Zealand company. This policy
+                explains what personal information we collect, why we collect
+                it, and how we look after it. Our privacy officer can be
+                contacted at <SupportEmail />.
               </p>
 
+              <h3 className={styles.subHeadPart}>
+                1.2 Information you give us
+              </h3>
               <p>
-                <strong>1.2 What Information We Collect</strong>
-                <br />
-                We collect only the information you voluntarily submit through our
-                contact form. This may include your full name, email address,
-                phone number (if provided), and the content of your enquiry or
-                message. We do not collect payment information, sensitive personal
-                information, or data from minors under the age of 16 without
-                parental consent.
+                We collect personal information when you use the contact form
+                on our website, contact us by email, phone or Facebook, or
+                when we work on a project together. This may include your
+                name, email address, phone number, business details, and
+                anything you tell us about your project.
               </p>
 
+              <h3 className={styles.subHeadPart}>
+                1.3 Information collected by our website
+              </h3>
               <p>
-                <strong>1.3 How We Use Your Information</strong>
-                <br />
-                The information you provide is used solely to respond to your
-                enquiry or request, provide a consultation or project quote, and
-                communicate with you regarding your project. We do not use your
-                information for marketing purposes without your explicit consent,
-                and we do not sell, trade, or transfer your personal information
-                to third parties.
+                When you send a message through our contact form, we receive
+                the name, email address, phone number (if you give one) and
+                message you enter. The form is delivered to our inbox by
+                EmailJS, an email delivery service based in the United States.
+                Nothing is collected from the form until you press
+                &ldquo;Send message&rdquo;. EmailJS may keep a copy of sent
+                messages for a limited time as part of its service.
+              </p>
+              <p>
+                Our website does not use cookies, and does not use analytics,
+                advertising or tracking tools. Like all websites, our hosting
+                provider (Vercel, based in the United States) may
+                automatically record basic technical information (such as your IP address, browser type and the
+                pages you requested) in server logs. These logs are used only
+                to keep the site running and secure.
               </p>
 
+              <h3 className={styles.subHeadPart}>
+                1.4 How we use your information
+              </h3>
               <p>
-                <strong>1.4 Storage &amp; Security</strong>
-                <br />
-                Your information is stored securely and only accessible to
-                authorised personnel within Save Point Limited. We take reasonable
-                steps to protect your information from loss, misuse, or
-                unauthorised access. No data transmission over the internet can be
-                guaranteed as completely secure; however, we take all practicable
-                steps to protect your information.
+                We use your information to reply to your enquiry, prepare a
+                quote, deliver and support your project, send invoices, and
+                meet our legal obligations. We will not use your information
+                for marketing without your permission.
               </p>
 
+              <h3 className={styles.subHeadPart}>1.5 Who we share it with</h3>
               <p>
-                <strong>1.5 Retention</strong>
-                <br />
-                We retain your personal information only as long as necessary to
-                fulfil the purposes outlined in this policy, or as required by
-                law. Contact form enquiries are typically retained for up to 24
-                months.
+                We never sell or trade your personal information. We only
+                share it when we need to, with:
+              </p>
+              <ul className={styles.list}>
+                <li>
+                  service providers we use to run our business, such as email
+                  (Google Workspace), contact form delivery (EmailJS), website
+                  hosting (Vercel) and file storage;
+                </li>
+                <li>
+                  contractors working on your project, who must keep it
+                  confidential; and
+                </li>
+                <li>government agencies, where the law requires it.</li>
+              </ul>
+              <p>
+                Some of these providers may store information outside New
+                Zealand. When that happens, we take reasonable steps to make
+                sure your information is protected to a standard comparable
+                to New Zealand law.
+              </p>
+              <p>
+                If you message us on Facebook, Meta&apos;s own privacy policy
+                also applies to that conversation.
               </p>
 
+              <h3 className={styles.subHeadPart}>1.6 Keeping it safe</h3>
               <p>
-                <strong>1.6 Your Rights</strong>
-                <br />
-                Under the Privacy Act 2020 you have the right to access the
-                personal information we hold about you, request correction of any
-                inaccurate information, and ask us to delete your information
-                (subject to legal obligations). To exercise any of these rights,
-                contact us at{" "}
-                <a
-                  href="mailto:support@savepoint.cc"
-                  className={styles.inlineLink}
-                >
-                  support@savepoint.cc
-                </a>
-                .
+                Your information is only available to people at Save Point
+                who need it. We take reasonable steps to protect it from loss,
+                misuse and unauthorised access. No method of sending
+                information over the internet is completely secure, but we
+                take every practical step to protect it.
               </p>
 
+              <h3 className={styles.subHeadPart}>1.7 How long we keep it</h3>
               <p>
-                <strong>1.7 Cookies</strong>
-                <br />
-                Our website may use cookies or similar technologies to improve
-                your browsing experience. These do not collect personally
-                identifiable information unless you have submitted a contact form.
+                We keep enquiries for up to 24 months. We keep project and
+                billing records for as long as we need them to support your
+                project, including any warranty period, and for as long as
+                New Zealand law requires us to keep business records
+                (generally 7 years).
               </p>
 
+              <h3 className={styles.subHeadPart}>1.8 Your rights</h3>
               <p>
-                <strong>1.8 Contact</strong>
-                <br />
-                For any privacy-related questions or complaints, please contact us
-                at{" "}
-                <a
-                  href="mailto:support@savepoint.cc"
-                  className={styles.inlineLink}
-                >
-                  support@savepoint.cc
-                </a>
-                . If you are not satisfied with our response, you may contact the
-                Office of the Privacy Commissioner at{" "}
+                You can ask to see the personal information we hold about
+                you, and ask us to correct it. You can also ask us to delete
+                it, unless we need to keep it by law. Email <SupportEmail />{" "}
+                and we will respond within 20 working days.
+              </p>
+
+              <h3 className={styles.subHeadPart}>1.9 Privacy breaches</h3>
+              <p>
+                If a privacy breach happens that has caused, or is likely to
+                cause, serious harm, we will tell you and the Office of the
+                Privacy Commissioner as soon as practicable.
+              </p>
+
+              <h3 className={styles.subHeadPart}>1.10 Children</h3>
+              <p>
+                We do not knowingly collect information from anyone under 16
+                without the consent of a parent or guardian.
+              </p>
+
+              <h3 className={styles.subHeadPart}>1.11 Questions or complaints</h3>
+              <p>
+                Contact our privacy officer at <SupportEmail />. If you are not
+                happy with our response, you can contact the Office of the
+                Privacy Commissioner at{" "}
                 <a
                   href="https://www.privacy.org.nz"
                   target="_blank"
@@ -132,379 +196,358 @@ export default function Legal() {
                   className={styles.inlineLink}
                 >
                   www.privacy.org.nz
+                  <span className="visually-hidden"> (opens in a new tab)</span>
                 </a>
                 .
               </p>
-            </div>
-          </div>
 
-          {/* 2. Terms of Service */}
-          <div className={styles.section}>
-            <h2 className={styles.sectionTitle}>Terms of Service</h2>
+              <h3 className={styles.subHeadPart}>1.12 Changes to this policy</h3>
+              <p>
+                We may update this policy from time to time. The latest
+                version will always be on this page, with the date it was
+                last updated.
+              </p>
+            </div>
+          </section>
+
+          {/* 2. Cookie Policy */}
+          <section id="cookies" className={styles.section}>
+            <h2 className={styles.sectionTitle}>2. Cookie Policy</h2>
             <div className={styles.sectionBody}>
+              <p className={styles.updated}>Last updated: {LAST_UPDATED}.</p>
+
+              <h3 className={styles.subHeadPart}>2.1 What cookies are</h3>
               <p>
-                <strong>
-                  Last updated: 13 May 2026 | Governed by the laws of New Zealand
-                </strong>
+                Cookies are small files that a website can save in your
+                browser. They are often used to remember logins or
+                preferences, or to track what you do across websites.
               </p>
 
+              <h3 className={styles.subHeadPart}>
+                2.2 Our website does not use cookies
+              </h3>
               <p>
-                <strong>2.1 Acceptance of Terms</strong>
-                <br />
-                By accessing our website or engaging our services, you agree to be
-                bound by these Terms of Service. If you do not agree, please do
-                not use our website or engage our services. These terms apply to
-                all clients and visitors of Save Point Limited.
+                The Save Point website does not set any cookies. We do not
+                use analytics, advertising or tracking tools, and our fonts
+                and images are served from our own website rather than from
+                third parties. Because of this, we do not show a cookie
+                banner or ask for cookie consent.
               </p>
 
+              <h3 className={styles.subHeadPart}>2.3 Links to other websites</h3>
               <p>
-                <strong>2.2 Services Provided</strong>
-                <br />
-                Save Point Limited provides technology services including, but not
-                limited to, web development, software development, IoT
-                integration, and related consultancy. The specific scope,
-                timeline, and deliverables for each project are agreed upon in
-                writing prior to commencement.
+                Our website links to other sites, such as Facebook. If you
+                follow one of those links, that website may set its own
+                cookies under its own cookie policy.
               </p>
 
+              <h3 className={styles.subHeadPart}>2.4 Managing cookies</h3>
               <p>
-                <strong>2.3 Project Agreements</strong>
-                <br />
-                All work is scoped individually. A formal written agreement or
-                proposal will be provided before any project begins, outlining the
-                project scope and deliverables, timeline and milestones, payment
-                terms and total cost, and warranty period. No work will commence
-                until both parties have agreed to the project scope in writing.
+                You can view, block or delete cookies at any time in your
+                browser settings.
               </p>
 
+              <h3 className={styles.subHeadPart}>2.5 If this changes</h3>
               <p>
-                <strong>2.4 Payment</strong>
-                <br />
-                Payment terms are agreed upon in the individual project agreement.
-                Unless otherwise stated, a deposit may be required prior to
-                commencement, remaining payment is due upon project completion or
-                at agreed milestones, and invoices are due within 14 days of
-                issue. Late payments may incur interest at a rate of 2% per week.
-                Save Point Limited reserves the right to suspend services on
-                accounts with outstanding balances.
-              </p>
-
-              <p>
-                <strong>2.5 Client Responsibilities</strong>
-                <br />
-                You agree to provide accurate and complete information required
-                for project delivery, respond to communications in a timely
-                manner, notify us of any changes in project requirements promptly,
-                and ensure you hold the rights to any content, logos, or materials
-                you provide to us.
-              </p>
-
-              <p>
-                <strong>2.6 Intellectual Property</strong>
-                <br />
-                Upon full payment, the client receives ownership of all
-                custom-built deliverables as specified in the project agreement.
-                Save Point Limited retains the right to use general methodologies,
-                frameworks, and non-client-specific code developed during the
-                project. Save Point Limited also retains the right to display
-                completed work in its portfolio unless otherwise agreed.
-              </p>
-
-              <p>
-                <strong>2.7 Confidentiality</strong>
-                <br />
-                Both parties agree to keep confidential any proprietary or
-                sensitive information shared during the course of the project.
-                Save Point Limited will not disclose your business information to
-                third parties without your consent.
-              </p>
-
-              <p>
-                <strong>2.8 Limitation of Liability</strong>
-                <br />
-                To the maximum extent permitted by New Zealand law, Save Point
-                Limited shall not be liable for any indirect, incidental, or
-                consequential damages arising from the use of our services or
-                deliverables. Our total liability for any claim shall not exceed
-                the total amount paid by you for the specific project giving rise
-                to the claim.
-              </p>
-
-              <p>
-                <strong>2.9 Termination</strong>
-                <br />
-                Either party may terminate a project agreement with written
-                notice. Work completed to date will be invoiced at a pro-rata
-                rate. Any deposits paid are non-refundable unless termination is
-                initiated by Save Point Limited. All deliverables completed and
-                paid for will be transferred to the client.
-              </p>
-
-              <p>
-                <strong>2.10 Governing Law</strong>
-                <br />
-                These terms are governed by and construed in accordance with the
-                laws of New Zealand. Any disputes shall be subject to the
-                exclusive jurisdiction of the New Zealand courts.
-              </p>
-
-              <p>
-                <strong>2.11 Changes to These Terms</strong>
-                <br />
-                We may update these Terms of Service from time to time. The
-                current version will always be available on our website with the
-                effective date noted. Continued use of our services after changes
-                constitutes acceptance of the revised terms.
+                If we ever add cookies that are not strictly necessary for
+                the website to work, we will update this policy and ask for
+                your consent first.
               </p>
             </div>
-          </div>
+          </section>
 
-          {/* 3. Disclaimer + 4. Support — two-column grid */}
-          <div className={styles.grid2}>
-            <div className={styles.section}>
-              <h2 className={styles.sectionTitle}>Disclaimer</h2>
-              <div className={styles.sectionBody}>
-                <p>
-                  <strong>Last updated: 13 May 2026</strong>
-                </p>
-
-                <p>
-                  <strong>3.1 General Information</strong>
-                  <br />
-                  The information provided on the Save Point Limited website is
-                  for general informational purposes only. While we endeavour to
-                  keep the information up to date and accurate, we make no
-                  representations or warranties of any kind, express or implied,
-                  about the completeness, accuracy, reliability, or availability
-                  of the website or the information contained on it.
-                </p>
-
-                <p>
-                  <strong>3.2 No Professional Advice</strong>
-                  <br />
-                  Nothing on this website constitutes legal, financial, technical,
-                  or professional advice. You should seek independent professional
-                  advice before making any decisions based on the content of this
-                  website.
-                </p>
-
-                <p>
-                  <strong>3.3 External Links</strong>
-                  <br />
-                  The Save Point Limited website may contain links to third-party
-                  websites. These links are provided for your convenience only. We
-                  have no control over the content of those sites and accept no
-                  responsibility for them or for any loss or damage that may arise
-                  from your use of them.
-                </p>
-
-                <p>
-                  <strong>3.4 Technology &amp; IoT Disclaimer</strong>
-                  <br />
-                  Our IoT and technology solutions are designed and tested to meet
-                  the agreed project specifications. However, performance may be
-                  affected by factors outside our control including third-party
-                  hardware, internet connectivity, firmware updates, environmental
-                  conditions, and software dependencies. We are not liable for
-                  failures arising from such external factors after the warranty
-                  period has elapsed.
-                </p>
-
-                <p>
-                  <strong>3.5 Accuracy of Pricing Information</strong>
-                  <br />
-                  Pricing displayed on our website is indicative only and is
-                  subject to change. Final pricing is confirmed only in a written
-                  project agreement following consultation.
-                </p>
-
-                <p>
-                  <strong>3.6 Limitation of Liability</strong>
-                  <br />
-                  Save Point Limited shall not be liable for any loss or damage,
-                  including without limitation, indirect or consequential loss or
-                  damage, arising from or in connection with the use of our
-                  website or services beyond what is required by New Zealand law.
-                </p>
-              </div>
-            </div>
-
-            <div className={styles.section}>
-              <h2 className={styles.sectionTitle}>Support</h2>
-              <div className={styles.sectionBody}>
-                <p>
-                  <strong>Last updated: 13 May 2026</strong>
-                </p>
-
-                <p>
-                  <strong>4.1 Overview</strong>
-                  <br />
-                  Save Point Limited is committed to providing responsive,
-                  professional support to all clients during and after project
-                  delivery.
-                </p>
-
-                <p>
-                  <strong>4.2 Support Channels</strong>
-                  <br />
-                  Email:{" "}
-                  <a
-                    href="mailto:support@savepoint.cc"
-                    className={styles.inlineLink}
-                  >
-                    support@savepoint.cc
-                  </a>
-                  <br />
-                  Phone: +64 021 065 3792
-                  <br />
-                  Available Monday to Friday, 9:00am – 5:00pm NZST, excluding New
-                  Zealand public holidays.
-                </p>
-
-                <p>
-                  <strong>4.3 Response Times</strong>
-                  <br />
-                  Email enquiries are responded to within 1 business day. Phone
-                  voicemails are returned within 1 business day. Critical project
-                  issues within the warranty period are addressed within 4
-                  business hours. Response times are targets, not guarantees.
-                </p>
-
-                <p>
-                  <strong>4.4 Warranty Support</strong>
-                  <br />
-                  During your warranty period we will address defects directly
-                  attributable to our workmanship or code at no additional cost.
-                  This covers bugs present at delivery and functionality not
-                  performing as agreed. It does not cover client-side
-                  modifications, third-party software changes, new feature
-                  requests, or issues after the warranty period.
-                </p>
-
-                <p>
-                  <strong>4.5 Out-of-Warranty Support</strong>
-                  <br />
-                  Support requests outside the warranty period will be assessed
-                  and quoted separately. We offer ongoing maintenance and support
-                  packages — contact us at{" "}
-                  <a
-                    href="mailto:support@savepoint.cc"
-                    className={styles.inlineLink}
-                  >
-                    support@savepoint.cc
-                  </a>{" "}
-                  to discuss options.
-                </p>
-
-                <p>
-                  <strong>4.6 Escalation</strong>
-                  <br />
-                  If your issue is not resolved to your satisfaction, email{" "}
-                  <a
-                    href="mailto:support@savepoint.cc"
-                    className={styles.inlineLink}
-                  >
-                    support@savepoint.cc
-                  </a>{" "}
-                  with the subject line &ldquo;Support Escalation&rdquo;. We will acknowledge
-                  escalated issues within 1 business day.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* 5. Refund & Warranty Policy */}
-          <div className={styles.section}>
-            <h2 className={styles.sectionTitle}>Refund &amp; Warranty Policy</h2>
+          {/* 3. Terms and Conditions */}
+          <section id="terms" className={styles.section}>
+            <h2 className={styles.sectionTitle}>3. Terms and Conditions</h2>
             <div className={styles.sectionBody}>
-              <p>
-                <strong>
-                  Last updated: 13 May 2026 | Governed by the Consumer Guarantees
-                  Act 1993 (NZ)
-                </strong>
+              <p className={styles.updated}>
+                Last updated: {LAST_UPDATED}. Governed by the laws of New
+                Zealand.
               </p>
 
+              <h3 className={styles.subHeadPart}>3.1 Accepting these terms</h3>
               <p>
-                <strong>5.1 Our Commitment</strong>
-                <br />
-                Save Point Limited stands behind the quality of its work. All
-                projects come with a warranty period as specified in your
-                individual project agreement. We comply with the Consumer
+                By using our website or engaging our services, you agree to
+                these Terms and Conditions. If you do not agree, please do not
+                use our website or services. These terms apply to all clients
+                and visitors of Save Point Limited.
+              </p>
+
+              <h3 className={styles.subHeadPart}>3.2 Our services</h3>
+              <p>
+                Save Point Limited provides technology services, including web
+                development, software development, IoT (smart device)
+                integration and related advice. The scope, timeline and
+                deliverables for each project are agreed in writing before
+                work begins.
+              </p>
+
+              <h3 className={styles.subHeadPart}>3.3 Project agreements</h3>
+              <p>
+                Every project is scoped individually. Before any work starts,
+                we will give you a written agreement or proposal setting out
+                the scope and deliverables, timeline and milestones, payment
+                terms and total cost, and warranty period. No work begins
+                until we have both agreed to it in writing. If these terms
+                and your project agreement disagree, your project agreement
+                applies.
+              </p>
+
+              <h3 className={styles.subHeadPart}>3.4 Quotes and estimates</h3>
+              <p>
+                Prices on our website are a general guide only. An estimate is
+                an approximate figure, not a fixed price. Your final price is
+                the one confirmed in your written project agreement.
+              </p>
+
+              <h3 className={styles.subHeadPart}>3.5 Payment</h3>
+              <p>
+                Payment terms are set out in your project agreement. Unless it
+                says otherwise, a deposit may be required before work starts,
+                the remaining balance is due on completion or at agreed
+                milestones, and invoices are due within 14 days. Overdue
+                invoices may incur interest at the rate set out in your
+                project agreement. We may pause work on accounts with overdue
+                balances.
+              </p>
+
+              <h3 className={styles.subHeadPart}>3.6 Your responsibilities</h3>
+              <p>
+                You agree to give us accurate and complete information,
+                respond to us in a reasonable time, tell us promptly about any
+                changes to your requirements, and make sure you have the
+                rights to any content, logos or materials you give us.
+              </p>
+
+              <h3 className={styles.subHeadPart}>3.7 Intellectual property</h3>
+              <p>
+                Once you have paid in full, you own the custom-built
+                deliverables listed in your project agreement. We keep the
+                right to reuse general methods, frameworks and code that are
+                not specific to you. We may also show completed work in our
+                portfolio, unless we agree otherwise.
+              </p>
+
+              <h3 className={styles.subHeadPart}>3.8 Confidentiality</h3>
+              <p>
+                We both agree to keep confidential any private or sensitive
+                information shared during a project. We will not share your
+                business information with third parties without your
+                consent, except as described in our Privacy Policy.
+              </p>
+
+              <h3 className={styles.subHeadPart}>3.9 Limitation of liability</h3>
+              <p>
+                To the extent allowed by New Zealand law, Save Point Limited
+                is not liable for any indirect or consequential loss arising
+                from our services or deliverables. Our total liability for any
+                claim is limited to the amount you paid us for the project
+                the claim relates to.
+              </p>
+
+              <h3 className={styles.subHeadPart}>3.10 Your consumer rights</h3>
+              <p>
+                Nothing in these terms limits any rights you have under the
+                Consumer Guarantees Act 1993 or the Fair Trading Act 1986
+                that cannot legally be excluded.
+              </p>
+
+              <h3 className={styles.subHeadPart}>3.11 Ending a project</h3>
+              <p>
+                Either of us may end a project agreement by giving written
+                notice. Work completed up to that point will be invoiced
+                pro-rata. Deposits are not refundable unless Save Point ends
+                the project. All deliverables that are completed and paid for
+                will be handed over to you.
+              </p>
+
+              <h3 className={styles.subHeadPart}>3.12 Using our website</h3>
+              <p>
+                The content on this website, including text, logos and
+                pixel-art images, belongs to Save Point Limited. Please do not
+                copy or reuse it without our permission, or use the website in
+                any way that could damage it or interfere with others using
+                it.
+              </p>
+
+              <h3 className={styles.subHeadPart}>3.13 Governing law</h3>
+              <p>
+                These terms are governed by New Zealand law. Any disputes will
+                be handled by the New Zealand courts.
+              </p>
+
+              <h3 className={styles.subHeadPart}>3.14 Changes to these terms</h3>
+              <p>
+                We may update these terms from time to time. The latest
+                version will always be on this page. Changes do not affect
+                project agreements already signed.
+              </p>
+            </div>
+          </section>
+
+          {/* 4. Refund and Warranty Policy */}
+          <section id="refunds" className={styles.section}>
+            <h2 className={styles.sectionTitle}>
+              4. Refund and Warranty Policy
+            </h2>
+            <div className={styles.sectionBody}>
+              <p className={styles.updated}>
+                Last updated: {LAST_UPDATED}. Read alongside the Consumer
                 Guarantees Act 1993 and the Fair Trading Act 1986.
               </p>
 
+              <h3 className={styles.subHeadPart}>4.1 Our commitment</h3>
               <p>
-                <strong>5.2 Warranty Periods</strong>
-                <br />
-                Warranty periods vary by tier: Online IoT Starter — 1 month from
-                project delivery; Business Foundation — 3+ months from project
-                delivery; Custom Enterprise — ongoing as per contract terms
-                (minimum 5 years).
+                We stand behind our work. Every project comes with a warranty
+                period, set out in your project agreement.
               </p>
 
+              <h3 className={styles.subHeadPart}>4.2 Warranty periods</h3>
+              <ul className={styles.list}>
+                <li>Online IoT Starter: 1 month from delivery.</li>
+                <li>Business Foundation: 3 months or more from delivery.</li>
+                <li>
+                  Custom Enterprise: ongoing under your contract, for at
+                  least 5 years.
+                </li>
+              </ul>
+
+              <h3 className={styles.subHeadPart}>4.3 What is covered</h3>
               <p>
-                <strong>5.3 What the Warranty Covers</strong>
-                <br />
-                During the warranty period, we will remedy defects in workmanship
-                or functionality that were present at the time of delivery, do not
-                conform to the agreed project specification, or arose from our
-                code, configuration, or installation.
+                During the warranty period, we will fix problems at no extra
+                cost where the work was faulty when we delivered it, does not
+                match the agreed specification, or was caused by our code,
+                setup or installation.
               </p>
 
+              <h3 className={styles.subHeadPart}>4.4 What is not covered</h3>
+              <ul className={styles.list}>
+                <li>
+                  Changes made by you or others, misuse, or accidental damage.
+                </li>
+                <li>Faults in third-party services, software or hardware.</li>
+                <li>Problems caused by changes to your other systems.</li>
+                <li>New features or changes to the original scope.</li>
+              </ul>
+
+              <h3 className={styles.subHeadPart}>4.5 Refunds</h3>
               <p>
-                <strong>5.4 What the Warranty Does Not Cover</strong>
-                <br />
-                The warranty does not apply to damage caused by client
-                modifications, misuse, or negligence; third-party services, APIs,
-                or hardware failures; issues arising from changes to the client&apos;s
-                existing infrastructure; or new feature requests or changes to
-                original scope.
+                Because our work is custom-made, refunds are considered case
+                by case. We may give a full or partial refund if we cannot
+                deliver the agreed scope after reasonable attempts, or if Save
+                Point ends the project before it is finished. Deposits are
+                generally not refundable, as they cover the initial
+                consultation, planning and setup. Any refund will be paid
+                within 20 working days.
               </p>
 
+              <h3 className={styles.subHeadPart}>4.6 Your consumer rights</h3>
               <p>
-                <strong>5.5 Refunds</strong>
-                <br />
-                Due to the custom nature of our work, refunds are assessed on a
-                case-by-case basis. A refund or partial refund may be considered
-                where we are unable to deliver agreed project scope after
-                reasonable attempts, or where a project is terminated by Save
-                Point Limited prior to completion. Deposits are generally
-                non-refundable as they cover initial consultation, planning, and
-                resource allocation. Any applicable refunds will be processed
-                within 20 business days.
+                This policy does not limit your rights under New Zealand
+                consumer law. If a service fails to meet a consumer guarantee,
+                you are entitled to have it fixed, or for a serious failure, a
+                refund.
               </p>
 
+              <h3 className={styles.subHeadPart}>4.7 How to make a claim</h3>
               <p>
-                <strong>5.6 Consumer Rights</strong>
-                <br />
-                Nothing in this policy limits your rights under the Consumer
-                Guarantees Act 1993 or the Fair Trading Act 1986. Where a service
-                fails to meet a consumer guarantee, you are entitled to have the
-                problem remedied or, in cases of significant failure, a refund.
+                Email <SupportEmail /> with a description of the problem and
+                your project details. We will acknowledge your claim within 2
+                working days and work with you to reach a fair outcome.
               </p>
-
-              <p>
-                <strong>5.7 How to Make a Claim</strong>
-                <br />
-                To make a warranty or refund claim, contact us at{" "}
-                <a
-                  href="mailto:support@savepoint.cc"
-                  className={styles.inlineLink}
-                >
-                  support@savepoint.cc
-                </a>{" "}
-                with a description of the issue and relevant project details. We
-                will acknowledge your claim within 2 business days and work with
-                you to reach a fair resolution.
-              </p>
-
-              <p>© 2026 Save Point Limited. All rights reserved.</p>
             </div>
-          </div>
+          </section>
+
+          {/* 5. Disclaimer */}
+          <section id="disclaimer" className={styles.section}>
+            <h2 className={styles.sectionTitle}>5. Disclaimer</h2>
+            <div className={styles.sectionBody}>
+              <p className={styles.updated}>Last updated: {LAST_UPDATED}.</p>
+
+              <h3 className={styles.subHeadPart}>5.1 General information</h3>
+              <p>
+                The information on this website is for general purposes only.
+                We try to keep it accurate and up to date, but we cannot
+                promise it is complete or free of errors.
+              </p>
+
+              <h3 className={styles.subHeadPart}>5.2 Not professional advice</h3>
+              <p>
+                Nothing on this website is legal, financial or professional
+                advice. Please get independent advice before making decisions
+                based on it.
+              </p>
+
+              <h3 className={styles.subHeadPart}>5.3 Links to other websites</h3>
+              <p>
+                We link to other websites for your convenience. We do not
+                control them and are not responsible for their content.
+              </p>
+
+              <h3 className={styles.subHeadPart}>
+                5.4 Technology and smart devices
+              </h3>
+              <p>
+                Our technology and smart device (IoT) solutions are built and
+                tested to the agreed specification. Their performance can be
+                affected by things outside our control, such as third-party
+                hardware, internet connections, firmware updates and the
+                environment they are used in. After the warranty period ends,
+                we are not responsible for failures caused by these outside
+                factors.
+              </p>
+            </div>
+          </section>
+
+          {/* 6. Support */}
+          <section id="support" className={styles.section}>
+            <h2 className={styles.sectionTitle}>6. Support</h2>
+            <div className={styles.sectionBody}>
+              <p className={styles.updated}>Last updated: {LAST_UPDATED}.</p>
+
+              <h3 className={styles.subHeadPart}>6.1 How to reach us</h3>
+              <p>
+                Email: <SupportEmail />
+                <br />
+                Phone:{" "}
+                <a href="tel:+64210653792" className={styles.inlineLink}>
+                  +64 21 065 3792
+                </a>
+                <br />
+                Monday to Friday, 9:00am to 5:00pm New Zealand time, except
+                public holidays.
+              </p>
+
+              <h3 className={styles.subHeadPart}>6.2 Response times</h3>
+              <p>
+                We aim to reply to emails and voicemails within 1 working day.
+                Urgent problems during your warranty period are looked at
+                within 4 working hours. These are targets, not guarantees.
+              </p>
+
+              <h3 className={styles.subHeadPart}>
+                6.3 Support outside the warranty
+              </h3>
+              <p>
+                After your warranty ends, we will quote any support work
+                separately. We also offer ongoing maintenance and support
+                plans. Email <SupportEmail /> to talk about options.
+              </p>
+
+              <h3 className={styles.subHeadPart}>6.4 If you are not happy</h3>
+              <p>
+                If your issue has not been sorted out, email <SupportEmail />{" "}
+                with the subject line &ldquo;Support Escalation&rdquo;. We will
+                reply within 1 working day.
+              </p>
+            </div>
+          </section>
+
+          <p className={styles.updated}>
+            © 2026 Save Point Limited. All rights reserved.
+          </p>
         </div>
-
       </main>
-
       <Footer />
     </>
   );

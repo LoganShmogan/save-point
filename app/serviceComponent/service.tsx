@@ -7,23 +7,23 @@ const services = [
   {
     title: "Automation",
     description:
-      "Smart devices for your home or business (IoT) — Arduino, Raspberry Pi, Elegoo and more, set up to do the repetitive jobs for you.",
+      "Smart devices for your home or business (IoT), such as Arduino, Raspberry Pi, Elegoo and more, set up to do the repetitive jobs for you.",
     image: "/ads/Hourglass (1250 x 1250).png",
-    alt: "Pixel-art hourglass",
+    alt: "Pixel-art hourglass, representing time saved by automation",
   },
   {
     title: "Custom Software",
     description:
-      "Systems built for the way you work — databases, customer management (CRM), point of sale (POS) and more.",
+      "Systems built for the way you work, including databases, customer management (CRM), point of sale (POS) and more.",
     image: "/ads/Lightbulb (1250 x 1250).png",
-    alt: "Pixel-art lightbulb",
+    alt: "Pixel-art lightbulb, representing custom software ideas",
   },
   {
     title: "Web Applications",
     description:
-      "Websites and online tools that work on phones, tablets and computers — for new startups or established businesses.",
+      "Websites and online tools that work on phones, tablets and computers, for new startups or established businesses.",
     image: "/ads/Coin (1250 x 1250).png",
-    alt: "Pixel-art coin",
+    alt: "Pixel-art gold coin, representing web applications for business",
   },
 ];
 
@@ -36,7 +36,7 @@ const Service = () => {
         <h2 className={styles.title}>Services</h2>
         <p className={styles.lead}>
           Three ways we can help. Not sure which you need? Get in touch and
-          we&apos;ll talk it through with you — no jargon, no obligation.
+          we&apos;ll talk it through with you. No jargon, no obligation.
         </p>
       </div>
       {/*Services cards*/}
@@ -56,6 +56,7 @@ const Service = () => {
               <p className={styles.cardText}>{service.description}</p>
               <Link href="/pricing" className={buttons.buttonDark}>
                 View packages
+                <span className="visually-hidden"> for {service.title}</span>
               </Link>
             </div>
           </article>

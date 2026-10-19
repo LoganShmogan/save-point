@@ -58,7 +58,7 @@ This is a two-part contract:
 ## `metadataBase` and relative URLs
 
 ```ts
-metadataBase: new URL("https://savepoint.cc"),
+metadataBase: new URL("https://savepoint.co.nz"),
 ```
 
 This is what allows every other metadata field in this app to use
@@ -129,7 +129,7 @@ fallback).
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [{ userAgent: "*", allow: "/", disallow: ["/error"] }],
-    sitemap: "https://savepoint.cc/sitemap.xml",
+    sitemap: "https://savepoint.co.nz/sitemap.xml",
   };
 }
 ```
@@ -141,7 +141,7 @@ User-Agent: *
 Allow: /
 Disallow: /error
 
-Sitemap: https://savepoint.cc/sitemap.xml
+Sitemap: https://savepoint.co.nz/sitemap.xml
 ```
 
 `userAgent: "*"` applies the rule to every crawler. The previous version
@@ -154,7 +154,7 @@ That's been consolidated into the single wildcard rule above.
 ## `app/sitemap.ts` → `/sitemap.xml`
 
 ```ts
-const baseUrl = "https://savepoint.cc";
+const baseUrl = "https://savepoint.co.nz";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", "/about", "/pricing", "/contact", "/legal"];

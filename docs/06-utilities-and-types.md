@@ -90,7 +90,7 @@ each `page.tsx`. There is no:
   `.json`/`.md` content files parsed at build time via something like
   `gray-matter` or `contentlayer`).
 - Shared constants file for repeated values — the contact email
-  (`contact@savepoint.cc`) and Facebook URL appear as separate string
+  (`contact@savepoint.co.nz`) and Facebook URL appear as separate string
   literals in both `app/contact/page.tsx` and `app/footer/footer.tsx`,
   rather than being imported from one `const CONTACT_EMAIL = "..."`
   source of truth.

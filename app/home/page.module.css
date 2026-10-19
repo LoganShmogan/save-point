@@ -35,7 +35,7 @@
   display: inline-block;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 17px;
+  font-size: 1.0625rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--plum);
@@ -45,12 +45,12 @@
 }
 
 .heroTitle {
-  font-size: clamp(36px, 5vw, 56px);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
   margin-bottom: 20px;
 }
 
 .heroLead {
-  font-size: 21px;
+  font-size: 1.3125rem;
   color: var(--on-plum-soft);
   max-width: 34em;
   margin-bottom: 32px;
@@ -93,7 +93,7 @@
 .sectionEyebrow {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 17px;
+  font-size: 1.0625rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--purple-deep);
@@ -101,7 +101,7 @@
 }
 
 .aboutHeader {
-  font-size: clamp(28px, 3.5vw, 38px);
+  font-size: clamp(1.75rem, 3.5vw, 2.375rem);
   margin-bottom: 20px;
 }
 
@@ -117,13 +117,13 @@
     padding-bottom: 64px;
   }
 
-  /* The flag is decoration — the logo is already in the header */
+  /* The flag is decoration; the logo is already in the header */
   .heroArt {
     display: none;
   }
 
   .heroLead {
-    font-size: 19px;
+    font-size: 1.1875rem;
   }
 
   .about {

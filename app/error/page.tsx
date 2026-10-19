@@ -19,13 +19,13 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className={styles.message}>
+      <main id="main" className={styles.message}>
         <div className={styles.messageArt}>
           <Image
             src="/ads/Hourglass (1250 x 1250).png"
             width={140}
             height={140}
-            alt=""
+            alt="Pixel-art hourglass"
           />
         </div>
         <h1 className={styles.messageTitle}>This page is being built.</h1>

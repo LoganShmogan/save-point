@@ -37,7 +37,7 @@
 }
 
 .columnHeader {
-  font-size: 20px;
+  font-size: 1.25rem;
   margin-bottom: 6px;
   padding-bottom: 8px;
   border-bottom: solid 3px var(--purple);
@@ -45,7 +45,7 @@
 
 .link {
   color: var(--on-plum);
-  font-size: 18px;
+  font-size: 1.125rem;
   text-decoration: underline;
   text-decoration-color: var(--purple);
   width: fit-content;
@@ -78,7 +78,7 @@
   padding: 20px var(--gutter) 28px;
   border-top: solid 2px var(--plum-soft);
   color: var(--on-plum-soft);
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 /* ── Mobile / Tablet responsive ── */

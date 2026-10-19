@@ -18,6 +18,23 @@
   gap: 12px 28px;
 }
 
+/* Only appears when tabbed to with the keyboard */
+.skipLink {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 200;
+  padding: 12px 20px;
+  background: var(--yellow);
+  color: var(--ink);
+  font-weight: 700;
+  border: var(--border);
+}
+
+.skipLink:focus {
+  top: 12px;
+}
+
 .brand {
   display: flex;
   flex-shrink: 0;
@@ -41,7 +58,7 @@
   display: block;
   padding: 10px 12px;
   font-family: var(--font-display);
-  font-size: 19px;
+  font-size: 1.1875rem;
   font-weight: 600;
   color: var(--on-plum);
   text-decoration: none;
@@ -88,7 +105,7 @@
   }
 
   .link {
-    font-size: 18px;
+    font-size: 1.125rem;
     padding: 8px 6px;
   }
 }
@@ -101,11 +118,39 @@
   /* Beat the full-width mobile button rule */
   .container .cta {
     width: auto;
-    font-size: 17px;
+    font-size: 1.0625rem;
     padding: 8px 14px;
   }
 
   .links {
     justify-content: flex-start;
+  }
+}
+
+/* Very small phones (e.g. iPhone SE): keep logo + button on one row and
+   all four links on the next */
+@media (max-width: 400px) {
+  .container {
+    gap: 10px 8px;
+  }
+
+  .brand img {
+    width: 124px;
+  }
+
+  .container .cta {
+    min-height: 44px;
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+
+  .links {
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .link {
+    font-size: 1.0625rem;
+    padding: 8px 4px;
   }
 }

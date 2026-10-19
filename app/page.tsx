@@ -10,18 +10,18 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main">
         {/*Hero*/}
         <section className={styles.hero}>
           <div className={styles.heroInner}>
             <div className={styles.heroText}>
-              <p className={styles.eyebrow}>New Zealand software &amp; IoT</p>
+              <p className={styles.eyebrow}>New Zealand based</p>
               <h1 className={styles.heroTitle}>
                 Intelligent connected systems built with you.
               </h1>
               <p className={styles.heroLead}>
                 Custom software, websites and smart devices for small
-                businesses through to enterprise — explained in plain
+                businesses through to enterprise, explained in plain
                 English, built around the way you already work.
               </p>
               <div className={styles.heroActions}>
@@ -38,7 +38,7 @@ export default function Home() {
                 src="/logo-flag.png"
                 width={600}
                 height={743}
-                alt=""
+                alt="Pixel-art purple flag from the Save Point logo"
                 priority
               />
             </div>
@@ -52,7 +52,7 @@ export default function Home() {
           <div className={styles.aboutImage}>
             <Image
               src="/logo/logoFlag (800 x 800).jpg"
-              alt="Save Point pixel flag logo"
+              alt="Save Point logo: a pixel-art purple flag on a black background"
               width={500}
               height={500}
             />
@@ -70,9 +70,9 @@ export default function Home() {
               than being brought down by slow, uncooperative software.
             </p>
             <p>
-              The software wasn&apos;t the only problem — so were the devices
+              The software wasn&apos;t the only problem. So were the devices
               and connecting systems it ran on. That&apos;s when Save Point
-              earned its true name — the one place where systems, software
+              earned its true name: the one place where systems, software
               and devices all work in one cohesive space, making businesses
               their own Save Point.
             </p>

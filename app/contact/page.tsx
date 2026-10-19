@@ -3,6 +3,7 @@ import Footer from "@/app/footer/footer";
 import Link from "next/link";
 import styles from "@/app/shared/page.module.css";
 import PageHero from "@/app/shared/pageHero";
+import ContactForm from "@/app/contact/contactForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,32 +19,41 @@ export default function Contact() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main">
         <PageHero
           title="Contact"
-          lead="Questions, quotes or just a chat — we'd love to hear from you."
+          lead="Questions, quotes or just a chat? We'd love to hear from you."
         />
 
         <div className={styles.content}>
-          {/* Get in touch */}
-          <div className={styles.section}>
-            <h2 className={styles.sectionTitle}>Get in touch</h2>
+          {/* Contact form */}
+          <section className={styles.section} aria-labelledby="form-title">
+            <h2 id="form-title" className={styles.sectionTitle}>
+              Send us a message
+            </h2>
             <div className={styles.sectionBody}>
               <p>
-                Get in touch with Save Point today! We are ready to hear from you
-                about small to large projects. Startups or established businesses.
-                Nothing is too big or small. Reach out today!
+                We are ready to hear from you about projects of any size, from
+                startups to established businesses. Fill in the form below and
+                we&apos;ll be in touch.
               </p>
+            </div>
+            <ContactForm />
+          </section>
 
+          {/* Other ways to get in touch */}
+          <div className={styles.section}>
+            <h2 className={styles.sectionTitle}>Other ways to reach us</h2>
+            <div className={styles.sectionBody}>
               <dl className={styles.contactList}>
                 <div className={styles.contactRow}>
                   <dt className={styles.contactLabel}>Email</dt>
                   <dd>
                     <a
-                      href="mailto:contact@savepoint.cc"
+                      href="mailto:contact@savepoint.co.nz"
                       className={styles.inlineLink}
                     >
-                      contact@savepoint.cc
+                      contact@savepoint.co.nz
                     </a>
                   </dd>
                 </div>
@@ -63,9 +73,11 @@ export default function Contact() {
                     <Link
                       href="https://www.facebook.com/profile.php?id=61584633437200"
                       target="_blank"
+                      rel="noopener noreferrer"
                       className={styles.inlineLink}
                     >
                       Save Point Limited
+                      <span className="visually-hidden"> (opens in a new tab)</span>
                     </Link>
                   </dd>
                 </div>
@@ -78,7 +90,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Two col — response times + what to expect */}
+          {/* Two col: response times + what to expect */}
           <div className={styles.grid2}>
             <div className={styles.section}>
               <h2 className={styles.sectionTitle}>Response Times</h2>
@@ -88,10 +100,10 @@ export default function Contact() {
                   communication.
                 </p>
                 <p>
-                  Our typical response time is within 11 hours, but this can
-                  take up to 25 hours depending on current workload. Not to
-                  worry, we will never forget about you! Please email, call, or
-                  message us on Facebook and we can discuss your project(s).
+                  We aim to reply within 1 working day, and often sooner. Not
+                  to worry, we will never forget about you! Send us a message,
+                  email, call, or message us on Facebook and we can talk about
+                  your project.
                 </p>
               </div>
             </div>
@@ -100,8 +112,8 @@ export default function Contact() {
               <h2 className={styles.sectionTitle}>What to expect</h2>
               <div className={styles.sectionBody}>
                 <p>
-                  Once you have reached out to Save Point, please expect a
-                  waiting period of up to 24 hours.
+                  Once you have reached out to Save Point, we aim to get back
+                  to you within 1 working day.
                 </p>
                 <p>
                   We will book in an initial consultation with you to discover

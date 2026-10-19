@@ -19,7 +19,7 @@ export default function Pricing() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main">
         <PageHero
           title="Pricing"
           lead="Clear starting prices. Every quote is tailored to you after a free consultation."
@@ -32,7 +32,7 @@ export default function Pricing() {
             <div className={styles.sectionBody}>
               <p>
                 All pricing is project-based and scoped during your free
-                consultation. The tiers below give a general guide — final quotes
+                consultation. The tiers below give a general guide, and final quotes
                 are tailored to your specific needs.
               </p>
             </div>
@@ -42,7 +42,7 @@ export default function Pricing() {
           <div className={styles.grid3}>
             <div className={styles.priceCard}>
               <h2 className={styles.priceCardTitle}>Online IoT Starter</h2>
-              <p className={styles.priceAmount}>$200 - $750</p>
+              <p className={styles.priceAmount}>$200 to $750</p>
               <p className={styles.priceDesc}>
                 Perfect for small businesses or sole traders looking to upgrade
                 their systems and give themselves a better online presence.
@@ -56,12 +56,13 @@ export default function Pricing() {
               </ul>
               <Link href="/contact" className={`${buttons.buttonDark} ${styles.priceBtn}`}>
                 Enquire
+                <span className="visually-hidden"> about Online IoT Starter</span>
               </Link>
             </div>
 
             <div className={styles.priceCard}>
               <h2 className={styles.priceCardTitle}>Business Foundation</h2>
-              <p className={styles.priceAmount}>$1000 ++</p>
+              <p className={styles.priceAmount}>From $1,000</p>
               <p className={styles.priceDesc}>
                 More focus on large scale applications and large multi-page
                 websites, as well as software to manage all your working
@@ -75,12 +76,13 @@ export default function Pricing() {
               </ul>
               <Link href="/contact" className={`${buttons.buttonDark} ${styles.priceBtn}`}>
                 Enquire
+                <span className="visually-hidden"> about Business Foundation</span>
               </Link>
             </div>
 
             <div className={styles.priceCard}>
               <h2 className={styles.priceCardTitle}>Custom Enterprise</h2>
-              <p className={styles.priceAmount}>$3000 ++</p>
+              <p className={styles.priceAmount}>From $3,000</p>
               <p className={styles.priceDesc}>
                 Full-scale systems, software and device integration for enterprise
                 organisations with complex requirements. Save Point offers full
@@ -94,6 +96,7 @@ export default function Pricing() {
               </ul>
               <Link href="/contact" className={`${buttons.buttonDark} ${styles.priceBtn}`}>
                 Enquire
+                <span className="visually-hidden"> about Custom Enterprise</span>
               </Link>
             </div>
           </div>
@@ -110,7 +113,7 @@ export default function Pricing() {
                 <Link href="/contact" className={styles.inlineLink}>
                   Book a free consultation
                 </Link>{" "}
-                and we will provide a detailed quote within 2 business days.
+                and we will provide a detailed quote within 2 working days.
               </p>
             </div>
           </div>

@@ -1,4 +1,4 @@
-/* Chunky retro buttons — big tap targets, plain-English labels */
+/* Chunky retro buttons: big tap targets, plain-English labels */
 .button,
 .buttonOutline,
 .buttonDark {
@@ -9,7 +9,7 @@
   min-height: 52px;
   padding: 12px 24px;
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.2;
   text-decoration: none;
@@ -19,21 +19,21 @@
     box-shadow 0.1s;
 }
 
-/* Primary — yellow "start" button */
+/* Primary: yellow "start" button */
 .button {
   background: var(--yellow);
   color: var(--ink);
   box-shadow: 4px 4px 0 var(--ink);
 }
 
-/* Secondary — for use on dark plum backgrounds */
+/* Secondary, for use on dark plum backgrounds */
 .buttonOutline {
   background: transparent;
   color: var(--on-plum);
   border-color: var(--on-plum);
 }
 
-/* Secondary — for use on light backgrounds */
+/* Secondary, for use on light backgrounds */
 .buttonDark {
   background: var(--plum);
   color: var(--on-plum);
