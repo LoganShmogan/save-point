@@ -1,6 +1,9 @@
 import Image from "next/image";
-import styles from "@/app/error/page.module.css";
+import Link from "next/link";
+import styles from "@/app/shared/page.module.css";
+import buttons from "@/app/shared/button.module.css";
 import Navbar from "@/app/navigation/navBar";
+import Footer from "@/app/footer/footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,21 +16,29 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main>
+    <>
       <Navbar />
-      <div className={styles.page}>
-        <div className={styles.logo}>
-          <Image
-            src="/logo.png"
-            width={470.7525}
-            height={91.51}
-            alt="Save Point Logo"
-          />
+      <main className={styles.message}>
+        <div className={styles.messageArt}>
+          <Image src="/logo-flag.png" width={600} height={743} alt="" />
         </div>
-        <div className={styles.construct}>
-          <h1 className={styles.textMain}>Page not found.</h1>
+        <h1 className={styles.messageTitle}>
+          Sorry, we can&apos;t find that page.
+        </h1>
+        <p>
+          The link may be out of date, or the page may have moved. Try one of
+          these instead:
+        </p>
+        <div className={styles.messageActions}>
+          <Link href="/" className={buttons.buttonDark}>
+            Back to home
+          </Link>
+          <Link href="/contact" className={buttons.button}>
+            Contact us
+          </Link>
         </div>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }

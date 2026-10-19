@@ -1,0 +1,269 @@
+/* Shared layout for the inner pages (About, Contact, Pricing, Legal, errors) */
+
+/* Hero banner at top of each page */
+.hero {
+  position: relative;
+  background: var(--plum);
+  color: var(--on-plum);
+  margin-bottom: calc(var(--pixel) * 2);
+}
+
+/* Stepped pixel edge dropping out of the hero */
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: calc(var(--pixel) * 2);
+  background:
+    linear-gradient(var(--plum), var(--plum)) top / 100% var(--pixel)
+      no-repeat,
+    linear-gradient(90deg, var(--plum) 50%, transparent 0) bottom /
+      calc(var(--pixel) * 4) var(--pixel) repeat-x;
+}
+
+.heroInner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 56px var(--gutter) 64px;
+}
+
+.heroTitle {
+  font-size: clamp(36px, 5vw, 56px);
+}
+
+.heroLead {
+  font-size: 21px;
+  color: var(--on-plum-soft);
+  max-width: 36em;
+  margin: 16px 0 0;
+}
+
+/* Main content wrapper */
+.content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 56px var(--gutter) 0;
+}
+
+/* Section block — white card with a chunky retro border */
+.section {
+  background: var(--paper-raised);
+  border: var(--border);
+  box-shadow: var(--pixel-shadow);
+  padding: clamp(24px, 4vw, 40px);
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-size: clamp(26px, 3vw, 32px);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: solid 4px var(--purple);
+}
+
+/* Long-form text stays at a comfortable reading width */
+.sectionBody {
+  max-width: 44em;
+}
+
+.sectionBody p:last-child {
+  margin-bottom: 0;
+}
+
+.subHeadPart {
+  font-size: 22px;
+  margin: 28px 0 10px;
+}
+
+.subHeadPart:first-child {
+  margin-top: 0;
+}
+
+/* Small print, e.g. contract disclaimers */
+.note {
+  font-size: 16px;
+  color: var(--ink-soft);
+  border-left: solid 4px var(--purple);
+  padding-left: 12px;
+}
+
+/* Two-column grid for cards */
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.grid2 > .section {
+  margin-bottom: 0;
+}
+
+/* Three-column grid */
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+/* Inline link style */
+.inlineLink {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* Contact field rows */
+.contactList {
+  margin: 28px 0 0;
+  display: grid;
+  gap: 4px;
+}
+
+.contactRow {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 16px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-top: solid 2px var(--paper-tint);
+  font-size: 20px;
+}
+
+.contactRow dd {
+  margin: 0;
+}
+
+.contactLabel {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--purple-deep);
+}
+
+/* Price card */
+.priceCard {
+  background: var(--paper-raised);
+  border: var(--border);
+  box-shadow: var(--pixel-shadow);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.priceCardTitle {
+  font-size: 24px;
+  width: 100%;
+  border-bottom: solid 4px var(--purple);
+  padding-bottom: 12px;
+}
+
+.priceAmount {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.1;
+  color: var(--purple-deep);
+  margin: 0;
+}
+
+.priceDesc {
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.priceList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Square pixel bullets */
+.priceList li {
+  display: flex;
+  gap: 12px;
+}
+
+.priceList li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  margin-top: 0.6em;
+  background: var(--purple-deep);
+}
+
+.priceBtn {
+  margin-top: auto;
+}
+
+/* Centred message for the error / not-found pages */
+.message {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 72px var(--gutter) 0;
+  text-align: center;
+}
+
+/* Pixel art on a dark "screen" tile so its white details show */
+.messageArt {
+  display: inline-flex;
+  padding: 24px;
+  margin-bottom: 32px;
+  background: var(--plum);
+  border: var(--border);
+  box-shadow: var(--pixel-shadow);
+}
+
+.messageArt img {
+  width: 96px;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.messageTitle {
+  font-size: clamp(32px, 4vw, 44px);
+  margin-bottom: 16px;
+}
+
+.messageActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+/* ── Mobile / Tablet ── */
+@media (max-width: 900px) {
+  .grid2,
+  .grid3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroInner {
+    padding: 40px var(--gutter) 48px;
+  }
+
+  .heroLead {
+    font-size: 19px;
+  }
+
+  .content {
+    padding-top: 40px;
+  }
+
+  .contactRow {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}

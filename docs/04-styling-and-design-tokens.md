@@ -37,40 +37,47 @@ to its own module.
 
 ## Design tokens (`app/globals.css`)
 
-The live color palette is six CSS custom properties defined once, on
-`:root`:
+The main site uses a light, high-contrast palette aimed at readability for
+all ages (the audience skews 40+), with retro pixel details layered on top.
+Tokens live on `:root`:
 
-```css
-:root {
-  --purple: #b791c2;
-  --yellow: #eecc67;
-  --blue: #699fd5;
-  --green: #82c88a;
-  --black: #000000;
-  --white: #ffffff;
-}
-```
+| Token | Use |
+| --- | --- |
+| `--paper`, `--paper-raised`, `--paper-tint` | Page background, cards, tinted bands |
+| `--ink`, `--ink-soft` | Headings/body text, secondary text |
+| `--plum`, `--plum-soft`, `--on-plum`, `--on-plum-soft` | Dark bands (header, heroes, footer) and the text on them |
+| `--purple-deep` | Links and accents on light backgrounds |
+| `--purple`, `--yellow` | Brand accents: pixel shadows/underlines, primary buttons |
+| `--border`, `--pixel-shadow`, `--pixel` | Chunky 3px border, hard offset shadow, stepped-edge pixel size |
+| `--content-width`, `--gutter` | Page max width and side padding |
 
-These are referenced by name throughout every `*.module.css` file (e.g.
-`background-color: var(--purple)` for card backgrounds, `color: var(--green)`
-for hover states, `border: solid 10px var(--white)` for the thick card
-borders that appear across services/pricing/footer cards). This is the
-**entire** design system: six named colors, no shade scale (no
-`--purple-100` / `--purple-900`), no semantic aliasing (no `--color-primary`
-pointing at `--purple`) — components reference the literal palette names
-directly.
+The original brand colours (`--blue`, `--green`, `--black`, `--white`) are
+still defined but currently unused by the main site.
 
-`--yellow` is defined but, as of this writing, not referenced by any
-`*.module.css` file in the repo — it's a reserved/unused brand color.
+Base type is 18px / 1.65 line-height Figtree; `h1`–`h3` use Chakra Petch.
+`:focus-visible` gives a thick yellow + ink ring. `body` is a flex column so
+the footer sits at the bottom of short pages.
 
-Two more globals worth knowing:
-- `html, body { background: var(--black); color: var(--white); }` — the
-  entire site is dark-mode-only by default; there is no light theme, and
-  no `prefers-color-scheme` handling.
-- `* { box-sizing: border-box; }` — a global reset so `width`/`height`
-  values throughout the CSS modules include padding/border rather than
-  excluding them (the standard modern reset, but worth knowing since it's
-  declared once, globally, rather than per-component).
+### Shared modules
+
+- `app/shared/page.module.css` — layout for every inner page (About,
+  Contact, Pricing, Legal, error/404): hero, content cards, grids, price
+  cards, contact list, message pages. Previously each page had an identical
+  copy of this file.
+- `app/shared/pageHero.tsx` — the dark hero band with the stepped pixel edge.
+- `app/shared/button.module.css` — `.button` (yellow primary),
+  `.buttonDark` (plum, for light backgrounds), `.buttonOutline` (for plum
+  backgrounds). Minimum 52px tall; full width on phones.
+
+The stepped "pixel edge" under heroes and above the footer is drawn with
+two `linear-gradient` layers on a pseudo-element (one solid row, one row of
+alternating blocks), sized by `--pixel`.
+
+Pixel-art images with white details (the flag, service illustrations) are
+always placed on a `--plum` tile, otherwise their white parts disappear
+against the paper background. `public/logo-wordmark.png` and
+`public/logo-flag.png` are tightly cropped versions of `public/logo.png`
+(which has a large transparent margin).
 
 ## Fonts (`next/font/google`, wired in `app/layout.tsx`)
 
@@ -97,12 +104,10 @@ runtime request to `fonts.googleapis.com`. This has two concrete effects:
    `*.module.css` files can just write `font-family: var(--font-display)`
    without importing anything themselves.
 
-Only **one weight** is loaded per font (700 for Chakra Petch, 400 for
-Figtree) — there's no 400/500/600/700 range being fetched, which keeps the
-font payload minimal but also means you cannot use e.g. `font-weight: 600`
-anywhere and expect the browser to render an actual semi-bold cut; it will
-synthesize (faux-bold/faux-weight) or silently fall back to the nearest
-loaded weight, because only the one static weight file was downloaded.
+Chakra Petch loads weights 600/700 and Figtree loads 400/600/700. Using
+any other weight (e.g. `font-weight: 500`) won't render a real cut — the
+browser will synthesize it or fall back to the nearest loaded weight — so
+add the weight to `layout.tsx` first if you need it.
 
 There is no explicit mapping of "which font for which purpose" beyond
 comments in `layout.tsx` (`// Main header / button font`, `// Main body

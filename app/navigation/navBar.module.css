@@ -1,64 +1,111 @@
 /* Navbar section */
 .outer {
-  padding: 10px;
-  padding-left: 80px;
-  padding-right: 80px;
+  background: var(--plum);
+  color: var(--on-plum);
+  border-bottom: solid 4px var(--purple);
   position: sticky;
-  top: 10px;
+  top: 0;
   z-index: 100;
 }
 
 .container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 14px var(--gutter);
   display: flex;
   flex-wrap: wrap;
-  padding: 10px;
-  font-size: 25px;
-  justify-content: space-evenly;
-  font-family: var(--font-display);
-  background-color: var(--purple);
-  border: solid 10px var(--white);
+  align-items: center;
+  gap: 12px 28px;
 }
 
-.home,
-.about,
-.contact,
-.package,
-.price,
-.legal {
+.brand {
   display: flex;
-  width: 200px;
-  justify-content: center;
-  padding: 4px 0;
+  flex-shrink: 0;
 }
 
-.home:hover,
-.about:hover,
-.contact:hover,
-.package:hover,
-.price:hover,
-.legal:hover {
-  color: var(--green);
+.brand img {
+  width: 180px;
+  height: auto;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  list-style: none;
+  margin: 0 0 0 auto;
+  padding: 0;
+}
+
+.link {
+  display: block;
+  padding: 10px 12px;
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--on-plum);
+  text-decoration: none;
+  border-bottom: solid 4px transparent;
+}
+
+.link:hover {
+  color: var(--on-plum);
+  border-bottom-color: var(--on-plum-soft);
+}
+
+.link[aria-current="page"] {
+  border-bottom-color: var(--yellow);
+}
+
+.cta {
+  min-height: 48px;
+  padding: 10px 20px;
+}
+
+.cta[aria-current="page"] {
+  outline: solid 3px var(--on-plum);
+  outline-offset: 3px;
 }
 
 /* ── Mobile / Tablet ── */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  /* Wrapped nav is tall, so stop it covering content on small screens */
   .outer {
-    padding: 8px;
-    top: 8px;
+    position: static;
   }
 
   .container {
-    font-size: 18px;
-    gap: 4px;
+    justify-content: space-between;
   }
 
-  .home,
-  .about,
-  .contact,
-  .package,
-  .price,
-  .legal {
+  .links {
+    order: 3;
+    width: 100%;
+    margin: 0;
+    justify-content: space-between;
+    border-top: solid 2px var(--plum-soft);
+    padding-top: 6px;
+  }
+
+  .link {
+    font-size: 18px;
+    padding: 8px 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  .brand img {
+    width: 150px;
+  }
+
+  /* Beat the full-width mobile button rule */
+  .container .cta {
     width: auto;
-    padding: 4px 10px;
+    font-size: 17px;
+    padding: 8px 14px;
+  }
+
+  .links {
+    justify-content: flex-start;
   }
 }

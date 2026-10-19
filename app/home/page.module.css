@@ -1,112 +1,138 @@
-/* Logo section */
-.logoContainer {
+/* Hero section */
+.hero {
+  position: relative;
+  background: var(--plum);
+  color: var(--on-plum);
+  margin-bottom: calc(var(--pixel) * 2);
+}
+
+/* Stepped pixel edge dropping out of the hero */
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: calc(var(--pixel) * 2);
+  background:
+    linear-gradient(var(--plum), var(--plum)) top / 100% var(--pixel)
+      no-repeat,
+    linear-gradient(90deg, var(--plum) 50%, transparent 0) bottom /
+      calc(var(--pixel) * 4) var(--pixel) repeat-x;
+}
+
+.heroInner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 80px var(--gutter) 88px;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--plum);
+  background: var(--purple);
+  padding: 4px 12px;
+  margin-bottom: 20px;
+}
+
+.heroTitle {
+  font-size: clamp(36px, 5vw, 56px);
+  margin-bottom: 20px;
+}
+
+.heroLead {
+  font-size: 21px;
+  color: var(--on-plum-soft);
+  max-width: 34em;
+  margin-bottom: 32px;
+}
+
+.heroActions {
   display: flex;
   flex-wrap: wrap;
+  gap: 16px;
+}
+
+.heroArt {
+  display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 700px;
-  padding: 20px;
-  gap: 20px;
 }
 
-.logo {
-  margin-right: 20px;
-}
-
-.logoSubHeading h1 {
-  font-family: var(--font-display);
-}
-
-.logoSubHeading h2 {
-  font-family: var(--font-body);
+.heroArt img {
+  width: min(260px, 100%);
+  image-rendering: pixelated;
 }
 
 /* About section */
-.aboutLogo {
-  display: flex;
-  justify-content: center;
+.about {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 80px var(--gutter) 0;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 56px;
   align-items: center;
 }
 
-.aboutLogoText {
-  font-size: 50px;
+.aboutImage img {
+  display: block;
+  border: var(--border);
+  box-shadow: var(--pixel-shadow);
+  image-rendering: pixelated;
+}
+
+.sectionEyebrow {
   font-family: var(--font-display);
-  margin: 0;
-}
-
-/* About card */
-.aboutContainer {
-  padding: 40px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0px;
-}
-
-.aboutCard {
-  background-color: var(--purple);
-  border: solid 10px var(--white);
-  padding: 10px;
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--purple-deep);
+  margin-bottom: 8px;
 }
 
 .aboutHeader {
-  font-size: 25px;
-  font-family: var(--font-display);
+  font-size: clamp(28px, 3.5vw, 38px);
+  margin-bottom: 20px;
 }
 
-.aboutSubHeader {
-  font-size: 18px;
-  padding-top: 10px;
-  font-family: var(--font-body);
-}
-
-.aboutBodyText {
-  padding-top: 10px;
-  font-family: var(--font-body);
-}
-
-.aboutBodyText p {
-  padding-bottom: 10px;
-}
-
-.aboutLink {
-  padding-top: 10px;
-  font-size: 25px;
-  font-family: var(--font-display);
+.aboutText > p:last-of-type {
+  margin-bottom: 28px;
 }
 
 /* ── Mobile / Tablet ── */
-@media (max-width: 768px) {
-  .logoContainer {
-    min-height: auto;
-    padding: 40px 20px;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .logo {
-    margin-right: 0;
-    /* Scale down logo image on mobile via max-width on the img tag isn't possible here,
-       but we can constrain the container */
-    max-width: 100%;
-  }
-
-  /* Make the Next.js Image scale on mobile */
-  .logo img {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  .aboutLogoText {
-    font-size: 32px;
-  }
-
-  .aboutContainer {
-    padding: 20px;
+@media (max-width: 900px) {
+  .heroInner {
     grid-template-columns: 1fr;
+    padding-top: 48px;
+    padding-bottom: 64px;
+  }
+
+  /* The flag is decoration — the logo is already in the header */
+  .heroArt {
+    display: none;
+  }
+
+  .heroLead {
+    font-size: 19px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    padding-top: 56px;
+    gap: 32px;
   }
 
   .aboutImage {
-    display: flex;
-    justify-content: center;
+    max-width: 320px;
   }
 }

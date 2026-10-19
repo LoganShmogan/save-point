@@ -1,6 +1,9 @@
 import Image from "next/image";
-import styles from "@/app/error/page.module.css";
+import Link from "next/link";
+import styles from "@/app/shared/page.module.css";
+import buttons from "@/app/shared/button.module.css";
 import Navbar from "@/app/navigation/navBar";
+import Footer from "@/app/footer/footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,21 +17,32 @@ export const metadata: Metadata = {
 // Page dedicatied under contruction or when site is down etc
 export default function Home() {
   return (
-    <main>
+    <>
       <Navbar />
-      <div className={styles.page}>
-        <div className={styles.logo}>
+      <main className={styles.message}>
+        <div className={styles.messageArt}>
           <Image
-            src="/logo.png"
-            width={470.7525}
-            height={91.51}
-            alt="Save Point Logo"
+            src="/ads/Hourglass (1250 x 1250).png"
+            width={140}
+            height={140}
+            alt=""
           />
         </div>
-        <div className={styles.construct}>
-          <h1 className={styles.textMain}>Page is under construction.</h1>
+        <h1 className={styles.messageTitle}>This page is being built.</h1>
+        <p>
+          We&apos;re still working on this part of the site. In the meantime,
+          you can head back home or get in touch with us directly.
+        </p>
+        <div className={styles.messageActions}>
+          <Link href="/" className={buttons.buttonDark}>
+            Back to home
+          </Link>
+          <Link href="/contact" className={buttons.button}>
+            Contact us
+          </Link>
         </div>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }

@@ -52,28 +52,86 @@
   --black: #000000;
   --white: #ffffff;
 
-  /* Neutral grays — used by the minimal venture landing pages */
-  --gray-50: #fafafa;
-  --gray-100: #f2f2f2;
-  --gray-300: #e0e0e0;
-  --gray-600: #666666;
-  --gray-900: #1a1a1a;
+  /* Main site palette — light, high-contrast, readable at any age */
+  --paper: #f7f4ef; /* page background */
+  --paper-raised: #ffffff; /* cards */
+  --paper-tint: #efe8f2; /* soft purple wash for alternating sections */
+  --ink: #221c27; /* headings + body text */
+  --ink-soft: #4a4352; /* secondary text, still AA+ on paper */
+  --plum: #2b2233; /* dark bands: header, heroes, footer */
+  --plum-soft: #3a2f45;
+  --on-plum: #ffffff;
+  --on-plum-soft: #e4dcea;
+  --purple-deep: #5b3d6b; /* links + accents on light backgrounds */
+
+  /* Retro pixel details */
+  --border: 3px solid var(--ink);
+  --pixel-shadow: 6px 6px 0 var(--purple);
+  --pixel: 8px; /* size of one "pixel" in stepped edges */
+
+  --content-width: 1120px;
+  --gutter: clamp(16px, 4vw, 40px);
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
-  background: var(--black);
-  color: var(--white);
+  background: var(--paper);
+  color: var(--ink);
   font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.65;
   /* Prevent horizontal scroll on mobile */
   overflow-x: hidden;
   max-width: 100vw;
+}
+
+/* Keep the footer at the bottom on short pages */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  margin: 0;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--purple-deep);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+/* Large, unmistakable keyboard focus */
+:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--ink);
 }
 
 /* Images responsive by default */
@@ -82,10 +140,19 @@ img {
   height: auto;
 }
 
-/* Brutalist selection */
 ::selection {
   background: var(--purple);
-  color: var(--black);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
 }
 
 @layer base {

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import styles from "@/app/footer/footer.module.css";
 
@@ -5,11 +6,43 @@ const Footer = () => {
   return (
     <footer className={styles.outer}>
       <div className={styles.container}>
-        {/* Column 1 — Legal */}
+        {/* Column 1 — Brand */}
+        <div className={styles.brandColumn}>
+          <Image
+            src="/logo-wordmark.png"
+            width={1400}
+            height={272}
+            alt="Save Point"
+            className={styles.logo}
+          />
+          <p className={styles.brandTagline}>
+            Intelligent connected systems built with you.
+          </p>
+        </div>
+
+        {/* Column 2 — Contact */}
         <div className={styles.column}>
-          <p className={styles.columnHeader}>Legal</p>
+          <h2 className={styles.columnHeader}>Contact</h2>
+          <a href="mailto:contact@savepoint.cc" className={styles.link}>
+            contact@savepoint.cc
+          </a>
+          <a href="tel:+64210653792" className={styles.link}>
+            +64 21 065 3792
+          </a>
+          <Link
+            href="https://www.facebook.com/profile.php?id=61584633437200"
+            target="_blank"
+            className={styles.link}
+          >
+            Facebook — Save Point Limited
+          </Link>
+        </div>
+
+        {/* Column 3 — Legal */}
+        <div className={styles.column}>
+          <h2 className={styles.columnHeader}>Legal</h2>
           <Link href="/legal" className={styles.link}>
-            Our Policy
+            Privacy Policy
           </Link>
           <Link href="/legal" className={styles.link}>
             Terms of Service
@@ -18,34 +51,8 @@ const Footer = () => {
             Support
           </Link>
         </div>
-
-        {/* Divider */}
-        <div className={styles.divider} />
-
-        {/* Column 2 — Contact */}
-        <div className={styles.column}>
-          <p className={styles.columnHeader}>Contact</p>
-          <p className={styles.text}>contact@savepoint.cc</p>
-          <Link
-            href="https://www.facebook.com/profile.php?id=61584633437200"
-            target="_blank"
-            className={styles.link}
-          >
-            Facebook — @Save Point Limited
-          </Link>
-        </div>
-
-        {/* Divider */}
-        <div className={styles.divider} />
-
-        {/* Column 3 — Brand */}
-        <div className={styles.brandColumn}>
-          <p className={styles.brandTagline}>
-            Intelligent connected systems built with you.
-          </p>
-          <p className={styles.copyright}>© 2026 Save Point Limited</p>
-        </div>
       </div>
+      <p className={styles.copyright}>© 2026 Save Point Limited</p>
     </footer>
   );
 };

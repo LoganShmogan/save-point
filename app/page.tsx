@@ -1,54 +1,67 @@
 import Image from "next/image";
 import styles from "@/app/home/page.module.css";
+import buttons from "@/app/shared/button.module.css";
 import Link from "next/link";
 import Navbar from "@/app/navigation/navBar";
 import Service from "@/app/serviceComponent/service";
-import OurVentures from "@/app/ourVentures/ourVentures";
 import Footer from "@/app/footer/footer";
 
 export default function Home() {
   return (
-    <main>
-      {/*Logo*/}
-      <div className={styles.logoContainer}>
-        <div className={styles.logo}>
-          <Image
-            src="/logo.png"
-            width={470.7525}
-            height={91.51}
-            alt="Save Point Logo"
-          />
-        </div>
-        {/*Logo sub-heading*/}
-        <div className={styles.logoSubHeading}>
-          <h1>Intelligent connected systems built with you.</h1>
-          <h2>Please scroll down for services.</h2>
-        </div>
-      </div>
+    <>
       <Navbar />
-      <Service />
-      <OurVentures />
-      {/*About section*/}
-      <div className={styles.aboutLogo}>
-        <div className={styles.aboutLogoText}>
-          <h2>About us</h2>
-        </div>
-      </div>
-      <div className={styles.aboutContainer}>
-        <div className={styles.aboutImage}>
-          <Image
-            src="/logo/logoFlag (800 x 800).jpg"
-            alt="Save Point flag logo"
-            width={500}
-            height={500}
-            loading="eager"
-          />
-        </div>
-        <div className={styles.aboutCard}>
-          <div className={styles.aboutHeader}>
-            <h3>How we started making your Save Point</h3>
+      <main>
+        {/*Hero*/}
+        <section className={styles.hero}>
+          <div className={styles.heroInner}>
+            <div className={styles.heroText}>
+              <p className={styles.eyebrow}>New Zealand software &amp; IoT</p>
+              <h1 className={styles.heroTitle}>
+                Intelligent connected systems built with you.
+              </h1>
+              <p className={styles.heroLead}>
+                Custom software, websites and smart devices for small
+                businesses through to enterprise — explained in plain
+                English, built around the way you already work.
+              </p>
+              <div className={styles.heroActions}>
+                <Link href="#services" className={buttons.button}>
+                  See our services
+                </Link>
+                <Link href="/contact" className={buttons.buttonOutline}>
+                  Book a free chat
+                </Link>
+              </div>
+            </div>
+            <div className={styles.heroArt}>
+              <Image
+                src="/logo-flag.png"
+                width={600}
+                height={743}
+                alt=""
+                priority
+              />
+            </div>
           </div>
-          <div className={styles.aboutBodyText}>
+        </section>
+
+        <Service />
+
+        {/*About section*/}
+        <section className={styles.about}>
+          <div className={styles.aboutImage}>
+            <Image
+              src="/logo/logoFlag (800 x 800).jpg"
+              alt="Save Point pixel flag logo"
+              width={500}
+              height={500}
+            />
+          </div>
+          <div className={styles.aboutText}>
+            <p className={styles.sectionEyebrow}>About us</p>
+            <h2 className={styles.aboutHeader}>
+              How we started making your Save Point
+            </h2>
             <p>
               Save Point started as a tiny startup by a Software Engineering
               student, Logan Young. Logan saw a major failure in business
@@ -57,33 +70,19 @@ export default function Home() {
               than being brought down by slow, uncooperative software.
             </p>
             <p>
-              This led to rigorous marketing and plenty of demotivating
-              failures on the way to building the company Save Point is today.
-              But there was another issue out there.
-            </p>
-            <p>
               The software wasn&apos;t the only problem — so were the devices
-              and connecting systems it ran on. This led to a big expansion in
-              research and exploration into computing and devices. Not only
-              did Logan move into an amazing software space helping companies
-              better produce their products and services through their
-              in-house technology, he also changed how companies today use
-              devices and systems.
+              and connecting systems it ran on. That&apos;s when Save Point
+              earned its true name — the one place where systems, software
+              and devices all work in one cohesive space, making businesses
+              their own Save Point.
             </p>
-            <p>
-              That&apos;s when Save Point earned its true name — the one place
-              where systems, software and devices all work in one cohesive
-              space, making businesses their own Save Point.
-            </p>
-          </div>
-          <div className={styles.aboutLink}>
-            <Link href="/about">
-              <u>View more</u>
+            <Link href="/about" className={buttons.buttonDark}>
+              Read our full story
             </Link>
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

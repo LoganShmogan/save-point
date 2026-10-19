@@ -5,14 +5,14 @@ import type { Metadata, Viewport } from "next";
 // Main header / button font
 const chakra = Chakra_Petch({
   subsets: ["latin"],
-  weight: ["700"],
+  weight: ["600", "700"],
   variable: "--font-display",
 });
 
 // Main body font
 const figtree = Figtree({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "600", "700"],
   variable: "--font-body",
 });
 

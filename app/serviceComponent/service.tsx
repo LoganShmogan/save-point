@@ -1,100 +1,65 @@
 import styles from "@/app/serviceComponent/service.module.css";
+import buttons from "@/app/shared/button.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
+const services = [
+  {
+    title: "Automation",
+    description:
+      "Smart devices for your home or business (IoT) — Arduino, Raspberry Pi, Elegoo and more, set up to do the repetitive jobs for you.",
+    image: "/ads/Hourglass (1250 x 1250).png",
+    alt: "Pixel-art hourglass",
+  },
+  {
+    title: "Custom Software",
+    description:
+      "Systems built for the way you work — databases, customer management (CRM), point of sale (POS) and more.",
+    image: "/ads/Lightbulb (1250 x 1250).png",
+    alt: "Pixel-art lightbulb",
+  },
+  {
+    title: "Web Applications",
+    description:
+      "Websites and online tools that work on phones, tablets and computers — for new startups or established businesses.",
+    image: "/ads/Coin (1250 x 1250).png",
+    alt: "Pixel-art coin",
+  },
+];
+
 const Service = () => {
   return (
-    <section>
-      {/*Servics*/}
-      {/*Services Logo*/}
-      <div className={styles.servicesLogo}>
-        <div className={styles.servicesLogoText}>
-          <h2>Services</h2>
-        </div>
+    <section id="services" className={styles.section}>
+      {/*Services heading*/}
+      <div className={styles.heading}>
+        <p className={styles.eyebrow}>What we do</p>
+        <h2 className={styles.title}>Services</h2>
+        <p className={styles.lead}>
+          Three ways we can help. Not sure which you need? Get in touch and
+          we&apos;ll talk it through with you — no jargon, no obligation.
+        </p>
       </div>
-      {/*Servics cards*/}
-      <div className={styles.servicesContainer}>
-        {/*Automation card*/}
-        <div className={styles.servicesCard}>
-          <div className={styles.servicesHeader}>
-            <h3>Automation</h3>
-          </div>
-          <div className={styles.servicesContent}>
-            <div className={styles.servicesSubheading}>
-              <p>
-                Home and business internet of things (IoT). Arduino,
-                Raspberry Pi, Elegoo ++ more.
-              </p>
-            </div>
-            <div className={styles.servicesImage}>
+      {/*Services cards*/}
+      <div className={styles.grid}>
+        {services.map((service) => (
+          <article key={service.title} className={styles.card}>
+            <div className={styles.cardImage}>
               <Image
-                src="/ads/Hourglass (1250 x 1250).png"
-                alt="Pixelated hourglass illustration"
-                width={250}
-                height={250}
+                src={service.image}
+                alt={service.alt}
+                width={140}
+                height={140}
               />
             </div>
-            <div className={styles.servicesCardLink}>
-              <Link href="/pricing">
-                <u>View Packages</u>
+            <div className={styles.cardBody}>
+              <h3 className={styles.cardTitle}>{service.title}</h3>
+              <p className={styles.cardText}>{service.description}</p>
+              <Link href="/pricing" className={buttons.buttonDark}>
+                View packages
               </Link>
             </div>
-          </div>
-        </div>
-        {/*Custom software card*/}
-        <div className={styles.servicesCard}>
-          <div className={styles.servicesHeader}>
-            <h3>Custom Software</h3>
-          </div>
-          <div className={styles.servicesContent}>
-            <div className={styles.servicesSubheading}>
-              <p>
-                All areas of advanced systems and software. DBMS, CRM, ERM, POS
-                ++ more.
-              </p>
-            </div>
-            <div className={styles.servicesImage}>
-              <Image
-                src="/ads/Lightbulb (1250 x 1250).png"
-                alt="Pixelated lightbulb illustration"
-                width={250}
-                height={250}
-              />
-            </div>
-            <div className={styles.servicesCardLink}>
-              <Link href="/pricing">
-                <u>View Packages</u>
-              </Link>
-            </div>
-          </div>
-        </div>
-        {/*Web apps card*/}
-        <div className={styles.servicesCard}>
-          <div className={styles.servicesHeader}>
-            <h3>Web applications</h3>
-          </div>
-          <div className={styles.servicesContent}>
-            <div className={styles.servicesSubheading}>
-              <p>
-                Mobile and desktop support. Startup or established business
-                support ++ more.
-              </p>
-            </div>
-            <div className={styles.servicesImage}>
-              <Image
-                src="/ads/Coin (1250 x 1250).png"
-                alt="Pixelated coin illustration"
-                width={250}
-                height={250}
-              />
-            </div>
-            <div className={styles.servicesCardLink}>
-              <Link href="/pricing">
-                <u>View Packages</u>
-              </Link>
-            </div>
-          </div>
-        </div>
+          </article>
+        ))}
       </div>
     </section>
   );

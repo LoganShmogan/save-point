@@ -1,0 +1,66 @@
+/* Chunky retro buttons — big tap targets, plain-English labels */
+.button,
+.buttonOutline,
+.buttonDark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 12px 24px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  border: var(--border);
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s;
+}
+
+/* Primary — yellow "start" button */
+.button {
+  background: var(--yellow);
+  color: var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+/* Secondary — for use on dark plum backgrounds */
+.buttonOutline {
+  background: transparent;
+  color: var(--on-plum);
+  border-color: var(--on-plum);
+}
+
+/* Secondary — for use on light backgrounds */
+.buttonDark {
+  background: var(--plum);
+  color: var(--on-plum);
+  box-shadow: 4px 4px 0 var(--purple);
+}
+
+.button:hover,
+.buttonDark:hover {
+  color: inherit;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.buttonDark:hover {
+  color: var(--on-plum);
+  box-shadow: 2px 2px 0 var(--purple);
+}
+
+.buttonOutline:hover {
+  background: var(--on-plum);
+  color: var(--plum);
+}
+
+@media (max-width: 600px) {
+  .button,
+  .buttonOutline,
+  .buttonDark {
+    width: 100%;
+  }
+}

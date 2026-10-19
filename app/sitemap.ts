@@ -4,13 +4,11 @@ const baseUrl = "https://savepoint.cc";
 
 // Update a route's date here when its page content actually changes.
 const routes = [
-  { path: "", lastModified: "2026-08-02" },
+  { path: "", lastModified: "2026-10-19" },
   { path: "/about", lastModified: "2026-07-09" },
   { path: "/pricing", lastModified: "2026-07-09" },
   { path: "/contact", lastModified: "2026-07-09" },
   { path: "/legal", lastModified: "2026-07-09" },
-  { path: "/automation", lastModified: "2026-08-02" },
-  { path: "/job-search", lastModified: "2026-08-02" },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
