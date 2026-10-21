@@ -2,30 +2,19 @@ import styles from "@/app/serviceComponent/service.module.css";
 import buttons from "@/app/shared/button.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { services, type ServiceInfo } from "@/app/services/servicesData";
+import { starters } from "@/app/pricing/packages";
 
-const services = [
-  {
-    title: "Automation",
-    description:
-      "Smart devices for your home or business (IoT), such as Arduino, Raspberry Pi, Elegoo and more, set up to do the repetitive jobs for you.",
-    image: "/ads/Hourglass (1250 x 1250).png",
-    alt: "Pixel-art hourglass, representing time saved by automation",
-  },
-  {
-    title: "Custom Software",
-    description:
-      "Systems built for the way you work, including databases, customer management (CRM), point of sale (POS) and more.",
-    image: "/ads/Lightbulb (1250 x 1250).png",
-    alt: "Pixel-art lightbulb, representing custom software ideas",
-  },
-  {
-    title: "Web Applications",
-    description:
-      "Websites and online tools that work on phones, tablets and computers, for new startups or established businesses.",
-    image: "/ads/Coin (1250 x 1250).png",
-    alt: "Pixel-art gold coin, representing web applications for business",
-  },
-];
+// Cheapest way in: the ready-made starter or the custom "from" price
+const toNumber = (price: string) => Number(price.replace(/[^0-9]/g, ""));
+
+const lowestPrice = (service: ServiceInfo) => {
+  const starter = starters.find((s) => s.id === service.starterId);
+  if (starter && toNumber(starter.price) < toNumber(service.customFrom)) {
+    return starter.price;
+  }
+  return service.customFrom;
+};
 
 const Service = () => {
   return (
@@ -35,14 +24,19 @@ const Service = () => {
         <p className={styles.eyebrow}>What we do</p>
         <h2 className={styles.title}>Services</h2>
         <p className={styles.lead}>
-          Three ways we can help. Not sure which you need? Get in touch and
-          we&apos;ll talk it through with you. No jargon, no obligation.
+          Automation is at the heart of everything we build, backed by the
+          kiosks, apps, software and websites to make it work. Not sure which
+          you need? We&apos;ll talk it through with you. No jargon, no
+          obligation.
         </p>
       </div>
-      {/*Services cards*/}
+      {/*Services cards: automation first and featured*/}
       <div className={styles.grid}>
-        {services.map((service) => (
-          <article key={service.title} className={styles.card}>
+        {services.map((service, index) => (
+          <article
+            key={service.id}
+            className={`${styles.card} ${index === 0 ? styles.featured : ""}`}
+          >
             <div className={styles.cardImage}>
               <Image
                 src={service.image}
@@ -53,10 +47,14 @@ const Service = () => {
             </div>
             <div className={styles.cardBody}>
               <h3 className={styles.cardTitle}>{service.title}</h3>
-              <p className={styles.cardText}>{service.description}</p>
-              <Link href="/pricing" className={buttons.buttonDark}>
-                View packages
-                <span className="visually-hidden"> for {service.title}</span>
+              <p className={styles.cardText}>{service.summary}</p>
+              <p className={styles.cardPrice}>From {lowestPrice(service)}</p>
+              <Link
+                href={`/services#${service.id}`}
+                className={buttons.buttonDark}
+              >
+                Learn more
+                <span className="visually-hidden"> about {service.title}</span>
               </Link>
             </div>
           </article>

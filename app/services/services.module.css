@@ -1,0 +1,215 @@
+/* Services page: extends the shared page layout */
+
+/* Jump list at the top of the page */
+.jumpList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.jumpLink {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 100%;
+  padding: 16px 18px;
+  border: solid 3px var(--paper-tint);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.jumpLink:hover {
+  border-color: var(--purple);
+  color: var(--ink);
+}
+
+.jumpTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--purple-deep);
+}
+
+.jumpSummary {
+  font-size: 1rem;
+  color: var(--ink-soft);
+}
+
+/* Service heading with its pixel-art tile */
+.serviceHead {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: solid 4px var(--purple);
+}
+
+/* Pixel art sits on a dark "screen" so its white highlights show */
+.serviceArt {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  height: 112px;
+  padding: 16px;
+  background: var(--plum);
+  border: var(--border);
+}
+
+.serviceArt img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.serviceTitle {
+  font-size: clamp(1.75rem, 3.5vw, 2.375rem);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 40px;
+  margin-top: 32px;
+}
+
+/* Square pixel bullets */
+.checkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.checkList li {
+  display: flex;
+  gap: 12px;
+}
+
+.checkList li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  margin-top: 0.6em;
+  background: var(--purple-deep);
+}
+
+/* Price panel under each service */
+.pricing {
+  display: grid;
+  gap: 2px;
+  margin: 32px 0 0;
+  max-width: 560px;
+  background: var(--paper-tint);
+  border-left: solid 6px var(--yellow);
+}
+
+.priceRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 24px;
+  padding: 12px 18px;
+}
+
+.priceRow dt {
+  font-weight: 600;
+}
+
+.priceValue {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.375rem;
+  color: var(--purple-deep);
+}
+
+.priceNote {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  margin: 10px 0 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+  margin-top: 32px;
+}
+
+/* Numbered process steps */
+.steps {
+  list-style: none;
+  counter-reset: step;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.step {
+  counter-increment: step;
+  border-top: solid 4px var(--yellow);
+  padding-top: 16px;
+}
+
+.step::before {
+  content: counter(step);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 12px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  background: var(--plum);
+  color: var(--on-plum);
+}
+
+.stepTitle {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.step p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+/* ── Mobile / Tablet ── */
+@media (max-width: 900px) {
+  .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .jumpList,
+  .columns,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .serviceHead {
+    gap: 16px;
+  }
+
+  .serviceArt {
+    width: 80px;
+    height: 80px;
+    padding: 12px;
+  }
+}

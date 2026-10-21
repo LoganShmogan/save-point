@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
 	title: "About Us",
 	description:
-		"Learn how Save Point started and our mission to build intelligent, connected software and IoT systems for businesses across New Zealand.",
+		"Learn how Save Point started and our mission to build intelligent, connected automation, software and kiosk systems for businesses across New Zealand.",
 	alternates: {
 		canonical: "/about",
 	},

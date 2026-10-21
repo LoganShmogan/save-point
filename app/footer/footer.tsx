@@ -16,7 +16,7 @@ const Footer = () => {
             className={styles.logo}
           />
           <p className={styles.brandTagline}>
-            Intelligent connected systems built with you.
+            Automation, kiosks and software that connect, built with you.
           </p>
         </div>
 

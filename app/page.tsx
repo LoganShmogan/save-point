@@ -6,6 +6,15 @@ import Navbar from "@/app/navigation/navBar";
 import Service from "@/app/serviceComponent/service";
 import Footer from "@/app/footer/footer";
 
+const automationExamples = [
+  { label: "Invoices sent without lifting a finger", colour: "var(--purple)" },
+  { label: "Bookings confirmed and reminded", colour: "var(--yellow)" },
+  { label: "Stock and sales synced across systems", colour: "var(--blue)" },
+  { label: "Reports built and emailed every morning", colour: "var(--green)" },
+  { label: "Enquiries sorted and routed by AI", colour: "var(--purple)" },
+  { label: "Kiosk check-ins straight into your records", colour: "var(--yellow)" },
+];
+
 export default function Home() {
   return (
     <>
@@ -15,18 +24,19 @@ export default function Home() {
         <section className={styles.hero}>
           <div className={styles.heroInner}>
             <div className={styles.heroText}>
-              <p className={styles.eyebrow}>New Zealand based</p>
+              <p className={styles.eyebrow}>Automation · Kiosks · Software</p>
               <h1 className={styles.heroTitle}>
-                Intelligent connected systems built with you.
+                Automate the busywork. Connect everything else.
               </h1>
               <p className={styles.heroLead}>
-                Custom software, websites and smart devices for small
-                businesses through to enterprise, explained in plain
-                English, built around the way you already work.
+                Save Point builds automation, AI, self-service kiosks, apps
+                and websites for New Zealand businesses, all designed to talk
+                to each other. Explained in plain English, built around the
+                way you already work.
               </p>
               <div className={styles.heroActions}>
-                <Link href="#services" className={buttons.button}>
-                  See our services
+                <Link href="/services" className={buttons.button}>
+                  Explore our services
                 </Link>
                 <Link href="/contact" className={buttons.buttonOutline}>
                   Book a free chat
@@ -35,14 +45,45 @@ export default function Home() {
             </div>
             <div className={styles.heroArt}>
               <Image
-                src="/logo-flag.png"
-                width={600}
-                height={743}
-                alt="Pixel-art purple flag from the Save Point logo"
+                src="/brand/blocks-logo.png"
+                width={864}
+                height={429}
+                alt="Save Point blocks logo: coloured pixel blocks fitting together"
                 priority
               />
             </div>
           </div>
+        </section>
+
+        {/*Automation band*/}
+        <section className={styles.automate} aria-labelledby="automate-title">
+          <div className={styles.automateText}>
+            <p className={styles.sectionEyebrow}>Automation first</p>
+            <h2 id="automate-title" className={styles.aboutHeader}>
+              What could your business stop doing by hand?
+            </h2>
+            <p>
+              Every week, small repetitive jobs quietly eat hours of your
+              team&apos;s time. We find them, automate them, and connect the
+              systems behind them so information only ever has to be entered
+              once.
+            </p>
+            <Link href="/services#automation" className={buttons.buttonDark}>
+              How automation works
+            </Link>
+          </div>
+          <ul className={styles.automateList}>
+            {automationExamples.map((example) => (
+              <li key={example.label} className={styles.automateItem}>
+                <span
+                  className={styles.automateDot}
+                  style={{ background: example.colour }}
+                  aria-hidden="true"
+                />
+                {example.label}
+              </li>
+            ))}
+          </ul>
         </section>
 
         <Service />

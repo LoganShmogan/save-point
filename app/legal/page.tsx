@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
 };
 
-const LAST_UPDATED = "19 October 2026";
+const LAST_UPDATED = "22 October 2026";
 
 const contents = [
   { id: "privacy", label: "Privacy Policy" },
@@ -275,9 +275,10 @@ export default function Legal() {
 
               <h3 className={styles.subHeadPart}>3.2 Our services</h3>
               <p>
-                Save Point Limited provides technology services, including web
-                development, software development, IoT (smart device)
-                integration and related advice. The scope, timeline and
+                Save Point Limited provides technology services, including
+                business automation and AI, self-service kiosks, app and
+                software development, web development, IoT (smart device)
+                integration, system integration and related advice. The scope, timeline and
                 deliverables for each project are agreed in writing before
                 work begins.
               </p>
@@ -295,7 +296,11 @@ export default function Legal() {
 
               <h3 className={styles.subHeadPart}>3.4 Quotes and estimates</h3>
               <p>
-                Prices on our website are a general guide only. An estimate is
+                Starter package prices on our website are fixed for the
+                inclusions listed with each package. Hardware, third-party
+                subscriptions and anything beyond those inclusions are quoted
+                separately. All other prices on our website are a general
+                guide only. An estimate is
                 an approximate figure, not a fixed price. Your final price is
                 the one confirmed in your written project agreement.
               </p>
@@ -404,11 +409,21 @@ export default function Legal() {
 
               <h3 className={styles.subHeadPart}>4.2 Warranty periods</h3>
               <ul className={styles.list}>
-                <li>Online IoT Starter: 1 month from delivery.</li>
-                <li>Business Foundation: 3 months or more from delivery.</li>
                 <li>
-                  Custom Enterprise: ongoing under your contract, for at
-                  least 5 years.
+                  Automation Starter and Website Starter: 1 month from
+                  delivery.
+                </li>
+                <li>
+                  Kiosk Starter and Business Starter Bundle: 3 months from
+                  delivery.
+                </li>
+                <li>
+                  Custom projects: as set out in your project agreement, at
+                  least 3 months from delivery.
+                </li>
+                <li>
+                  Ongoing enterprise contracts: for the length of your
+                  contract, at least 5 years.
                 </li>
               </ul>
 

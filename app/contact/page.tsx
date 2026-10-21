@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Save Point for custom software, web development, and IoT projects across New Zealand.",
+    "Get in touch with Save Point for automation, kiosk, software, app and website projects across New Zealand.",
   alternates: {
     canonical: "/contact",
   },

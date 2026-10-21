@@ -4,12 +4,14 @@ import Link from "next/link";
 import styles from "@/app/shared/page.module.css";
 import PageHero from "@/app/shared/pageHero";
 import buttons from "@/app/shared/button.module.css";
+import { starters } from "@/app/pricing/packages";
+import { services } from "@/app/services/servicesData";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Transparent, project-based pricing for custom software, web applications, and IoT integration from Save Point, New Zealand.",
+    "Fixed-price, ready-made starter packages for automation, websites and kiosks, plus clear starting prices for custom-built projects from Save Point, New Zealand.",
   alternates: {
     canonical: "/pricing",
   },
@@ -22,82 +24,106 @@ export default function Pricing() {
       <main id="main">
         <PageHero
           title="Pricing"
-          lead="Clear starting prices. Every quote is tailored to you after a free consultation."
+          lead="Ready-made starters at a fixed price, or something custom-built around you. Prices are in New Zealand dollars."
         />
 
         <div className={styles.content}>
           {/* Intro */}
           <div className={styles.section}>
-            <h2 className={styles.sectionTitle}>Transparent pricing</h2>
+            <h2 className={styles.sectionTitle}>Two ways to start</h2>
             <div className={styles.sectionBody}>
               <p>
-                All pricing is project-based and scoped during your free
-                consultation. The tiers below give a general guide, and final quotes
-                are tailored to your specific needs.
+                <strong>Starter packages</strong> are pre-built solutions we
+                have already designed and tested. We set them up for your
+                business, add your branding and connect them to your tools, so
+                they cost less and are live in days, not months.
+              </p>
+              <p>
+                <strong>Custom projects</strong> are built from scratch around
+                the way you work. They are scoped in a free consultation and
+                quoted individually. Many clients begin with a starter and grow
+                into custom work later.
               </p>
             </div>
           </div>
 
-          {/* Price cards */}
-          <div className={styles.grid3}>
-            <div className={styles.priceCard}>
-              <h2 className={styles.priceCardTitle}>Online IoT Starter</h2>
-              <p className={styles.priceAmount}>$200 to $750</p>
-              <p className={styles.priceDesc}>
-                Perfect for small businesses or sole traders looking to upgrade
-                their systems and give themselves a better online presence.
-                Let us help shape your ideas and aspirations.
-              </p>
-              <ul className={styles.priceList}>
-                <li>1x Small-scale application or software</li>
-                <li>1x Small-scale website</li>
-                <li>Small-scale IoT setup</li>
-                <li>1 month warranty</li>
-              </ul>
-              <Link href="/contact" className={`${buttons.buttonDark} ${styles.priceBtn}`}>
-                Enquire
-                <span className="visually-hidden"> about Online IoT Starter</span>
-              </Link>
-            </div>
+          {/* Starter packages */}
+          <h2 className={styles.groupTitle}>Starter packages</h2>
+          <div className={styles.priceGrid}>
+            {starters.map((pkg) => (
+              <div key={pkg.id} id={pkg.id} className={styles.priceCard}>
+                <p className={styles.priceTag}>Ready-made</p>
+                <h3 className={styles.priceCardTitle}>{pkg.name}</h3>
+                <p className={styles.priceAmount}>
+                  {pkg.price}
+                  <span className={styles.priceUnit}> one-off</span>
+                </p>
+                <p className={styles.priceTurnaround}>{pkg.turnaround}</p>
+                <p className={styles.priceDesc}>{pkg.description}</p>
+                <ul className={styles.priceList}>
+                  {pkg.includes.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+                <Link
+                  href="/contact"
+                  className={`${buttons.buttonDark} ${styles.priceBtn}`}
+                >
+                  Get started
+                  <span className="visually-hidden"> with {pkg.name}</span>
+                </Link>
+              </div>
+            ))}
+          </div>
 
-            <div className={styles.priceCard}>
-              <h2 className={styles.priceCardTitle}>Business Foundation</h2>
-              <p className={styles.priceAmount}>From $1,000</p>
-              <p className={styles.priceDesc}>
-                More focus on large scale applications and large multi-page
-                websites, as well as software to manage all your working
-                requirements and devices to help you interact.
+          {/* Custom projects by service */}
+          <div className={styles.section}>
+            <h2 className={styles.sectionTitle}>Custom projects</h2>
+            <div className={styles.sectionBody}>
+              <p>
+                When a starter isn&apos;t enough, we design and build
+                something just for you. These are typical starting prices.
+                Your final quote depends on the size of the project.{" "}
+                <Link href="/legal#terms" className={styles.inlineLink}>
+                  Terms and conditions apply
+                </Link>
+                .
               </p>
-              <ul className={styles.priceList}>
-                <li>Large scale multi-page web app</li>
-                <li>Custom software</li>
-                <li>Advanced IoT integration</li>
-                <li>3+ months warranty</li>
-              </ul>
-              <Link href="/contact" className={`${buttons.buttonDark} ${styles.priceBtn}`}>
-                Enquire
-                <span className="visually-hidden"> about Business Foundation</span>
-              </Link>
             </div>
+            <dl className={styles.contactList}>
+              {services.map((service) => (
+                <div key={service.id} className={styles.customRow}>
+                  <dt>
+                    <Link
+                      href={`/services#${service.id}`}
+                      className={styles.inlineLink}
+                    >
+                      {service.title}
+                    </Link>
+                  </dt>
+                  <dd className={styles.customPrice}>
+                    From {service.customFrom}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
 
-            <div className={styles.priceCard}>
-              <h2 className={styles.priceCardTitle}>Custom Enterprise</h2>
-              <p className={styles.priceAmount}>From $3,000</p>
-              <p className={styles.priceDesc}>
-                Full-scale systems, software and device integration for enterprise
-                organisations with complex requirements. Save Point offers full
-                upgrade and integration with pre-established hardware & software.
+          {/* Add-ons */}
+          <div className={styles.section}>
+            <h2 className={styles.sectionTitle}>Add-ons and ongoing support</h2>
+            <div className={styles.sectionBody}>
+              <p>
+                Any starter or custom project can be extended. These are quoted
+                alongside your package, so you only pay for what you need.
               </p>
-              <ul className={styles.priceList}>
-                <li>Full systems architecture</li>
-                <li>IoT devices built with you</li>
-                <li>On-site support and in-house IT</li>
-                <li>Ongoing contract + 5 year warranty</li>
+              <ul className={styles.list}>
+                <li>Extra automations and integrations as your business grows</li>
+                <li>Hosting, maintenance and monitoring of your systems</li>
+                <li>Kiosk hardware supply, mounting and on-site installation</li>
+                <li>AI features such as document reading and enquiry sorting</li>
+                <li>Staff training and extended support after your warranty</li>
               </ul>
-              <Link href="/contact" className={`${buttons.buttonDark} ${styles.priceBtn}`}>
-                Enquire
-                <span className="visually-hidden"> about Custom Enterprise</span>
-              </Link>
             </div>
           </div>
 
@@ -106,8 +132,11 @@ export default function Pricing() {
             <h2 className={styles.sectionTitle}>A note on pricing</h2>
             <div className={styles.sectionBody}>
               <p>
-                All projects are scoped individually. We cannot guarantee the
-                cheapest pricing, but we can guarantee the best quality.
+                We cannot guarantee the cheapest pricing, but we can guarantee
+                the best quality. Starter prices are fixed for the setup
+                described. Hardware,
+                third-party subscriptions and anything beyond the listed
+                inclusions are quoted separately before any work begins.
               </p>
               <p>
                 <Link href="/contact" className={styles.inlineLink}>
@@ -118,7 +147,6 @@ export default function Pricing() {
             </div>
           </div>
         </div>
-
       </main>
 
       <Footer />

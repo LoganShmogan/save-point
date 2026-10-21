@@ -11,9 +11,10 @@ tree of static folders.
 
 | URL | File | Notes |
 |---|---|---|
-| `/` | `app/page.tsx` | Hero, `<Service />`, About-us teaser, `<Footer />` |
+| `/` | `app/page.tsx` | Hero, automation band, `<Service />` overview, About-us teaser, `<Footer />` |
+| `/services` | `app/services/page.tsx` | Full detail per service; content lives in `app/services/servicesData.ts` (shared with `<Service />`) |
 | `/about` | `app/about/page.tsx` | Origin story, mission, values, team |
-| `/pricing` | `app/pricing/page.tsx` | Three pricing tiers, static USD-style figures |
+| `/pricing` | `app/pricing/page.tsx` | Fixed-price ready-made starters (data in `app/pricing/packages.ts`), custom "from" prices per service (from `servicesData.ts`), add-ons. Starter names and warranties are also listed in the legal warranty section 4.2 |
 | `/contact` | `app/contact/page.tsx` | Email / Facebook / location, response-time copy |
 | `/legal` | `app/legal/page.tsx` | Privacy Policy, ToS, Disclaimer, Support, Refund/Warranty — all in one page, sectioned |
 | `/error` | `app/error/page.tsx` | Static "under construction" placeholder. **Not** a Next.js `error.tsx` boundary — see below. |

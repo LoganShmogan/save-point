@@ -27,14 +27,21 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
   title: {
-    default: "Save Point | Custom Software & IoT Development, New Zealand",
+    default: "Save Point | Business Automation, Kiosks & Software, New Zealand",
     template: "%s | Save Point NZ",
   },
   description:
-    "Save Point is a New Zealand software company building custom software, web applications, and IoT device integration for small businesses through to enterprise.",
+    "Save Point is a New Zealand automation company building business automation, AI, self-service kiosks, apps, custom software and websites that connect to each other, for small businesses through to enterprise.",
   keywords: [
     "Save Point",
     "Save Point NZ",
+    "business automation NZ",
+    "automation New Zealand",
+    "AI automation NZ",
+    "self-service kiosk NZ",
+    "kiosk software New Zealand",
+    "app development NZ",
+    "system integration NZ",
     "software New Zealand",
     "software development NZ",
     "custom software New Zealand",
@@ -50,16 +57,16 @@ export const metadata: Metadata = {
     locale: "en_NZ",
     url: "https://savepoint.co.nz",
     siteName: "Save Point",
-    title: "Save Point | Custom Software & IoT Development, New Zealand",
+    title: "Save Point | Business Automation, Kiosks & Software, New Zealand",
     description:
-      "Custom software, web applications, and IoT device integration for New Zealand businesses.",
+      "Business automation, AI, self-service kiosks, apps, software and websites that connect, for New Zealand businesses.",
     images: ["/logo.png"],
   },
   twitter: {
     card: "summary",
-    title: "Save Point | Custom Software & IoT Development, New Zealand",
+    title: "Save Point | Business Automation, Kiosks & Software, New Zealand",
     description:
-      "Custom software, web applications, and IoT device integration for New Zealand businesses.",
+      "Business automation, AI, self-service kiosks, apps, software and websites that connect, for New Zealand businesses.",
     images: ["/logo.png"],
   },
   robots: {
@@ -75,7 +82,7 @@ const organizationJsonLd = {
   url: "https://savepoint.co.nz",
   logo: "https://savepoint.co.nz/logo.png",
   description:
-    "Save Point builds custom software, web applications, and IoT device integration for businesses across New Zealand.",
+    "Save Point builds business automation, self-service kiosks, apps, custom software and websites that connect, for businesses across New Zealand.",
   email: "contact@savepoint.co.nz",
   telephone: "+64210653792",
   areaServed: {

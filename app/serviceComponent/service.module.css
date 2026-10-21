@@ -35,7 +35,7 @@
 /* Container for cards */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
 }
 
@@ -60,7 +60,42 @@
 .cardImage img {
   width: 120px;
   height: 120px;
+  object-fit: contain;
   image-rendering: pixelated;
+}
+
+/* Automation leads: full-width card with the art on the left */
+.featured {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  box-shadow: 6px 6px 0 var(--yellow);
+}
+
+.featured .cardImage {
+  align-items: center;
+  padding: 40px;
+  border-bottom: 0;
+  border-right: var(--border);
+}
+
+.featured .cardImage img {
+  width: 160px;
+  height: 160px;
+}
+
+.featured .cardBody {
+  justify-content: center;
+  padding: 32px;
+}
+
+.featured .cardTitle {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+}
+
+.featured .cardText {
+  flex: 0;
+  font-size: 1.1875rem;
+  max-width: 36em;
 }
 
 .cardBody {
@@ -79,7 +114,15 @@
 .cardText {
   color: var(--ink-soft);
   flex: 1;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
+}
+
+.cardPrice {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--purple-deep);
+  margin-bottom: 20px;
 }
 
 /* ── Mobile / Tablet ── */
@@ -93,6 +136,16 @@
     flex-direction: row;
   }
 
+  .featured {
+    grid-column: auto;
+  }
+
+  .featured .cardImage img {
+    width: 88px;
+    height: 88px;
+  }
+
+  .featured .cardImage,
   .cardImage {
     align-items: center;
     padding: 20px;
@@ -115,6 +168,7 @@
     flex-direction: column;
   }
 
+  .featured .cardImage,
   .cardImage {
     border-right: 0;
     border-bottom: var(--border);
