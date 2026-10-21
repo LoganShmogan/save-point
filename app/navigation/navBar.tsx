@@ -11,6 +11,7 @@ const links = [
   { href: "/services", label: "Services" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
+  { href: "/legal", label: "Legal" },
 ];
 
 const Navbar = () => {

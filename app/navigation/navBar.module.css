@@ -154,3 +154,11 @@
     padding: 8px 4px;
   }
 }
+
+/* Smallest phones (320px wide): fit all five links on one row */
+@media (max-width: 360px) {
+  .link {
+    font-size: 1rem;
+    padding: 8px 2px;
+  }
+}
