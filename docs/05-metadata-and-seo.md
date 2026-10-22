@@ -5,6 +5,26 @@ This doc covers Next's typed Metadata API as actually used in this repo:
 `about/pricing/contact/legal/error/not-found`, and the three
 metadata-file routes (`manifest.ts`, `robots.ts`, `sitemap.ts`).
 
+## Current setup (October 2026)
+
+Parts of this doc below predate these changes; where they disagree, this
+section wins.
+
+- **Per-page metadata** goes through `pageMetadata()` in
+  `app/shared/seo.tsx`. It sets title, description, canonical, and the full
+  `openGraph`/`twitter` objects (including the share image), because Next
+  replaces those objects per page rather than merging them.
+- **Structured data** uses the `<JsonLd>` component from the same file:
+  - root layout: `ProfessionalService` + `WebSite` graph
+  - every inner page: `BreadcrumbList` via `breadcrumbJsonLd()`
+  - `/services`: `ItemList` of `Service` with NZD starting prices
+  - `/pricing`: `OfferCatalog` of the starter packages
+- **Icons and share image** use Next file conventions: `app/favicon.ico`
+  (real 48x48 ICO), `app/icon.png` (512), `app/apple-icon.png` (180),
+  `app/opengraph-image.png` and `app/twitter-image.png` (1200x630).
+  Manifest icons live in `public/brand/icon-192.png` and `icon-512.png`.
+- When page content changes, bump that route's date in `app/sitemap.ts`.
+
 ## The `Metadata` type and merge behavior
 
 Every `page.tsx`/`layout.tsx` may export a `const metadata: Metadata = {...}`

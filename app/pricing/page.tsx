@@ -7,14 +7,44 @@ import buttons from "@/app/shared/button.module.css";
 import { starters } from "@/app/pricing/packages";
 import { services } from "@/app/services/servicesData";
 import type { Metadata } from "next";
+import {
+  JsonLd,
+  ORG_ID,
+  SITE_URL,
+  breadcrumbJsonLd,
+  pageMetadata,
+  priceToNumber,
+} from "@/app/shared/seo";
 
-export const metadata: Metadata = {
-  title: "Pricing",
+export const metadata: Metadata = pageMetadata({
+  title: "Pricing & Starter Packages",
   description:
-    "Fixed-price, ready-made starter packages for automation, websites and kiosks, plus clear starting prices for custom-built projects from Save Point, New Zealand.",
-  alternates: {
-    canonical: "/pricing",
-  },
+    "Fixed-price starter packages from $349 for websites, automation and kiosks, plus clear starting prices for custom projects. Save Point, New Zealand.",
+  path: "/pricing",
+});
+
+// Fixed-price starters as offers, for Google
+const startersJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "OfferCatalog",
+  name: "Save Point starter packages",
+  url: `${SITE_URL}/pricing`,
+  itemListElement: starters.map((pkg) => ({
+    "@type": "Offer",
+    name: pkg.name,
+    description: pkg.description,
+    price: priceToNumber(pkg.price),
+    priceCurrency: "NZD",
+    url: `${SITE_URL}/pricing#${pkg.id}`,
+    seller: { "@id": ORG_ID },
+    itemOffered: {
+      "@type": "Service",
+      name: pkg.name,
+      description: pkg.description,
+      provider: { "@id": ORG_ID },
+      areaServed: { "@type": "Country", name: "New Zealand" },
+    },
+  })),
 };
 
 export default function Pricing() {
@@ -22,6 +52,8 @@ export default function Pricing() {
     <>
       <Navbar />
       <main id="main">
+        <JsonLd data={breadcrumbJsonLd("Pricing", "/pricing")} />
+        <JsonLd data={startersJsonLd} />
         <PageHero
           title="Pricing"
           lead="Ready-made starters at a fixed price, or something custom-built around you. Prices are in New Zealand dollars."

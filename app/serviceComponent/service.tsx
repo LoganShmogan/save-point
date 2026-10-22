@@ -2,19 +2,7 @@ import styles from "@/app/serviceComponent/service.module.css";
 import buttons from "@/app/shared/button.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { services, type ServiceInfo } from "@/app/services/servicesData";
-import { starters } from "@/app/pricing/packages";
-
-// Cheapest way in: the ready-made starter or the custom "from" price
-const toNumber = (price: string) => Number(price.replace(/[^0-9]/g, ""));
-
-const lowestPrice = (service: ServiceInfo) => {
-  const starter = starters.find((s) => s.id === service.starterId);
-  if (starter && toNumber(starter.price) < toNumber(service.customFrom)) {
-    return starter.price;
-  }
-  return service.customFrom;
-};
+import { services, lowestPrice } from "@/app/services/servicesData";
 
 const Service = () => {
   return (

@@ -5,21 +5,21 @@ import styles from "@/app/shared/page.module.css";
 import PageHero from "@/app/shared/pageHero";
 import ContactForm from "@/app/contact/contactForm";
 import type { Metadata } from "next";
+import { JsonLd, breadcrumbJsonLd, pageMetadata } from "@/app/shared/seo";
 
-export const metadata: Metadata = {
-  title: "Contact",
+export const metadata: Metadata = pageMetadata({
+  title: "Contact Us",
   description:
-    "Get in touch with Save Point for automation, kiosk, software, app and website projects across New Zealand.",
-  alternates: {
-    canonical: "/contact",
-  },
-};
+    "Talk to Save Point about automation, kiosks, apps, software or a new website. Free consultation and a detailed quote within 2 working days. New Zealand.",
+  path: "/contact",
+});
 
 export default function Contact() {
   return (
     <>
       <Navbar />
       <main id="main">
+        <JsonLd data={breadcrumbJsonLd("Contact", "/contact")} />
         <PageHero
           title="Contact"
           lead="Questions, quotes or just a chat? We'd love to hear from you."

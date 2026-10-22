@@ -22,7 +22,7 @@ export default function Home() {
       <main id="main" className={styles.message}>
         <div className={styles.messageArt}>
           <Image
-            src="/ads/Hourglass (1250 x 1250).png"
+            src="/brand/hourglass.png"
             width={140}
             height={140}
             alt="Pixel-art hourglass"

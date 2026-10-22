@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Chakra_Petch, Figtree } from "next/font/google";
 import type { Metadata, Viewport } from "next";
+import { JsonLd, ORG_ID, SITE_NAME, SITE_URL } from "@/app/shared/seo";
 
 // Main header / button font
 const chakra = Chakra_Petch({
@@ -19,19 +20,25 @@ const figtree = Figtree({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#2b2233",
 };
 
+const title = "Save Point | Business Automation, Kiosks & Software, New Zealand";
+const description =
+  "Save Point is a New Zealand automation company building business automation, AI, self-service kiosks, apps, custom software and websites that connect to each other, for small businesses through to enterprise.";
+const shareDescription =
+  "Business automation, AI, self-service kiosks, apps, software and websites that connect, for New Zealand businesses.";
+
+// Icons and the share image come from app/icon.png, app/apple-icon.png,
+// app/favicon.ico and app/opengraph-image.png (Next file conventions).
 export const metadata: Metadata = {
-  metadataBase: new URL("https://savepoint.co.nz"),
-  icons: {
-    icon: "/favicon.ico",
-  },
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Save Point | Business Automation, Kiosks & Software, New Zealand",
+    default: title,
     template: "%s | Save Point NZ",
   },
-  description:
-    "Save Point is a New Zealand automation company building business automation, AI, self-service kiosks, apps, custom software and websites that connect to each other, for small businesses through to enterprise.",
+  description,
+  applicationName: SITE_NAME,
   keywords: [
     "Save Point",
     "Save Point NZ",
@@ -42,59 +49,95 @@ export const metadata: Metadata = {
     "kiosk software New Zealand",
     "app development NZ",
     "system integration NZ",
-    "software New Zealand",
-    "software development NZ",
     "custom software New Zealand",
+    "website design NZ",
     "IoT New Zealand",
-    "web application development NZ",
   ],
-  authors: [{ name: "Save Point Limited" }],
+  authors: [{ name: "Save Point Limited", url: SITE_URL }],
+  creator: "Save Point Limited",
+  publisher: "Save Point Limited",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_NZ",
-    url: "https://savepoint.co.nz",
-    siteName: "Save Point",
-    title: "Save Point | Business Automation, Kiosks & Software, New Zealand",
-    description:
-      "Business automation, AI, self-service kiosks, apps, software and websites that connect, for New Zealand businesses.",
-    images: ["/logo.png"],
+    url: "/",
+    siteName: SITE_NAME,
+    title,
+    description: shareDescription,
   },
   twitter: {
-    card: "summary",
-    title: "Save Point | Business Automation, Kiosks & Software, New Zealand",
-    description:
-      "Business automation, AI, self-service kiosks, apps, software and websites that connect, for New Zealand businesses.",
-    images: ["/logo.png"],
+    card: "summary_large_image",
+    title,
+    description: shareDescription,
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
-const organizationJsonLd = {
+// Who we are, for Google's knowledge panel and rich results
+const siteJsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "Save Point Limited",
-  url: "https://savepoint.co.nz",
-  logo: "https://savepoint.co.nz/logo.png",
-  description:
-    "Save Point builds business automation, self-service kiosks, apps, custom software and websites that connect, for businesses across New Zealand.",
-  email: "contact@savepoint.co.nz",
-  telephone: "+64210653792",
-  areaServed: {
-    "@type": "Country",
-    name: "New Zealand",
-  },
-  address: {
-    "@type": "PostalAddress",
-    addressCountry: "NZ",
-  },
-  sameAs: [
-    "https://www.facebook.com/profile.php?id=61584633437200",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": ORG_ID,
+      name: "Save Point Limited",
+      alternateName: "Save Point",
+      url: SITE_URL,
+      logo: `${SITE_URL}/brand/icon-512.png`,
+      image: `${SITE_URL}/opengraph-image.png`,
+      description,
+      slogan: "Automate the busywork. Connect everything else.",
+      email: "contact@savepoint.co.nz",
+      telephone: "+64210653792",
+      priceRange: "$$",
+      currenciesAccepted: "NZD",
+      areaServed: {
+        "@type": "Country",
+        name: "New Zealand",
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "NZ",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        email: "contact@savepoint.co.nz",
+        telephone: "+64210653792",
+        areaServed: "NZ",
+        availableLanguage: "English",
+      },
+      knowsAbout: [
+        "Business process automation",
+        "AI automation",
+        "Self-service kiosks",
+        "Custom software development",
+        "Mobile app development",
+        "Website development",
+        "System integration",
+        "Internet of Things",
+      ],
+      sameAs: ["https://www.facebook.com/profile.php?id=61584633437200"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      inLanguage: "en-NZ",
+      publisher: { "@id": ORG_ID },
+    },
   ],
 };
 
@@ -106,10 +149,7 @@ export default function RootLayout({
   return (
     <html lang="en-NZ" className={`${chakra.variable} ${figtree.variable}`}>
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
+        <JsonLd data={siteJsonLd} />
         {children}
       </body>
     </html>

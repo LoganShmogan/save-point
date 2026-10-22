@@ -6,9 +6,9 @@ const baseUrl = "https://savepoint.co.nz";
 const routes = [
   { path: "", lastModified: "2026-10-22" },
   { path: "/services", lastModified: "2026-10-22" },
-  { path: "/about", lastModified: "2026-10-19" },
+  { path: "/about", lastModified: "2026-10-22" },
   { path: "/pricing", lastModified: "2026-10-22" },
-  { path: "/contact", lastModified: "2026-10-19" },
+  { path: "/contact", lastModified: "2026-10-22" },
   { path: "/legal", lastModified: "2026-10-22" },
 ];
 

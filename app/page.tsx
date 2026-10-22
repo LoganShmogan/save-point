@@ -92,7 +92,7 @@ export default function Home() {
         <section className={styles.about}>
           <div className={styles.aboutImage}>
             <Image
-              src="/logo/logoFlag (800 x 800).jpg"
+              src="/brand/logo-flag-square.jpg"
               alt="Save Point logo: a pixel-art purple flag on a black background"
               width={500}
               height={500}

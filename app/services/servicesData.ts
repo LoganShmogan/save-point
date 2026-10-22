@@ -1,5 +1,8 @@
 // Shared by the home page overview and the full /services page
 
+import { starters } from "@/app/pricing/packages";
+import { priceToNumber } from "@/app/shared/seo";
+
 export type ServiceInfo = {
   id: string;
   title: string;
@@ -38,7 +41,7 @@ export const services: ServiceInfo[] = [
       "Jobs get missed because they rely on someone remembering",
       "You want answers from your data without building reports by hand",
     ],
-    image: "/ads/Hourglass (1250 x 1250).png",
+    image: "/brand/hourglass.png",
     alt: "Pixel-art hourglass, representing time saved by automation",
     customFrom: "$599",
     starterId: "automation-starter",
@@ -92,7 +95,7 @@ export const services: ServiceInfo[] = [
       "Your current software forces awkward workarounds",
       "You have an idea for an app and need someone to build it with you",
     ],
-    image: "/ads/Lightbulb (1250 x 1250).png",
+    image: "/brand/lightbulb.png",
     alt: "Pixel-art lightbulb, representing custom software ideas",
     customFrom: "$1,250",
   },
@@ -118,7 +121,7 @@ export const services: ServiceInfo[] = [
       "Enquiries from your website get lost in an inbox",
       "You want customers to book, order or log in online",
     ],
-    image: "/ads/Coin (1250 x 1250).png",
+    image: "/brand/coin.png",
     alt: "Pixel-art gold coin, representing websites and web apps for business",
     customFrom: "$600",
     starterId: "website-starter",
@@ -150,3 +153,12 @@ export const services: ServiceInfo[] = [
     customFrom: "$500",
   },
 ];
+
+// Cheapest way in: the ready-made starter or the custom "from" price
+export const lowestPrice = (service: ServiceInfo) => {
+  const starter = starters.find((s) => s.id === service.starterId);
+  if (starter && priceToNumber(starter.price) < priceToNumber(service.customFrom)) {
+    return starter.price;
+  }
+  return service.customFrom;
+};

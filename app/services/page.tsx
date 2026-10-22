@@ -6,18 +6,24 @@ import styles from "@/app/shared/page.module.css";
 import serviceStyles from "@/app/services/services.module.css";
 import PageHero from "@/app/shared/pageHero";
 import buttons from "@/app/shared/button.module.css";
-import { services } from "@/app/services/servicesData";
+import { services, lowestPrice } from "@/app/services/servicesData";
 import { starters } from "@/app/pricing/packages";
 import type { Metadata } from "next";
+import {
+  JsonLd,
+  ORG_ID,
+  SITE_URL,
+  breadcrumbJsonLd,
+  pageMetadata,
+  priceToNumber,
+} from "@/app/shared/seo";
 
-export const metadata: Metadata = {
-  title: "Services",
+export const metadata: Metadata = pageMetadata({
+  title: "Automation, Kiosk, App & Website Services",
   description:
-    "Business automation, AI, self-service kiosks, custom apps and software, and websites from Save Point, all built to connect to each other. New Zealand based.",
-  alternates: {
-    canonical: "/services",
-  },
-};
+    "Business automation and AI, self-service kiosks, custom apps and software, websites and system integration that all connect. Save Point, New Zealand.",
+  path: "/services",
+});
 
 const steps = [
   {
@@ -38,6 +44,39 @@ const steps = [
   },
 ];
 
+// Each service with its starting price, for Google
+const servicesJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Save Point services",
+  itemListElement: services.map((service, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "Service",
+      "@id": `${SITE_URL}/services#${service.id}`,
+      name: service.title,
+      serviceType: service.title,
+      description: service.summary,
+      url: `${SITE_URL}/services#${service.id}`,
+      image: `${SITE_URL}${service.image}`,
+      provider: { "@id": ORG_ID },
+      areaServed: { "@type": "Country", name: "New Zealand" },
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "NZD",
+        price: priceToNumber(lowestPrice(service)),
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "NZD",
+          minPrice: priceToNumber(lowestPrice(service)),
+        },
+        url: `${SITE_URL}/pricing`,
+      },
+    },
+  })),
+};
+
 export default function Services() {
   const starterFor = (id?: string) => starters.find((s) => s.id === id);
 
@@ -45,6 +84,8 @@ export default function Services() {
     <>
       <Navbar />
       <main id="main">
+        <JsonLd data={breadcrumbJsonLd("Services", "/services")} />
+        <JsonLd data={servicesJsonLd} />
         <PageHero
           title="Services"
           lead="Automation first, with the apps, kiosks, software and websites to back it up. Everything we build is designed to connect."

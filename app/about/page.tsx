@@ -4,21 +4,21 @@ import styles from "@/app/shared/page.module.css";
 import PageHero from "@/app/shared/pageHero";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { JsonLd, breadcrumbJsonLd, pageMetadata } from "@/app/shared/seo";
 
-export const metadata: Metadata = {
-	title: "About Us",
-	description:
-		"Learn how Save Point started and our mission to build intelligent, connected automation, software and kiosk systems for businesses across New Zealand.",
-	alternates: {
-		canonical: "/about",
-	},
-};
+export const metadata: Metadata = pageMetadata({
+  title: "About Us",
+  description:
+    "How Save Point started and why we build connected automation, software and kiosk systems for New Zealand businesses, from small teams to enterprise.",
+  path: "/about",
+});
 
 export default function About() {
 	return (
 		<>
 			<Navbar />
 			<main id="main">
+				<JsonLd data={breadcrumbJsonLd("About", "/about")} />
 				<PageHero
 					title="About Us"
 					lead="The people and the thinking behind Save Point."

@@ -3,15 +3,14 @@ import Footer from "@/app/footer/footer";
 import styles from "@/app/shared/page.module.css";
 import PageHero from "@/app/shared/pageHero";
 import type { Metadata } from "next";
+import { JsonLd, breadcrumbJsonLd, pageMetadata } from "@/app/shared/seo";
 
-export const metadata: Metadata = {
-  title: "Legal",
+export const metadata: Metadata = pageMetadata({
+  title: "Legal, Privacy & Terms",
   description:
-    "Save Point's privacy policy, cookie policy, terms and conditions, refund and warranty policy, governed by New Zealand law.",
-  alternates: {
-    canonical: "/legal",
-  },
-};
+    "Save Point's privacy policy, cookie policy, terms and conditions, and refund and warranty policy, governed by New Zealand law.",
+  path: "/legal",
+});
 
 const LAST_UPDATED = "22 October 2026";
 
@@ -35,6 +34,7 @@ export default function Legal() {
     <>
       <Navbar />
       <main id="main">
+        <JsonLd data={breadcrumbJsonLd("Legal", "/legal")} />
         <PageHero
           title="Legal"
           lead="Our privacy, cookie, terms, refund and warranty policies, all in one place."
