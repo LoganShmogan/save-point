@@ -2,6 +2,7 @@ import Navbar from "@/app/navigation/navBar";
 import Footer from "@/app/footer/footer";
 import styles from "@/app/shared/page.module.css";
 import PageHero from "@/app/shared/pageHero";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { JsonLd, breadcrumbJsonLd, pageMetadata } from "@/app/shared/seo";
 
@@ -55,6 +56,13 @@ export default function Legal() {
                 </li>
               ))}
             </ol>
+            <p>
+              Using our Discord bot? See the{" "}
+              <Link href="/legal/discord-bot" className={styles.inlineLink}>
+                Discord bot terms and privacy policy
+              </Link>
+              .
+            </p>
           </nav>
 
           {/* 1. Privacy Policy */}

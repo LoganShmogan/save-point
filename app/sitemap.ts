@@ -9,7 +9,8 @@ const routes = [
   { path: "/about", lastModified: "2026-10-22" },
   { path: "/pricing", lastModified: "2026-10-22" },
   { path: "/contact", lastModified: "2026-10-22" },
-  { path: "/legal", lastModified: "2026-10-22" },
+  { path: "/legal", lastModified: "2026-10-29" },
+  { path: "/legal/discord-bot", lastModified: "2026-10-29" },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
