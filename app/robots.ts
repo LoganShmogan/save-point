@@ -5,8 +5,9 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
+        // /error is kept out of results by its noindex tag, which crawlers
+        // can only see if the page isn't disallowed here.
         allow: "/",
-        disallow: ["/error"],
       },
     ],
     sitemap: "https://savepoint.co.nz/sitemap.xml",

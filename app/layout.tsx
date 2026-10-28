@@ -23,9 +23,9 @@ export const viewport: Viewport = {
   themeColor: "#2b2233",
 };
 
-const title = "Save Point | Business Automation, Kiosks & Software, New Zealand";
+const title = "Business Automation, Kiosks & Software NZ | Save Point";
 const description =
-  "Save Point is a New Zealand automation company building business automation, AI, self-service kiosks, apps, custom software and websites that connect to each other, for small businesses through to enterprise.";
+  "Save Point is a New Zealand automation company building AI, self-service kiosks, apps, custom software and websites that connect to each other.";
 const shareDescription =
   "Business automation, AI, self-service kiosks, apps, software and websites that connect, for New Zealand businesses.";
 

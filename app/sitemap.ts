@@ -4,7 +4,7 @@ const baseUrl = "https://savepoint.co.nz";
 
 // Update a route's date here when its page content actually changes.
 const routes = [
-  { path: "", lastModified: "2026-10-22" },
+  { path: "", lastModified: "2026-10-28" },
   { path: "/services", lastModified: "2026-10-22" },
   { path: "/about", lastModified: "2026-10-22" },
   { path: "/pricing", lastModified: "2026-10-22" },
