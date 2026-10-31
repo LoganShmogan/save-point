@@ -94,11 +94,11 @@ Technical notes:
 - Copyright year is a hardcoded string: `© 2026 Save Point Limited`. It
   is not computed from `new Date().getFullYear()`, so it will silently
   read "2026" forever until someone edits the JSX by hand next January.
-- The same line credits the brand designer ("Brand design by Emily
-  Jacobs") in a second `<span>`. The flex layout puts it on the right on wide
+- The same line credits the people behind the site ("Built by Logan
+  Young · Brand design by Emily Jacobs") in a second `<span>`. The flex layout puts it on the right on wide
   screens and wraps it under the copyright on narrow ones. Keep it if the
   footer is redesigned: Save Point owns the artwork but doesn't claim to
-  have designed it.
+  have designed it, so Emily's credit must stay.
 
 ## `<Service />` — `app/serviceComponent/service.tsx`
 

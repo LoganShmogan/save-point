@@ -62,7 +62,7 @@ const Footer = () => {
       </div>
       <p className={styles.copyright}>
         © 2026 Save Point Limited
-        <span>Brand design by Emily Jacobs</span>
+        <span>Built by Logan Young · Brand design by Emily Jacobs</span>
       </p>
     </footer>
   );

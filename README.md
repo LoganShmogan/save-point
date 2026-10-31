@@ -24,7 +24,7 @@ reused. See [Ownership and licence](#ownership-and-licence).
 |---|---|
 | Live site | https://savepoint.co.nz |
 | Owner | Save Point Limited, New Zealand |
-| Maintainer | Logan Young, Founder ([logandev@savepoint.co.nz](mailto:logandev@savepoint.co.nz)) |
+| Maintainer | Logan Young, Founder ([logan@savepoint.co.nz](mailto:logan@savepoint.co.nz)) |
 | Framework | Next.js 16 (App Router), React 19, TypeScript |
 | Styling | Hand-written CSS Modules, Chakra Petch and Figtree |
 | Hosting | Vercel, deployed automatically from `master` |
@@ -113,6 +113,8 @@ flyers and business cards. Save Point Limited owns the final designs. Emily
 Jacobs is credited as their designer in the site footer and keeps the right
 to show them in her portfolio.
 
+The website itself was built by **Logan Young**, also credited in the footer.
+
 Brand files in this repository:
 
 | File | What it is |
@@ -150,5 +152,5 @@ Third-party packages in `package.json` keep their own licences.
 
 - Website: [savepoint.co.nz](https://savepoint.co.nz)
 - General enquiries: [contact@savepoint.co.nz](mailto:contact@savepoint.co.nz)
-- Technical or repository questions: [logandev@savepoint.co.nz](mailto:logandev@savepoint.co.nz)
+- Technical or repository questions: [logan@savepoint.co.nz](mailto:logan@savepoint.co.nz)
 - Support: [support@savepoint.co.nz](mailto:support@savepoint.co.nz)
