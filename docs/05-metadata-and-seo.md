@@ -92,6 +92,51 @@ Open Graph `og:image` must be an absolute URL to work in practice, per the
 Open Graph protocol spec — relative URLs are technically undefined
 behavior for consumers).
 
+## Canonical domain and redirects
+
+The canonical address is `https://savepoint.co.nz` (no `www`). Everything
+in the code agrees on it: `SITE_URL` in `app/shared/seo.tsx`,
+`metadataBase`, every `alternates.canonical`, `robots.txt` and
+`sitemap.xml`.
+
+The host has to agree too. In Vercel (Project → Settings → Domains):
+
+| Domain | Setting |
+|---|---|
+| `savepoint.co.nz` | Connected to Production (serves the site) |
+| `www.savepoint.co.nz` | 308 redirect to `savepoint.co.nz` |
+
+Until 31 October 2026 this was the other way round: Vercel redirected the
+apex to `www`, while the canonical tags and sitemap pointed back at the
+apex. Every sitemap URL redirected and every page's canonical pointed at a
+redirect, which Search Console reported as "Redirect error" and "Page with
+redirect". **Don't add a host-based www ↔ apex redirect in
+`next.config.ts`.** Vercel's domain redirect runs before the app, so a
+second rule in the opposite direction creates a real infinite loop. If the
+canonical domain ever changes, change Vercel and `SITE_URL` together.
+
+Removed pages that Google had already indexed are permanently redirected
+in `next.config.ts` (`redirects()`, served as 308, which Google treats
+like a 301):
+
+| Old path | Now goes to |
+|---|---|
+| `/home` | `/` |
+| `/packages` | `/pricing` |
+| `/automation` (old Home Automation venture page) | `/services` |
+
+`/job-search` (old Job Search venture page) is deliberately left as a
+404. It has no replacement yet, and redirecting it to the home page would
+be treated as a soft 404. When a page is removed in future, add a redirect
+here if it has a real replacement, otherwise let it 404, and take it out
+of `app/sitemap.ts` either way.
+
+To check the live site, each URL should reach a 200 in one hop:
+
+```sh
+curl -sIL https://www.savepoint.co.nz/services | grep -iE '^(HTTP|location)'
+```
+
 ## JSON-LD structured data
 
 `app/layout.tsx` defines a plain JS object, `organizationJsonLd`, typed

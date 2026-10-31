@@ -17,8 +17,10 @@ tree of static folders.
 | `/pricing` | `app/pricing/page.tsx` | Fixed-price ready-made starters (data in `app/pricing/packages.ts`), custom "from" prices per service (from `servicesData.ts`), add-ons. Starter names and warranties are also listed in the legal warranty section 4.2 |
 | `/contact` | `app/contact/page.tsx` | Email / Facebook / location, response-time copy |
 | `/legal` | `app/legal/page.tsx` | Privacy Policy, ToS, Disclaimer, Support, Refund/Warranty — all in one page, sectioned |
+| `/legal/discord-bot` | `app/legal/discord-bot/page.tsx` | Terms and privacy for the Project Hub Discord bot; the Discord Developer Portal links to its `#terms` and `#privacy` anchors |
 | `/error` | `app/error/page.tsx` | Static "under construction" placeholder. **Not** a Next.js `error.tsx` boundary — see below. |
 | *(any unmatched path)* | `app/not-found.tsx` | Rendered with HTTP 404 |
+| `/home`, `/packages`, `/automation` | `next.config.ts` `redirects()` | Removed pages, permanently redirected (308) to `/`, `/pricing` and `/services`. `/job-search` is deliberately left as a 404. See [`05-metadata-and-seo.md`](./05-metadata-and-seo.md#canonical-domain-and-redirects) |
 | `/manifest.webmanifest` | `app/manifest.ts` | PWA manifest, generated |
 | `/robots.txt` | `app/robots.ts` | Crawler directives, generated |
 | `/sitemap.xml` | `app/sitemap.ts` | URL list for search engines, generated |

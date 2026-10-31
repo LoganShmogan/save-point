@@ -140,12 +140,25 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.resolve(__dirname),
   },
+  // Old pages Google still has on file. /job-search is left as a 404 since
+  // it has no replacement yet.
+  async redirects() {
+    return [
+      { source: "/home", destination: "/", permanent: true },
+      { source: "/packages", destination: "/pricing", permanent: true },
+      { source: "/automation", destination: "/services", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;
 ```
 
-The only non-default setting in the entire Next config. `path.resolve(__dirname)`
+Two settings. `redirects()` permanently redirects removed pages that
+Google had indexed; see
+[`05-metadata-and-seo.md`](./05-metadata-and-seo.md#canonical-domain-and-redirects).
+
+`path.resolve(__dirname)`
 resolves to the absolute path of the directory containing this config
 file (the project root), pinned explicitly to stop Turbopack's
 auto-detected "workspace root" heuristic from walking up past this

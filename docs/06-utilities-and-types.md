@@ -71,7 +71,7 @@ cross-referencing Next's source.
 | `MetadataRoute.Sitemap` | `next` | `app/sitemap.ts` | `Array<{ url: string, lastModified?: string \| Date, changeFrequency?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never", priority?: number }>` |
 | `MetadataRoute.Robots` | `next` | `app/robots.ts` | `{ rules: { userAgent?: string \| string[], allow?: string \| string[], disallow?: string \| string[] } \| Array<...>, sitemap?: string \| string[], host?: string }` |
 | `MetadataRoute.Manifest` | `next` | `app/manifest.ts` | Mirrors the W3C Web App Manifest spec: `{ name, short_name, description, start_url, display, background_color, theme_color, icons: Array<{ src, sizes, type }> }` |
-| `NextConfig` | `next` | `next.config.ts` | `{ turbopack?: { root?: string }, ... }` — a large optional-everything config object; this repo only sets `turbopack.root` |
+| `NextConfig` | `next` | `next.config.ts` | `{ turbopack?: { root?: string }, ... }` — a large optional-everything config object; this repo only sets `turbopack.root` and `redirects` |
 | `ClassValue` | `clsx` | `lib/utils.ts` | `string \| number \| boolean \| undefined \| null \| ClassValue[] \| { [key: string]: unknown }` — a recursive union type, which is why it can represent arbitrarily nested conditional class expressions |
 | `React.ReactNode` | `react` | `app/layout.tsx` (`{ children }: { children: React.ReactNode }`) | The universal "anything React can render" union: `ReactElement \| string \| number \| Iterable<ReactNode> \| boolean \| null \| undefined` |
 

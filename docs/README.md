@@ -68,7 +68,7 @@ save-point/
 │   └── utils.ts                # `cn()` class-merging helper (shadcn convention)
 ├── public/                     # Static assets served from `/`
 ├── components.json             # shadcn/ui CLI config (no components generated yet)
-├── next.config.ts              # Next.js config (Turbopack root pin)
+├── next.config.ts              # Next.js config (Turbopack root pin, old-page redirects)
 ├── tsconfig.json                # TypeScript compiler config
 ├── eslint.config.mjs            # ESLint flat config
 ├── postcss.config.mjs           # PostCSS config (Tailwind v4 plugin)
