@@ -110,8 +110,8 @@ The Save Point brand identity was designed for Save Point by
 **Emily Jacobs** (graphic designer, New Zealand). Her work includes the logo
 and logo mark, wordmark, colour palette, typography, website illustrations,
 flyers and business cards. Save Point Limited owns the final designs. Emily
-Jacobs is credited as their designer and keeps the right to show them in her
-portfolio.
+Jacobs is credited as their designer in the site footer and keeps the right
+to show them in her portfolio.
 
 Brand files in this repository:
 

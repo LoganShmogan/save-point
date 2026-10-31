@@ -79,6 +79,10 @@
   border-top: solid 2px var(--plum-soft);
   color: var(--on-plum-soft);
   font-size: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
 }
 
 /* ── Mobile / Tablet responsive ── */
