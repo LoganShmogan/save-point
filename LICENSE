@@ -1,0 +1,30 @@
+Copyright (c) 2025-2026 Save Point Limited (New Zealand company 9392145).
+All rights reserved.
+
+This repository contains the source code, written content, pricing, legal
+policies and brand artwork for the Save Point Limited website at
+https://savepoint.co.nz. It is published so that it can be viewed. It is not
+open source, and no licence to use it is granted.
+
+Without prior written permission from Save Point Limited, you may not copy,
+modify, distribute, sublicense, sell, deploy or otherwise use any part of this
+repository, in whole or in part, except as allowed by law.
+
+Brand artwork
+
+The Save Point name, logo, logo mark, wordmark, illustrations, icons and other
+brand artwork in this repository (including everything in public/ and the
+image files in app/) are owned by Save Point Limited and may not be used
+without written permission. The brand artwork was designed for Save Point by
+Emily Jacobs, who is credited as its designer and keeps the right to show it
+in her professional portfolio.
+
+Third-party material
+
+Third-party packages listed in package.json, and the Chakra Petch and Figtree
+fonts (SIL Open Font License 1.1), are covered by their own licences and are
+not claimed by Save Point Limited.
+
+Permission requests: contact@savepoint.co.nz
+
+This notice is governed by the laws of New Zealand.

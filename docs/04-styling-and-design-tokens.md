@@ -79,6 +79,11 @@ against the paper background. `public/logo-wordmark.png` and
 `public/logo-flag.png` are tightly cropped versions of `public/logo.png`
 (which has a large transparent margin).
 
+The logo, wordmark, pixel-art illustrations and brand colours were designed
+by Emily Jacobs for Save Point and are owned by Save Point Limited. Don't
+redraw or alter them in a way that changes the design; ask for new artwork
+instead. Full list in the [project README](../README.md#brand-and-graphic-design).
+
 ## Fonts (`next/font/google`, wired in `app/layout.tsx`)
 
 ```tsx

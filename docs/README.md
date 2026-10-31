@@ -5,6 +5,10 @@ documents what is actually in the repository right now (not aspirational
 architecture), at a level of detail intended for an engineer who has never
 opened the project before.
 
+Owned and maintained by Save Point Limited. Brand artwork designed by Emily
+Jacobs for Save Point. See the [project README](../README.md#ownership-and-licence)
+for ownership, licence and design credits.
+
 ## Stack summary
 
 | Layer | Technology | Version (installed) |

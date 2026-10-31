@@ -2,6 +2,14 @@
   "name": "save-point",
   "version": "0.1.0",
   "private": true,
+  "description": "The official website of Save Point Limited (savepoint.co.nz)",
+  "homepage": "https://savepoint.co.nz",
+  "author": "Save Point Limited <contact@savepoint.co.nz> (https://savepoint.co.nz)",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoganShmogan/save-point.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
