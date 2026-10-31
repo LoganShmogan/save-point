@@ -1,22 +1,28 @@
 <p align="center">
-  <img src="public/logo.png" alt="Save Point" width="320">
+  <a href="https://savepoint.co.nz"><img src="public/logo.png" alt="Save Point" width="320"></a>
+</p>
+
+<h1 align="center">Save Point Website</h1>
+
+<p align="center">
+  The source for <a href="https://savepoint.co.nz">savepoint.co.nz</a>: what Save Point offers, its starter prices, its story, its legal policies and how to get in touch.<br>
+  Built, owned and run by <a href="https://savepoint.co.nz"><b>Save Point Limited</b></a>, New Zealand.
 </p>
 
 <p align="center">
-  <strong>The official website of Save Point Limited</strong><br>
-  <a href="https://savepoint.co.nz">savepoint.co.nz</a>
+  <a href="docs/README.md">Docs</a> ·
+  <a href="https://savepoint.co.nz/legal">Legal</a> ·
+  <a href="SECURITY.md">Security</a> ·
+  <a href="LICENSE">Licence</a>
 </p>
 
 ---
 
+> [!IMPORTANT]
+> This is Save Point's company website and proprietary software. The code is public so the work can be seen. It is **not** open source, and it may not be copied, reused or deployed. See [LICENSE](LICENSE).
+
 Save Point is a New Zealand software company that builds automation, kiosks,
 custom software, websites and connected (IoT) systems for small businesses.
-This repository is the source for its public website: what Save Point offers,
-its starter prices, its story, its legal policies and how to get in touch.
-
-This repository is owned and maintained by **Save Point Limited**
-(NZ company 9392145). It is public so the work can be seen, not so it can be
-reused. See [Ownership and licence](#ownership-and-licence).
 
 ## At a glance
 
@@ -48,6 +54,33 @@ social share images and JSON-LD structured data.
 Service text and prices live in `app/services/servicesData.ts` and
 `app/pricing/packages.ts`, so the home, services and pricing pages always agree.
 
+## Project layout
+
+```
+save-point/
+├── app/                      # Next.js App Router: every folder is a route
+│   ├── layout.tsx            # Root layout: fonts, global metadata, JSON-LD
+│   ├── page.tsx              # /  (home page; styles in home/)
+│   ├── about/  contact/  pricing/  services/  legal/  error/
+│   │                         # One folder per route (legal/discord-bot/ is the bot's terms)
+│   ├── services/servicesData.ts  # Service text, shared by home and /services
+│   ├── pricing/packages.ts   # Starter packages and prices
+│   ├── navigation/  footer/  serviceComponent/  shared/
+│   │                         # Shared components and styles
+│   ├── sitemap.ts  robots.ts  manifest.ts
+│   └── opengraph-image.png  twitter-image.png  icon.png  favicon.ico
+├── docs/                     # Engineering documentation (start at docs/README.md)
+├── lib/utils.ts              # cn() class-merging helper
+├── public/                   # Logos and brand artwork (owned by Save Point)
+│   └── brand/
+├── .github/CODEOWNERS        # All changes reviewed by the maintainer
+├── .env.example              # EmailJS settings template (copy to .env.local)
+├── next.config.ts  tsconfig.json  eslint.config.mjs  postcss.config.mjs
+├── package.json
+├── LICENSE                   # Proprietary, all rights reserved
+└── SECURITY.md
+```
+
 ## Running it locally
 
 Requires Node.js 20 or newer.
@@ -76,6 +109,11 @@ Only the contact form needs these. Everything else works without them.
 | `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY` | EmailJS public key |
 
 The same values are set in the Vercel project for production.
+
+> [!WARNING]
+> Never commit real values. `.env.local` and every other `.env*` file except
+> `.env.example` are git-ignored. The EmailJS key is a *public* key by design,
+> but keep it in the environment so it can be rotated without a code change.
 
 ## Deploying
 

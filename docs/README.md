@@ -1,11 +1,11 @@
-# Save Point — Technical Documentation
+# Save Point Website: Documentation
 
 This is the engineering documentation for the Save Point marketing site. It
 documents what is actually in the repository right now (not aspirational
 architecture), at a level of detail intended for an engineer who has never
 opened the project before.
 
-Owned and maintained by Save Point Limited. Brand artwork designed by Emily
+© Save Point Limited. Proprietary, not open source. Brand artwork designed by Emily
 Jacobs for Save Point. See the [project README](../README.md#ownership-and-licence)
 for ownership, licence and design credits.
 
@@ -52,29 +52,46 @@ runtime data fetching (see [`01-architecture.md`](./01-architecture.md)).
 
 ```
 save-point/
-├── app/                        # Next.js App Router root
-│   ├── layout.tsx              # Root layout — fonts, <html>/<body>, global <Metadata>, JSON-LD
-│   ├── page.tsx                # Route: /
-│   ├── globals.css             # Global stylesheet, design tokens, Tailwind import
-│   ├── manifest.ts             # Route: /manifest.webmanifest
-│   ├── robots.ts               # Route: /robots.txt
-│   ├── sitemap.ts              # Route: /sitemap.xml
-│   ├── not-found.tsx           # Rendered on any unmatched route (404)
-│   ├── about/page.tsx          # Route: /about
-│   ├── contact/page.tsx        # Route: /contact
-│   ├── pricing/page.tsx        # Route: /pricing
-│   ├── legal/page.tsx          # Route: /legal
-│   ├── error/page.tsx          # Route: /error (static "under construction" page — not a Next.js error boundary)
-│   ├── navigation/navBar.tsx   # <Navbar /> shared component
-│   ├── footer/footer.tsx       # <Footer /> shared component
-│   └── serviceComponent/service.tsx  # <Service /> shared component (services grid)
+├── app/                          # Next.js App Router root
+│   ├── layout.tsx                # Root layout: fonts, <html>/<body>, global metadata, JSON-LD
+│   ├── page.tsx                  # Route: /
+│   ├── globals.css               # Global stylesheet and design tokens
+│   ├── manifest.ts               # Route: /manifest.webmanifest
+│   ├── robots.ts                 # Route: /robots.txt
+│   ├── sitemap.ts                # Route: /sitemap.xml
+│   ├── not-found.tsx             # Rendered on any unmatched route (404)
+│   ├── opengraph-image.png       # Social share images (+ .alt.txt)
+│   ├── twitter-image.png
+│   ├── icon.png  apple-icon.png  favicon.ico
+│   ├── home/page.module.css      # Styles for the home page
+│   ├── about/page.tsx            # Route: /about
+│   ├── contact/page.tsx          # Route: /contact
+│   ├── services/
+│   │   ├── page.tsx              # Route: /services
+│   │   ├── servicesData.ts       # Service text shared by / and /services
+│   │   └── services.module.css
+│   ├── pricing/
+│   │   ├── page.tsx              # Route: /pricing
+│   │   └── packages.ts           # Starter packages, "from" prices, add-ons
+│   ├── legal/
+│   │   ├── page.tsx              # Route: /legal
+│   │   └── discord-bot/page.tsx  # Route: /legal/discord-bot (Project Hub terms and privacy)
+│   ├── error/page.tsx            # Route: /error (static "under construction" page, not an error boundary)
+│   ├── navigation/navBar.tsx     # <Navbar />
+│   ├── footer/footer.tsx         # <Footer />
+│   ├── serviceComponent/service.tsx  # <Service /> (services grid)
+│   └── shared/                   # pageHero.tsx, seo.tsx and shared CSS modules
 ├── lib/
-│   └── utils.ts                # `cn()` class-merging helper (shadcn convention)
-├── public/                     # Static assets served from `/`
-├── components.json             # shadcn/ui CLI config (no components generated yet)
-├── next.config.ts              # Next.js config (Turbopack root pin, old-page redirects)
-├── tsconfig.json                # TypeScript compiler config
-├── eslint.config.mjs            # ESLint flat config
-├── postcss.config.mjs           # PostCSS config (Tailwind v4 plugin)
+│   └── utils.ts                  # cn() class-merging helper (shadcn convention)
+├── public/                       # Static assets served from /
+│   ├── logo.png  logo-wordmark.png  logo-flag.png
+│   └── brand/                    # Illustrations, square logos, app icons
+├── .github/CODEOWNERS
+├── .env.example                  # EmailJS variables (real values live in .env.local / Vercel)
+├── components.json               # shadcn/ui CLI config (no components generated yet)
+├── next.config.ts                # Next.js config (Turbopack root pin, old-page redirects)
+├── tsconfig.json                 # TypeScript compiler config
+├── eslint.config.mjs             # ESLint flat config
+├── postcss.config.mjs            # PostCSS config (Tailwind v4 plugin)
 └── package.json
 ```
