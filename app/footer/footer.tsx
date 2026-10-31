@@ -62,7 +62,7 @@ const Footer = () => {
       </div>
       <p className={styles.copyright}>
         © 2026 Save Point Limited
-        <span className={styles.credit}>Brand design by Emily Jacobs</span>
+        <span>Brand design by Emily Jacobs</span>
       </p>
     </footer>
   );

@@ -95,7 +95,7 @@ Technical notes:
   is not computed from `new Date().getFullYear()`, so it will silently
   read "2026" forever until someone edits the JSX by hand next January.
 - The same line credits the brand designer ("Brand design by Emily
-  Jacobs", `.credit`). The flex layout puts it on the right on wide
+  Jacobs") in a second `<span>`. The flex layout puts it on the right on wide
   screens and wraps it under the copyright on narrow ones. Keep it if the
   footer is redesigned: Save Point owns the artwork but doesn't claim to
   have designed it.
